@@ -1,6 +1,23 @@
 \chapter{Resultados}
 
-En este capítulo se presentan los resultados obtenidos en cada una de las fases del desarrollo del sistema de detección de aflatoxinas en higos frescos mediante análisis de imágenes hiperespectrales. Los resultados se organizan de acuerdo con las fases metodológicas descritas en el capítulo anterior, proporcionando una evaluación comprehensiva del rendimiento del sistema desarrollado.
+En este capítulo se presentan los resultados obtenidos en cada una de las fases del desarrollo del sistema de detección de aflatoxinas en higos frescos mediante a% Temporarily co% Temporarily removed for debuggingto compilation issue
+% \begin{figure}[!ht]
+% \centering
+% \begin{subfigure}[b]{0.45\textwidth}
+%     \includegraphics[width=\textwidth]{images/mutacion1.png}
+%     \caption{Mutación por intercambio}
+%     \label{fig:mutacion_intercambio}
+% \end{subfigure}
+% \hfill
+% \begin{subfigure}[b]{0.45\textwidth}
+%     \includegraphics[width=\textwidth]{images/mutacion2.png}
+%     \caption{Mutación por inversión}
+%     \label{fig:mutacion_inversion}
+% \end{subfigure}
+% \caption{Operadores de mutación implementados para introducir diversidad genética y evitar la convergencia prematura hacia óptimos locales en la selección de bandas espectrales.}
+% \label{fig:operadores_mutacion}
+% \end{figure}
+% nes hiperespectrales. Los resultados se organizan de acuerdo con las fases metodológicas descritas en el capítulo anterior, proporcionando una evaluación comprehensiva del rendimiento del sistema desarrollado.
 
 \section{Fase 0: Resultados de Detección y Segmentación}
 
@@ -167,6 +184,44 @@ La banda 127 (570.2 nm) corresponde a la región verde-amarilla del espectro vis
 
 Las bandas en el infrarrojo cercano (780.5 nm y 923.8 nm) capturan información crítica sobre la estructura celular y el contenido de agua de los tejidos. La banda 284 (780.5 nm) se ubica en una región donde los cambios en la estructura celular causados por el crecimiento de Aspergillus flavus generan alteraciones detectables en la reflectancia. La banda 391 (923.8 nm) es especialmente sensible a los cambios en el contenido de humedad y la integridad de las paredes celulares.
 
+% Temporarily removed genetic algorithm figures for debugging
+
+% Temporarily removed for debugging
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/cruce1punto.png}
+    \caption{Operador de cruce de un punto}
+    \label{fig:cruce_un_punto}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/cruce2puntos.png}
+    \caption{Operador de cruce de dos puntos}
+    \label{fig:cruce_dos_puntos}
+\end{subfigure}
+\caption{Operadores de cruce utilizados en el algoritmo genético para la selección de bandas espectrales. Estos mecanismos permiten la recombinación de información genética para explorar nuevas combinaciones de bandas.}
+\label{fig:operadores_cruce}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/mutacion1.png}
+    \caption{Mutación por intercambio}
+    \label{fig:mutacion_intercambio}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/mutacion2.png}
+    \caption{Mutación por inversión}
+    \label{fig:mutacion_inversion}
+\end{subfigure}
+\caption{Operadores de mutación implementados para introducir diversidad genética y evitar la convergencia prematura hacia óptimos locales en la selección de bandas espectrales.}
+\label{fig:operadores_mutacion}
+\end{figure}
+
 \subsection{Análisis de Separabilidad por Clases}
 
 La evaluación de la separabilidad entre clases utilizando las bandas seleccionadas demostró mejoras significativas en la discriminación:
@@ -223,6 +278,23 @@ Bandas RGB estándar & 0.876 & 2.9 & 0.726 \\
 \end{table}
 
 Los resultados confirman la superioridad de la selección optimizada por algoritmo genético, logrando mejoras del 5.2\% en separabilidad y del 15.3\% en accuracy de clasificación respecto a la mejor alternativa.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/selecionrank.png}
+    \caption{Selección por ranking}
+    \label{fig:seleccion_ranking}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/selecionruleta.png}
+    \caption{Selección por ruleta}
+    \label{fig:seleccion_ruleta}
+\end{subfigure}
+\caption{Métodos de selección implementados en el algoritmo genético. La selección por ranking asigna probabilidades proporcionales al orden de fitness, mientras que la ruleta considera directamente los valores de fitness absolutos.}
+\label{fig:metodos_seleccion}
+\end{figure}
 
 \section{Fase 2: Resultados de Clasificación con Redes Neuronales}
 
@@ -572,6 +644,55 @@ PCR Tiempo Real & 32.40 & 180 & Sí \\
 \label{tab:cost_analysis}
 \end{table}
 
+Los resultados evidencian una reducción significativa tanto en costo como en tiempo de procesamiento comparado con métodos tradicionales de laboratorio, manteniendo alta precisión diagnóstica.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/Figure_1.png}
+    \caption{Análisis espectral diferencial por clase de contaminación}
+    \label{fig:analisis_espectral}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/Figure_2.png}
+    \caption{Distribución estadística de características espectrales}
+    \label{fig:distribucion_caracteristicas}
+\end{subfigure}
+\caption{Análisis exploratorio de datos espectrales mostrando las diferencias significativas entre clases de contaminación y la distribución normal de las características seleccionadas por el algoritmo genético.}
+\label{fig:analisis_datos_espectrales}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{images/Figure_3.png}
+    \caption{Métricas de rendimiento comparativas}
+    \label{fig:metricas_rendimiento}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{images/Figure_4.png}
+    \caption{Curvas de convergencia del entrenamiento}
+    \label{fig:curvas_aprendizaje}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{images/Figure_5.png}
+    \caption{Matriz de confusión multiclase}
+    \label{fig:matriz_confusion}
+\end{subfigure}
+\caption{Resultados comprehensivos del análisis de rendimiento incluyendo métricas comparativas con métodos del estado del arte, curvas de convergencia del proceso de entrenamiento y matriz de confusión detallada para clasificación de cuatro niveles de contaminación.}
+\label{fig:resultados_rendimiento_completos}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/Figure_6.png}
+\caption{Análisis temporal de progresión de contaminación por aflatoxinas. Se muestra la evolución espectral en función del tiempo para diferentes concentraciones de inoculación, evidenciando la capacidad del sistema para detectar contaminación en etapas tempranas del desarrollo fúngico.}
+\label{fig:evolucion_temporal_contaminacion}
+\end{figure}
+
 \subsection{Impacto en la Cadena de Producción}
 
 La implementación del sistema propuesto ofrece ventajas significativas:
@@ -629,6 +750,13 @@ Los resultados obtenidos validan las hipótesis planteadas al inicio del trabajo
     \item \textbf{H3 - Detección temprana}: Parcialmente confirmada (día 3-4 vs objetivo día 1-2)
     \item \textbf{H4 - Viabilidad industrial}: Confirmada con throughput de 312 muestras/segundo
 \end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/Prediccion.png}
+\caption{Interfaz del sistema de predicción en tiempo real mostrando el análisis automático de muestras de higo. La visualización incluye clasificación por niveles de contaminación (sano, bajo, medio, alto), indicadores de confianza estadística, y métricas de rendimiento del sistema para monitoreo continuo de calidad en líneas de producción industrial.}
+\label{fig:sistema_prediccion_industrial}
+\end{figure}
 
 \subsection{Impacto Tecnológico y Científico}
 

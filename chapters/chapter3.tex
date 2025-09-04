@@ -24,6 +24,13 @@ Una vez adquiridas, las imágenes originales fueron preprocesadas con correcció
 
 La arquitectura del sistema desarrollado combina detección de objetos mediante \emph{text prompts}, segmentación semántica avanzada \textcolor{red}{refencia a esta técnica}, y procesamiento especializado de cubos hiperespectrales. El enfoque metodológico permite la creación de un \emph{dataset} estructurado que facilita el análisis automatizado y escalable de muestras, estableciendo las bases para las fases posteriores que implementarán algoritmos de \emph{machine learning} para la clasificación y detección de contaminación.
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.9\textwidth]{images/Sistema.png}
+\caption{Esquema general de la metodología seguida para llevar a cabo el estudio. El sistema integra técnicas de visión por computador, procesamiento hiperespectral y algoritmos de machine learning para la detección automatizada de contaminación por aflatoxinas.}
+\label{fig:sistema_general}
+\end{figure}
+
 El sistema se ha diseñado para manejar eficientemente el volumen considerable de datos hiperespectrales, garantizando tanto la precisión en la localización de objetos como la integridad radiométrica de los datos espectrales extraídos. La primera fase, completada y documentada en el repositorio \texttt{create-dataset}, establece los fundamentos para el procesamiento posterior mediante la localización y segmentación automatizada de higos individuales.
 
 \section{Primera Fase: Localización y Segmentación de Figuras}
@@ -35,8 +42,16 @@ La primera fase del desarrollo se centra en la localización y segmentación aut
 Esta fase es fundamental para el flujo de trabajo completo, ya que permite el aislamiento automatizado de regiones de interés que posteriormente serán procesadas por algoritmos de análisis espectral y clasificación. La precisión en esta etapa determina directamente la calidad de los datos de entrada para las fases subsiguientes.
 
 \subsection{Herramientas y Tecnologías Empleadas}
+\label{docker}
 
 La implementación de esta fase se basa en la integración de modelos de visión por computador de última generación, complementados con librerías especializadas para el procesamiento de datos hiperespectrales y manipulación de anotaciones.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/topologia.png}
+\caption{Topología de la red neuronal desarrollada para el análisis de imágenes hiperespectrales. La arquitectura combina capas convolucionales para la extracción de características espectrales con mecanismos de atención para la localización precisa de regiones contaminadas.}
+\label{fig:topologia_red}
+\end{figure}
 
 \subsubsection{Grounding DINO}
 
@@ -77,9 +92,40 @@ El modelo recibe como \emph{input} los \emph{bounding boxes} generados por \emph
 
 El desarrollo incorporó librerías especializadas para diferentes aspectos del \emph{pipeline}: \texttt{spectral} para manejo eficiente de datos hiperespectrales en formato ENVI, \texttt{pycocotools} para manipulación y validación de anotaciones en formato COCO, \texttt{supervision} para visualización avanzada de detecciones y segmentaciones, \texttt{OpenCV} para operaciones de procesamiento de imágenes, y \texttt{PyTorch} como \emph{framework} base para la ejecución de los modelos de \emph{deep learning}.
 
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/Docker2.png}
+    \caption{Arquitectura containerizada con Docker}
+    \label{fig:docker_arquitectura}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/anaconda.png}
+    \caption{Gestión de entornos con Anaconda}
+    \label{fig:anaconda_entorno}
+\end{subfigure}
+\caption{Infraestructura tecnológica del sistema de desarrollo. La implementación utiliza contenedores Docker para garantizar reproducibilidad y Anaconda para la gestión de dependencias de machine learning y procesamiento científico.}
+\label{fig:infraestructura_desarrollo}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.7\textwidth]{images/slurm.png}
+\caption{Configuración del sistema de cómputo de alto rendimiento basado en SLURM para el entrenamiento distribuido de modelos de machine learning. La infraestructura permite el procesamiento paralelo de grandes volúmenes de datos hiperespectrales con gestión automática de recursos computacionales.}
+\label{fig:sistema_slurm}
+\end{figure}
+
 
 
 \subsection{Implementación del \emph{Pipeline}}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.9\textwidth]{images/pseudocodigo.png}
+\caption{Pseudocódigo del algoritmo principal implementado para la detección y segmentación automatizada de higos individuales. El proceso incluye preprocesamiento de imágenes hiperespectrales, detección mediante text prompts, segmentación semántica y extracción de subcubos espectrales.}
+\label{fig:pseudocodigo_sistema}
+\end{figure}
 
 \subsubsection{Estructura del \emph{Workflow}}
 
