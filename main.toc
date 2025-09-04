@@ -1,0 +1,118 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Agradecimientos}{I}{chapter*.1}%
+\contentsline {chapter}{Índice de figuras}{VIII}{chapter*.4}%
+\contentsline {chapter}{Índice de tablas}{X}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducción}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Motivación}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objetivo general}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objetivos específicos}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Planificación}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Organización del documento}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Estado del Arte}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introducción}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Imágenes Hiperespectrales en Aplicaciones Alimentarias}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Fundamentos de la Imagen Hiperespectral}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Aplicaciones en Detección de Contaminantes}{7}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Inteligencia Artificial en Análisis de Imágenes}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Redes Neuronales Profundas}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Modelos de Detección de Objetos}{7}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Algoritmos Genéticos y Optimización}{8}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Fundamentos de los Algoritmos Genéticos}{8}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Selección de Características Espectrales}{8}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Métodos de Clasificación en Machine Learning}{8}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Algoritmos Clásicos}{8}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Enfoques Híbridos}{9}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Sistemas de Procesamiento en Tiempo Real}{9}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Arquitecturas de Hardware}{9}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Pipeline de Procesamiento}{9}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Aplicaciones Específicas en Seguridad Alimentaria}{10}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Detección de Micotoxinas}{10}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Evaluación de Calidad en Frutas}{10}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}Desafíos y Limitaciones Actuales}{11}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Limitaciones Tecnológicas}{11}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Consideraciones de Escalabilidad}{11}{subsection.2.8.2}%
+\contentsline {section}{\numberline {2.9}Tendencias y Perspectivas Futuras}{11}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Integración de Sensores Múltiples}{11}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Automatización e Industria 4.0}{12}{subsection.2.9.2}%
+\contentsline {section}{\numberline {2.10}Conclusiones del Capítulo}{12}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Desarrollo}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introducción}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Adquisición de Imágenes Hiperespectrales}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Arquitectura del Sistema}{14}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Primera Fase: Localización y Segmentación de Figuras}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Objetivo de la Fase}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Herramientas y Tecnologías Empleadas}{15}{subsection.3.2.2}%
+\contentsline {subsubsection}{Grounding DINO}{15}{section*.7}%
+\contentsline {subsubsection}{SAM2 (Segment Anything Model 2)}{16}{section*.8}%
+\contentsline {subsubsection}{Librerías de Soporte}{16}{section*.10}%
+\contentsline {subsection}{\numberline {3.2.3}Implementación del \emph {Pipeline}}{17}{subsection.3.2.3}%
+\contentsline {subsubsection}{Estructura del \emph {Workflow}}{17}{section*.11}%
+\contentsline {subsubsection}{Organización de Metadatos}{18}{section*.12}%
+\contentsline {subsection}{\numberline {3.2.4}Resultados y Productos Intermedios}{19}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Desafíos y Observaciones Técnicas}{19}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Fases Futuras del Desarrollo}{19}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}[Sección reservada para Fase 2: Selección de Bandas con Algoritmo Genético]}{19}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}[Sección reservada para Fase 3: Procesamiento de \emph {Patches} con Espectro Completo]}{20}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}[Sección reservada para Fase 4: Evaluación Comparativa y Validación]}{20}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Resultados}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Fase 0: Resultados de Detección y Segmentación}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Rendimiento del Sistema de Detección}{21}{subsection.4.1.1}%
+\contentsline {subsubsection}{Métricas de Detección con Grounding DINO}{21}{section*.13}%
+\contentsline {subsubsection}{Calidad de Segmentación con SAM2}{22}{section*.15}%
+\contentsline {subsection}{\numberline {4.1.2}Estadísticas del Dataset Generado}{22}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Análisis de Calidad Radiométrica}{23}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Fase 1: Resultados de Selección de Bandas con Algoritmo Genético}{23}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Configuración del Algoritmo Genético}{23}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Función de Fitness}{23}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Evolución del Fitness}{24}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Bandas Espectrales Seleccionadas}{24}{subsection.4.2.4}%
+\contentsline {subsubsection}{Análisis Espectral de las Bandas Seleccionadas}{25}{section*.20}%
+\contentsline {subsection}{\numberline {4.2.5}Análisis de Separabilidad por Clases}{25}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Validación de la Selección de Bandas}{26}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}Fase 2: Resultados de Clasificación con Redes Neuronales}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Arquitecturas de Red Neuronal Evaluadas}{26}{subsection.4.3.1}%
+\contentsline {subsubsection}{Red Neuronal Convolucional (CNN) Básica}{27}{section*.23}%
+\contentsline {subsubsection}{Red Residual (ResNet) Adaptada}{27}{section*.24}%
+\contentsline {subsubsection}{Red Neuronal Densa (DenseNet) Modificada}{27}{section*.25}%
+\contentsline {subsection}{\numberline {4.3.2}Optimización de Hiperparámetros}{28}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Resultados de Clasificación}{28}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Análisis Detallado del Mejor Modelo}{28}{subsection.4.3.4}%
+\contentsline {subsubsection}{Curvas de Entrenamiento}{28}{section*.28}%
+\contentsline {subsubsection}{Matriz de Confusión}{28}{section*.30}%
+\contentsline {subsubsection}{Análisis de Errores por Clase}{29}{section*.32}%
+\contentsline {subsection}{\numberline {4.3.5}Análisis de Curvas ROC}{30}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Análisis Temporal de la Contaminación}{30}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Evolución de las Características Espectrales}{30}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Ventana Temporal Óptima para Detección}{31}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Comparación con Métodos del Estado del Arte}{31}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Benchmarking con Técnicas Tradicionales}{31}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Comparación con Trabajos Relacionados}{31}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Análisis de Eficiencia Computacional}{32}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Recursos Computacionales}{32}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Escalabilidad del Sistema}{32}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Validación con Datos de Campo}{33}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Experimento de Validación Independiente}{33}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Resultados de Validación en Campo}{33}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Análisis de Variabilidad Ambiental}{33}{subsection.4.7.3}%
+\contentsline {section}{\numberline {4.8}Análisis de Costo-Beneficio}{34}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Evaluación Económica}{34}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Impacto en la Cadena de Producción}{34}{subsection.4.8.2}%
+\contentsline {section}{\numberline {4.9}Discusión de Resultados}{35}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Contribuciones Principales}{35}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Limitaciones Identificadas}{35}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Comparación con Hipótesis Iniciales}{36}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Impacto Tecnológico y Científico}{36}{subsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.9.5}Direcciones Futuras}{37}{subsection.4.9.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{38}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{38}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Logros Principales}{38}{subsection.5.1.1}%
+\contentsline {subsubsection}{Desarrollo del Sistema de Detección y Segmentación}{38}{section*.39}%
+\contentsline {subsubsection}{Optimización mediante Algoritmos Genéticos}{38}{section*.40}%
+\contentsline {subsubsection}{Clasificación mediante Redes Neuronales}{39}{section*.41}%
+\contentsline {subsection}{\numberline {5.1.2}Contribuciones Científicas}{39}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Trabajo Futuro}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Problemas encontrados}{40}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Trabajo futuro}{40}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Agradecimientos}{42}{chapter.6}%
+\contentsline {chapter}{Referencias}{43}{chapter.6}%

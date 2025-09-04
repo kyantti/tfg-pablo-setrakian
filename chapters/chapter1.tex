@@ -1,0 +1,47 @@
+\chapter{Introducción}
+\section{Introducción}
+Las enfermedades y plagas en cultivos representan un desafío económico significativo para los sectores agrícola y alimentario a nivel mundial. Entre las amenazas más graves se encuentran las micotoxinas, sustancias producidas naturalmente por ciertos tipos de hongos bajo condiciones particulares de humedad y temperatura. La presencia de micotoxinas en alimentos constituye un problema serio tanto para la salud humana como animal. La Agencia Internacional para la Investigación del Cáncer (IARC) ha clasificado un grupo de aflatoxinas como sustancias carcinogénicas del grupo 1, siendo la vía común de exposición a micotoxinas la ingesta de alimentos contaminados.
+
+El hongo \textit{Aspergillus flavus}, que prolifera a temperaturas entre 12°C y 27°C con 85\% de humedad, se multiplica en diversos alimentos incluyendo maíz, cacahuetes, arroz, frutos secos e higos. Aunque su presencia es típica de climas tropicales, también prolifera bajo ciertas condiciones de riego. El ciclo de crecimiento de la aflatoxina es de entre 3 y 5 días. Incluso si los higos van a ser secados, la introducción de higos infectados con aflatoxinas en el proceso puede provocar la contaminación de otros frutos. Por tanto, la detección de aflatoxinas en el producto fresco se considera crucial tanto para el consumo directo como para su procesamiento posterior.
+
+El cultivo de la higuera (\textit{Ficus carica} L.) tiene sus orígenes en la región de Caria en Asia, habiéndose extendido a otras áreas como la región mediterránea, África y América. España es actualmente el sexto mayor productor mundial, representando el 3.5\% de la producción global. La región de Extremadura, con 12,771 hectáreas cultivadas, representa el mayor productor en España, alcanzando el 55.5\% de la producción nacional. El aumento en la productividad está vinculado a la adopción de técnicas innovadoras como fertilización, poda, tratamiento del suelo e irrigación. Sin embargo, los cambios en la humedad facilitan la propagación de la micotoxina \textit{Aspergillus flavus}, requiriendo investigación adicional para analizar y prevenir que higos infectados entren en la cadena alimentaria humana.
+
+\section{Motivación}
+La detección tradicional de aflatoxinas se realiza mediante métodos invasivos que requieren la destrucción de la muestra, o mediante inspección visual en etapas avanzadas de contaminación \cite{russell2016artificial,geron2019hands}. Estos métodos presentan limitaciones significativas: son lentos, costosos, y no permiten el análisis en tiempo real durante el proceso productivo \cite{burkov2020machine}. Además, los higos frescos son perecederos, tienen una vida útil limitada y son más sensibles al crecimiento microbiano que los higos secos, alterando la calidad del producto y representando un riesgo serio para la salud humana.
+
+El uso de imágenes hiperespectrales (HSI) combinado con técnicas de inteligencia artificial, particularmente el deep learning, ofrece una alternativa prometedora \cite{goodfellow2016deep,lecun2015deep}. La tecnología HSI mide la interacción de un amplio espectro de luz con un objeto determinado, adquiriendo cientos de bandas espectrales contiguas para cada píxel en una imagen \cite{lu2020medical,zhang2016hyperspectral}. Esta capacidad proporciona información detallada sobre el objeto y revela diferencias sutiles en textura y composición química que no son detectables mediante métodos convencionales.
+
+La necesidad de desarrollar métodos no invasivos y precisos para la detección temprana de contaminación por aflatoxinas en higos frescos es crítica para garantizar la seguridad alimentaria, reducir pérdidas económicas en la cadena de producción, y proteger la salud pública.
+
+\section{Objetivo general}
+Desarrollar un sistema de inteligencia artificial basado en el análisis de imágenes hiperespectrales para la detección temprana de contaminación por micotoxinas en higos frescos, utilizando técnicas de deep learning y algoritmos genéticos para optimizar la selección de características espectrales relevantes.
+
+\section{Objetivos específicos}
+\begin{itemize}
+    \item Implementar un sistema de detección y segmentación automática de higos individuales en imágenes hiperespectrales mediante técnicas de visión por computador, generando anotaciones en formato COCO para el procesamiento posterior.
+    \item Desarrollar e implementar un algoritmo genético para la selección óptima de las tres bandas espectrales más informativas del cubo hiperespectral, reduciendo la dimensionalidad de los datos mientras se mantiene la capacidad discriminativa.
+    \item Diseñar y entrenar modelos de redes neuronales profundas capaces de clasificar el estado de contaminación de los higos basándose en las bandas espectrales seleccionadas, evaluando diferentes arquitecturas y configuraciones.
+    \item Implementar un sistema de procesamiento basado en transformada wavelet para el análisis del espectro completo a nivel de patches, preparando la infraestructura para futuras investigaciones comparativas con el método de referencia.
+\end{itemize}
+
+\newpage
+\section{Planificación}
+El desarrollo del proyecto se estructura en las siguientes fases principales, diseñadas para abordar progresivamente los desafíos técnicos y científicos:
+
+\begin{enumerate}
+    \item \textbf{Fase de preparación y adquisición de datos:} Recolección del dataset de imágenes hiperespectrales incluyendo muestras contaminadas con diferentes niveles de micotoxinas y muestras de control no contaminadas, capturadas durante un período de dos semanas para garantizar diversidad y robustez.
+    \item \textbf{Fase 0 - Detección y segmentación:} Desarrollo del sistema de detección automática de higos individuales mediante modelos de object detection y segmentación aplicados a versiones RGB de las imágenes hiperespectrales, generando máscaras y anotaciones en formato COCO.
+    \item \textbf{Fase 1 - Selección de bandas con algoritmo genético:} Implementación del algoritmo genético para identificar las tres bandas espectrales más informativas del cubo hiperespectral, construyendo imágenes reducidas para el entrenamiento de redes neuronales.
+    \item \textbf{Fase 2 - Procesamiento de espectro completo con patches:} Desarrollo del sistema de extracción de patches y aplicación de transformada wavelet sobre el espectro completo, estableciendo la base para análisis comparativos futuros.
+    \item \textbf{Fase de validación y documentación:} Evaluación exhaustiva de los modelos desarrollados, análisis comparativo de resultados, y preparación de la documentación técnica y científica del proyecto.
+\end{enumerate}
+
+\section{Organización del documento}
+El presente documento se estructura en los siguientes capítulos para presentar de manera sistemática el desarrollo y resultados del proyecto:
+
+\begin{itemize}
+    \item \textbf{Capítulo 2. Marco teórico y estado del arte:} Presenta los fundamentos teóricos de las imágenes hiperespectrales, técnicas de deep learning aplicadas a la agricultura de precisión, y una revisión exhaustiva de trabajos relacionados con la detección de aflatoxinas mediante métodos no invasivos.
+    \item \textbf{Capítulo 3. Desarrollo:} Detalla la metodología implementada en cada fase del proyecto, incluyendo la arquitectura del sistema de detección y segmentación, el diseño del algoritmo genético, y la implementación de los modelos de redes neuronales profundas.
+    \item \textbf{Capítulo 4. Resultados:} Presenta los resultados experimentales obtenidos en cada fase, incluyendo métricas de rendimiento, análisis comparativo entre diferentes aproximaciones, y evaluación del impacto computacional y energético de los modelos.
+    \item \textbf{Capítulo 5. Conclusiones y trabajo futuro:} Resume las contribuciones principales del proyecto, discute las limitaciones encontradas, y propone líneas de investigación futuras para mejorar y extender el sistema desarrollado.
+\end{itemize}

@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: cover/cover_CUM.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: cover/cover_CUM_data.aux
+Reallocating 'name_of_file' (item size: 1) to 32 items.
+A level-1 auxiliary file: frontmatter/acknowledgments.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: frontmatter/summary.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: frontmatter/abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapters/chapter1.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapters/chapter2.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapters/chapter3.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapters/chapter4.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapters/chapter5.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapters/chapter6.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+The style file: ieeetr.bst
+Database file #1: bibliography/references.bib
+Warning--empty publisher in darwin2007
+Too many commas in name 1 of "Carmen Torrano, Paloma Recuero, Fran Ramírez, Santiago Hernández, José Torres" for entry CTorrado2019
+while executing---line 969 of file ieeetr.bst
+Too many commas in name 1 of "Carmen Torrano, Paloma Recuero, Fran Ramírez, Santiago Hernández, José Torres" for entry CTorrado2019
+while executing---line 969 of file ieeetr.bst
+Warning--empty publisher in GBonaccorso2017
+Warning--empty publisher in DBerrar2018
+Warning--empty journal in geladi2020
+You've used 55 entries,
+            1876 wiz_defined-function locations,
+            783 strings with 13563 characters,
+and the built_in function-call counts, 14105 in all, are:
+= -- 1419
+> -- 510
+< -- 0
++ -- 196
+- -- 141
+* -- 902
+:= -- 1925
+add.period$ -- 74
+call.type$ -- 55
+change.case$ -- 37
+chr.to.int$ -- 0
+cite$ -- 59
+duplicate$ -- 763
+empty$ -- 1405
+format.name$ -- 141
+if$ -- 3510
+int.to.chr$ -- 0
+int.to.str$ -- 55
+missing$ -- 69
+newline$ -- 187
+num.names$ -- 52
+pop$ -- 227
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 487
+stack$ -- 0
+substring$ -- 864
+swap$ -- 305
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 132
+width$ -- 57
+write$ -- 528
+(There were 2 error messages)

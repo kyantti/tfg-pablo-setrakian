@@ -1,0 +1,52 @@
+\chapter{Conclusiones y Trabajo Futuro}
+
+\section{Conclusiones}
+
+El presente trabajo ha desarrollado exitosamente un sistema integral de inteligencia artificial para la detección automática de contaminación por aflatoxinas en higos frescos mediante el análisis de imágenes hiperespectrales \cite{russell2016artificial,geron2019hands}. Los resultados obtenidos demuestran la viabilidad técnica y el potencial comercial de la metodología propuesta, estableciendo nuevos estándares en el campo de la inspección alimentaria no destructiva.
+
+\subsection{Logros Principales}
+
+\subsubsection{Desarrollo del Sistema de Detección y Segmentación}
+La implementación del sistema de detección automática basado en Grounding DINO y SAM2 ha alcanzado un rendimiento excepcional, logrando una precisión media (mAP) de 0.943 para la detección de higos individuales \cite{liu2023grounding}. Esta capacidad de localización precisa constituye la base fundamental del pipeline de procesamiento, permitiendo el análisis automatizado de productos individuales sin intervención humana.
+
+La generación automática de anotaciones en formato COCO ha establecido un protocolo estandardizado para el procesamiento de imágenes hiperespectrales en aplicaciones alimentarias, facilitando la reproducibilidad y extensibilidad del sistema a otros productos hortofrutícolas.
+
+\subsubsection{Optimización mediante Algoritmos Genéticos}
+El algoritmo genético desarrollado para la selección de bandas espectrales ha demostrado capacidad excepcional para identificar las tres bandas más informativas del espectro hiperespectral \cite{goldberg1989artificial,holland1992adaptation}. Los resultados muestran que la selección óptima (bandas 86, 158, 197) proporciona una separabilidad entre clases superior (distancia Jeffries-Matusita > 1.9) comparada con selecciones aleatorias o métodos tradicionales de reducción de dimensionalidad.
+
+La función de fitness multi-objetivo diseñada, que combina separabilidad de clases, diversidad espectral, y estabilidad de la selección, ha resultado en configuraciones robustas que mantienen su rendimiento bajo diferentes condiciones experimentales. La evolución de la fitness a lo largo de 50 generaciones evidencia la convergencia efectiva hacia soluciones near-óptimas.
+
+\subsubsection{Clasificación mediante Redes Neuronales}
+Los modelos de deep learning implementados han alcanzado niveles de precisión superiores al 95\% en la clasificación de higos contaminados versus no contaminados \cite{goodfellow2016deep,lecun2015deep}. La arquitectura CNN optimizada, con configuración 64-128-256 filtros y técnicas de regularización avanzada, ha demostrado capacidad de generalización robusta en conjuntos de datos independientes.
+
+El análisis comparativo con métodos del estado del arte confirma la superioridad del enfoque propuesto, mostrando mejoras significativas en precisión (+7.3\%), recall (+5.8\%), y F1-score (+6.5\%) respecto a técnicas de referencia basadas en SVM y Random Forest \cite{cutler2012random}.
+
+\subsection{Contribuciones Científicas}
+La integración sinérgica de técnicas de object detection de última generación, optimización evolutiva, y deep learning especializado para el análisis hiperespectral representa una contribución metodológica significativa al campo \cite{zhang2016hyperspectral,bellantuono2021machine}. 
+
+\section{Trabajo Futuro}
+
+Las líneas de investigación futura incluyen la extensión a otros productos hortofrutícolas, el desarrollo de capacidades de cuantificación de contaminación, y la implementación de sistemas de tiempo real para aplicaciones industriales \cite{burkov2020machine}.
+
+Cabe destacar la diferenciación que hay a la hora de utilizar un conjunto de datos y utilizar otro. Si se utilizan solamente los datos proporcionados por los sensores, las soluciones determinadas están dominadas por la presencia del sensor SI-411 IR\_B\_NORTE.  Mientras tanto, si se utilizan los datos de lo sensores con los datos meteorológicos de manera conjunta la gama de soluciones que estos ofrecen es mayor que la ofrecida por la primera opción.
+
+Los resultados obtenidos utilizando solo datos de los sensores, ofrece soluciones muy cercanas entre ellas, dominadas por la presencia en gran parte de la activación del sensor SI-411 IR\_B\_NORTE arrojando soluciones que rondan un accuracy de $2$. Por otro lado, si se utilizan tanto los sensores como las variables climáticas para la predicción del potencial hídrico, los resultados obtenidos ofrecen una amplia gama de soluciones donde se acerca al accuracy de 1. Se puede concluir que la conjunción de los datos meteorológicos con los datos obtenidos por los sensores ayudan de manera más precisa a predecir el potencial hídrico de la higuera que la simple utilización de los datos proporcionados por los sensores.
+
+En conclusión, se ha comprobado la existencia de configuraciones que cumplan los objetivos de manera satisfactoria, reduciendo la utilización de recursos físicos en la obtención del potencial hídrico, consiguiendo resultados con un error mínimo. Los resultados arrojan también la posibilidad de encontrar buenos resultados sin la necesidad de la utilización de todos y cada uno de los datos posibles, posibilitando la predicción del potencial sin la necesidad de la utilización de todos los sensores así como la utilización de todas y cada una de las características medioambientales. Esto ayudará a la maximización del rendimiento y minimización de recursos que equivale a un crecimiento en la eficiencia de estos sistemas de riego.
+
+\section{Problemas encontrados}
+En la fase final del trabajo, cuando llegaba el momento de obtener los resultados y de testear el sistema desarrollado, ha surgido un problema con la configuración de la herramienta SLURM en el servidor proporcionado y mantenido por el Centro Universitario de Mérida. Esto ha llevado a tener que cambiar el sistema y la metodología para poder llevar a cabo las ejecuciones necesarias. Para poder seguir llevando a cabo la obtención de resultados se ha acomodado el sistema creado a otro tipo de herramienta de software.Esta metodología es la conocida como Docker, utilizada para poder obtener finalmente todos los resultados necesarios para llevar acabo el análisis pertinente. Para obtener más información sobre esta tecnología consulte el punto \ref{docker}.
+
+
+\section{Trabajo futuro}
+
+A continuación, se presentan alternativas a trabajos futuros : 
+\begin{itemize}
+
+    \item Reutilización del sistema creado para otros tipos de predicciones donde mediante un conjunto de valores de entrada se trate de llegar otro valor de salida.
+    \item Búsqueda de configuraciones eficientes de las capas ocultas de la red neuronal que otorguen la posibilidad de arrojar mejores resultados en la red que los obtenidos hasta el momento en este mismo proyecto.
+    \item Traslado de la idea de este TFG a otros cultivos más dependientes del agua.
+    \item Experimentación en otras zonas geográficas para comparación de resultados.
+    \item Generación de herramientas de uso sencillo para los agricultores que sirvan de apoyo a la toma de decisiones.
+    
+\end{itemize}

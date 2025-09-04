@@ -1,0 +1,22 @@
+idindiv,configuracion,accuracy,fitness,elitismo,selec,cruce,reemplazamiento
+1,0101000010010,0.993,3.975,1,Ranking,1 punto,Estacionario
+2,0000000101000,1.507,4.522,2,Ranking,1 punto,Estacionario
+3,0100100001000,1.353,4.061,1,Ranking,1 punto,Estacionario
+4,1000011000000,1.267,3.801,0,Ranking,2 puntos,Estacionario
+5,0000010000010,1.099,3.299,1,Ranking,Uniforme,Estacionario
+6,0000010010100,1.554,4.664,2,Ranking,1 punto,Generacional
+7,0000010000000,1.302,3.907,1,Ranking,1 punto,Generacional
+8,1010000010010,1.107,4.429,0,Ranking,1 punto,Generacional
+9,0100010000010,1.382,4.147,2,Ranking,2 puntos,Generacional
+10,0000100000110,1.550,4.651,1,Ranking,2 puntos,Generacional
+11,0000011001000,1.258,3.774,0,Ranking,2 puntos,Generacional
+12,0000001010010,1.252,3.756,2,Truncado,2 puntos,Estacionario
+13,0000100011000,1.326,3.979,1,Truncado,Uniforme,Estacionario
+14,0000100000000,1.401,4.203,2,Truncado,Uniforme,Estacionario
+15,1001000100000,1.364,4.094,2,Truncado,1 punto,Generacional
+16,0000010010010,1.180,3.542,0,Truncado,1 punto,Generacional
+17,0000010101000,1.341,4.024,0,Truncado,2 puntos,Generacional
+18,0010011010011,1.037,6.223,0,Torneo,2 puntos,Estacionario
+19,1100010000000,1.525,4.576,2,Torneo,2 puntos,Estacionario
+20,1000101000010,1.475,5.901,0,Torneo,1 punto,Generacional
+
