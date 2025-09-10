@@ -2,14 +2,22 @@
 \section{Introducción}
 Las enfermedades y plagas en cultivos representan un desafío económico significativo para los sectores agrícola y alimentario a nivel mundial. Entre las amenazas más graves se encuentran las micotoxinas, sustancias producidas naturalmente por ciertos tipos de hongos bajo condiciones particulares de humedad y temperatura. La presencia de micotoxinas en alimentos constituye un problema serio tanto para la salud humana como animal. La Agencia Internacional para la Investigación del Cáncer (IARC) ha clasificado un grupo de aflatoxinas como sustancias carcinogénicas del grupo 1, siendo la vía común de exposición a micotoxinas la ingesta de alimentos contaminados.
 
+\vspace{5mm}
+
 El hongo \textit{Aspergillus flavus}, que prolifera a temperaturas entre 12°C y 27°C con 85\% de humedad, se multiplica en diversos alimentos incluyendo maíz, cacahuetes, arroz, frutos secos e higos. Aunque su presencia es típica de climas tropicales, también prolifera bajo ciertas condiciones de riego. El ciclo de crecimiento de la aflatoxina es de entre 3 y 5 días. Incluso si los higos van a ser secados, la introducción de higos infectados con aflatoxinas en el proceso puede provocar la contaminación de otros frutos. Por tanto, la detección de aflatoxinas en el producto fresco se considera crucial tanto para el consumo directo como para su procesamiento posterior.
+
+\vspace{5mm}
 
 El cultivo de la higuera (\textit{Ficus carica} L.) tiene sus orígenes en la región de Caria en Asia, habiéndose extendido a otras áreas como la región mediterránea, África y América. España es actualmente el sexto mayor productor mundial, representando el 3.5\% de la producción global. La región de Extremadura, con 12,771 hectáreas cultivadas, representa el mayor productor en España, alcanzando el 55.5\% de la producción nacional. El aumento en la productividad está vinculado a la adopción de técnicas innovadoras como fertilización, poda, tratamiento del suelo e irrigación. Sin embargo, los cambios en la humedad facilitan la propagación de la micotoxina \textit{Aspergillus flavus}, requiriendo investigación adicional para analizar y prevenir que higos infectados entren en la cadena alimentaria humana.
 
 \section{Motivación}
-La detección tradicional de aflatoxinas se realiza mediante métodos invasivos que requieren la destrucción de la muestra, o mediante inspección visual en etapas avanzadas de contaminación \cite{russell2016artificial,geron2019hands}. Estos métodos presentan limitaciones significativas: son lentos, costosos, y no permiten el análisis en tiempo real durante el proceso productivo \cite{burkov2020machine}. Además, los higos frescos son perecederos, tienen una vida útil limitada y son más sensibles al crecimiento microbiano que los higos secos, alterando la calidad del producto y representando un riesgo serio para la salud humana.
+La detección tradicional de aflatoxinas se realiza mediante métodos invasivos que requieren la destrucción de la muestra, o mediante inspección visual en etapas avanzadas de contaminación. Estos métodos presentan limitaciones significativas: son lentos, costosos, y no permiten el análisis en tiempo real durante el proceso productivo. Además, los higos frescos son perecederos, tienen una vida útil limitada y son más sensibles al crecimiento microbiano que los higos secos, alterando la calidad del producto y representando un riesgo serio para la salud humana.
 
-El uso de imágenes hiperespectrales (HSI) combinado con técnicas de inteligencia artificial, particularmente el deep learning, ofrece una alternativa prometedora \cite{goodfellow2016deep,lecun2015deep}. La tecnología HSI mide la interacción de un amplio espectro de luz con un objeto determinado, adquiriendo cientos de bandas espectrales contiguas para cada píxel en una imagen \cite{lu2020medical,zhang2016hyperspectral}. Esta capacidad proporciona información detallada sobre el objeto y revela diferencias sutiles en textura y composición química que no son detectables mediante métodos convencionales.
+\vspace{5mm}
+
+El uso de imágenes hiperespectrales (HSI) combinado con técnicas de inteligencia artificial, particularmente el deep learning, ofrece una alternativa prometedora. La tecnología HSI mide la interacción de un amplio espectro de luz con un objeto determinado, adquiriendo cientos de bandas espectrales contiguas para cada píxel en una imagen. Esta capacidad proporciona información detallada sobre el objeto y revela diferencias sutiles en textura y composición química que no son detectables mediante métodos convencionales.
+
+\vspace{5mm}
 
 La necesidad de desarrollar métodos no invasivos y precisos para la detección temprana de contaminación por aflatoxinas en higos frescos es crítica para garantizar la seguridad alimentaria, reducir pérdidas económicas en la cadena de producción, y proteger la salud pública.
 
@@ -18,7 +26,7 @@ Desarrollar un sistema de inteligencia artificial basado en el análisis de imá
 
 \section{Objetivos específicos}
 \begin{itemize}
-    \item Implementar un sistema de detección y segmentación automática de higos individuales en imágenes hiperespectrales mediante técnicas de visión por computador, generando anotaciones en formato COCO para el procesamiento posterior.
+    \item Implementar un sistema de detección y segmentación automática de higos individuales en imágenes RGB mediante técnicas de visión por computador, generando máscaras y anotaciones para su posterior extracción de datos hiperespectrales.
     \item Desarrollar e implementar un algoritmo genético para la selección óptima de las tres bandas espectrales más informativas del cubo hiperespectral, reduciendo la dimensionalidad de los datos mientras se mantiene la capacidad discriminativa.
     \item Diseñar y entrenar modelos de redes neuronales profundas capaces de clasificar el estado de contaminación de los higos basándose en las bandas espectrales seleccionadas, evaluando diferentes arquitecturas y configuraciones.
     \item Implementar un sistema de procesamiento basado en transformada wavelet para el análisis del espectro completo a nivel de patches, preparando la infraestructura para futuras investigaciones comparativas con el método de referencia.
