@@ -11,26 +11,29 @@
 \contentsline {section}{\numberline {1.6}Organización del documento}{4}{section.1.6}%
 \contentsline {chapter}{\numberline {2}Estado del Arte}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{6}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Desarrollo}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introducción}{7}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Adquisición de Imágenes Hiperespectrales}{7}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Arquitectura del Sistema}{8}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Primera Fase: Localización y Segmentación de Figuras}{8}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Objetivo de la Fase}{8}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Herramientas y Tecnologías Empleadas}{9}{subsection.3.2.2}%
-\contentsline {subsubsection}{Grounding DINO}{9}{section*.7}%
-\contentsline {subsubsection}{SAM2 (Segment Anything Model 2)}{10}{section*.8}%
-\contentsline {subsubsection}{Librerías de Soporte}{10}{section*.10}%
-\contentsline {subsection}{\numberline {3.2.3}Implementación del \emph {Pipeline}}{11}{subsection.3.2.3}%
-\contentsline {subsubsection}{Estructura del \emph {Workflow}}{11}{section*.11}%
-\contentsline {subsubsection}{Organización de Metadatos}{12}{section*.12}%
-\contentsline {subsection}{\numberline {3.2.4}Resultados y Productos Intermedios}{13}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Desafíos y Observaciones Técnicas}{13}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Fases Futuras del Desarrollo}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}[Sección reservada para Fase 2: Selección de Bandas con Algoritmo Genético]}{13}{subsection.3.3.1}%
-\contentsline {chapter}{\numberline {4}Resultados}{14}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{15}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Logros Principales}{15}{subsection.5.1.1}%
-\contentsline {chapter}{\numberline {6}Agradecimientos}{16}{chapter.6}%
-\contentsline {chapter}{Referencias}{17}{chapter.6}%
+\contentsline {section}{\numberline {2.2}HSI en Agricultura de Precisión}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Imágenes RGB en Agricultura de Precisión}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Machine Learning en Imagenología Agrícola}{9}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}Desarrollo}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introducción}{12}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Adquisición de Imágenes Hiperespectrales}{12}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Arquitectura del Sistema}{13}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Primera Fase: Localización y Segmentación de Figuras}{13}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Objetivo de la Fase}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Herramientas y Tecnologías Empleadas}{14}{subsection.3.2.2}%
+\contentsline {subsubsection}{Grounding DINO}{14}{section*.7}%
+\contentsline {subsubsection}{SAM2 (Segment Anything Model 2)}{15}{section*.8}%
+\contentsline {subsubsection}{Librerías de Soporte}{15}{section*.10}%
+\contentsline {subsection}{\numberline {3.2.3}Implementación del \emph {Pipeline}}{16}{subsection.3.2.3}%
+\contentsline {subsubsection}{Estructura del \emph {Workflow}}{16}{section*.11}%
+\contentsline {subsubsection}{Organización de Metadatos}{17}{section*.12}%
+\contentsline {subsection}{\numberline {3.2.4}Resultados y Productos Intermedios}{18}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Desafíos y Observaciones Técnicas}{18}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Fases Futuras del Desarrollo}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}[Sección reservada para Fase 2: Selección de Bandas con Algoritmo Genético]}{18}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}Resultados}{19}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{20}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Logros Principales}{20}{subsection.5.1.1}%
+\contentsline {chapter}{\numberline {6}Agradecimientos}{21}{chapter.6}%
+\contentsline {chapter}{Referencias}{22}{chapter.6}%

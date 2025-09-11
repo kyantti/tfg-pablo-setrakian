@@ -1,3 +1,64 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{CISTERNAS2020105626}
+I.~Cisternas, I.~Velásquez, A.~Caro, and A.~Rodríguez, ``Systematic
+  literature review of implementations of precision agriculture,'' {\em
+  Computers and Electronics in Agriculture}, vol.~176, p.~105626, 2020.
+
+\bibitem{agriengineering6040225}
+C.~Cruz-Carrasco, J.~Díaz-Álvarez, F.~Chávez de~la O, A.~Sánchez-Venegas,
+  and J.~Villegas~Cortez, ``Detection of aspergillus flavus in figs by means of
+  hyperspectral images and deep learning algorithms,'' {\em AgriEngineering},
+  vol.~6, no.~4, pp.~3969--3988, 2024.
+
+\bibitem{WIEME2022156}
+J.~Wieme, K.~Mollazade, I.~Malounas, M.~Zude-Sasse, M.~Zhao, A.~Gowen,
+  D.~Argyropoulos, S.~Fountas, and J.~{Van Beek}, ``Application of
+  hyperspectral imaging systems and artificial intelligence for quality
+  assessment of fruit, vegetables and mushrooms: A review,'' {\em Biosystems
+  Engineering}, vol.~222, pp.~156--176, 2022.
+
+\bibitem{PAOLETTI2019279}
+M.~Paoletti, J.~Haut, J.~Plaza, and A.~Plaza, ``Deep learning classifiers for
+  hyperspectral imaging: A review,'' {\em ISPRS Journal of Photogrammetry and
+  Remote Sensing}, vol.~158, pp.~279--317, 2019.
+
+\bibitem{jimaging5050052}
+A.~Signoroni, M.~Savardi, A.~Baronio, and S.~Benini, ``Deep learning meets
+  hyperspectral image analysis: A multidisciplinary review,'' {\em Journal of
+  Imaging}, vol.~5, no.~5, 2019.
+
+\bibitem{KHAN2022101678}
+A.~Khan, A.~D. Vibhute, S.~Mali, and C.~Patil, ``A systematic review on
+  hyperspectral imaging technology with a machine and deep learning methodology
+  for agricultural applications,'' {\em Ecological Informatics}, vol.~69,
+  p.~101678, 2022.
+
+\bibitem{article}
+R.~Sahoo, S.~Ray, and M.~R, ``Hyperspectral remote sensing of agriculture,''
+  {\em Current science}, vol.~108, pp.~848--859, 03 2015.
+
+\bibitem{HONG201935}
+D.~Hong, N.~Yokoya, J.~Chanussot, J.~Xu, and X.~X. Zhu, ``Learning to propagate
+  labels on graphs: An iterative multitask regression framework for
+  semi-supervised hyperspectral dimensionality reduction,'' {\em ISPRS Journal
+  of Photogrammetry and Remote Sensing}, vol.~158, pp.~35--49, 2019.
+
+\bibitem{FERENTINOS2018311}
+K.~P. Ferentinos, ``Deep learning models for plant disease detection and
+  diagnosis,'' {\em Computers and Electronics in Agriculture}, vol.~145,
+  pp.~311--318, 2018.
+
+\bibitem{chen2014deep}
+Y.~Chen, Z.~Lin, X.~Zhao, G.~Wang, and Y.~Gu, ``Deep learning-based
+  classification of hyperspectral data,'' {\em Selected Topics in Applied Earth
+  Observations and Remote Sensing, IEEE Journal of}, vol.~7, pp.~2094--2107, 06
+  2014.
+
+\bibitem{Zhong}
+Z.~Zhong, J.~Li, Z.~Luo, and M.~Chapman, ``Spectral-spatial residual network
+  for hyperspectral image classification: A 3-d deep learning framework,'' {\em
+  IEEE Transactions on Geoscience and Remote Sensing}, vol.~56, pp.~847--858,
+  10 2017.
 
 \end{thebibliography}

@@ -1,3 +1,86 @@
 \chapter{Estado del Arte}
 
 \section{Introducción}
+
+La agricultura de precisión ha experimentado una transformación significativa en las últimas décadas, impulsada por el desarrollo de tecnologías emergentes que permiten el monitoreo y análisis automatizado de cultivos \cite{CISTERNAS2020105626}. En este contexto, las tecnologías de imagenología avanzada, particularmente las imágenes hiperespectrales (HSI) y RGB, han emergido como herramientas clave para la detección temprana de contaminantes y patógenos en productos agrícolas. La integración de estas tecnologías con algoritmos de machine learning ha abierto nuevas posibilidades para el desarrollo de sistemas de detección no invasivos, precisos y eficientes \cite{jimaging5050052, KHAN2022101678}. 
+    
+Este capítulo presenta una revisión sistemática del estado del arte en tecnologías de detección de contaminantes en productos agrícolas, centrándose en la aplicación de imágenes hiperespectrales y RGB en combinación con técnicas de aprendizaje automático. El análisis ofrece el marco teórico necesario para comprender las contribuciones de este proyecto y su relevancia dentro del panorama científico actual.
+
+\section{HSI en Agricultura de Precisión}
+
+La imagenología hiperespectral constituye un avance notable en el análisis remoto, ya que permite capturar información extremadamente detallada a través de cientos de bandas espectrales contiguas por cada píxel \cite{article}. Este enfoque mide cómo un amplio rango del espectro electromagnético interactúa con un objeto, proporcionando información sobre su composición química y revelando variaciones sutiles que los métodos convencionales no pueden detectar \cite{WIEME2022156}. La capacidad de HSI para capturar características a través de múltiples bandas permite crear firmas únicas que representan cómo diferentes materiales responden a cada longitud de onda. Según la literatura científica, cuanto mayor es el número de bandas, más detalladas son las características que pueden ser identificadas, aunque no todas las bandas incluyen información relevante para mejorar la precisión de detección \cite{HONG201935}.
+
+\vspace{5mm}
+
+Los sistemas HSI típicamente operan en diferentes rangos espectrales, incluyendo el visible (VIS: 400-700 nm), infrarrojo cercano (NIR: 700-1000 nm), infrarrojo de onda corta (SWIR: 1000-2500 nm), y otros rangos especializados. Esta versatilidad espectral permite identificar características específicas de materiales y cambios químicos imperceptibles para el ojo humano o sistemas de imagen convencionales.
+
+\vspace{5mm}
+
+La aplicación de HSI en la detección de contaminantes agrícolas ha mostrado resultados prometedores en numerosos estudios. Estas investigaciones han abordado la identificación de infecciones fúngicas, micotoxinas y otros patógenos que comprometen la calidad y la seguridad de los productos alimentarios. En el contexto específico de detección de aflatoxinas, varios estudios han explorado el potencial de HSI para la identificación temprana de contaminación. La investigación ha demostrado que las aflatoxinas, particularmente la Aflatoxina B1 producida por Aspergillus flavus, pueden ser detectadas utilizando análisis espectral no invasivo. Estudios recientes han aplicado HSI con cámaras VNIR (400-1000 nm) y SWIR (1000-2500 nm) en diversos cultivos, logrando resultados prometedores en la identificación de muestras contaminadas frente a controles sanos.
+
+\vspace{5mm}
+
+La distribución superficial de las aflatoxinas representa una ventaja particular para el análisis mediante HSI, ya que permite detectar cambios químicos y estructurales en las capas exteriores de los productos agrícolas. Esta característica facilita la implementación de sistemas de detección que no requieren la destrucción de las muestras, manteniendo la integridad del producto para su comercialización.
+
+\vspace{5mm}
+
+A pesar de las ventajas evidentes de HSI, existen desafíos significativos asociados con su implementación práctica. El principal desafío radica en la alta dimensionalidad de los datos hiperespectrales, que puede representar un obstáculo considerable para los algoritmos de clasificación tradicionales \cite{HONG201935}. Los cubos hiperespectrales generan volúmenes masivos de datos complejos que requieren técnicas especializadas de procesamiento y análisis. La gestión de la dimensionalidad espectral requiere estrategias de selección de características y reducción dimensional para identificar las bandas espectrales más informativas. La eliminación de bandas espectrales redundantes no solo facilita el análisis computacional, sino que también puede mejorar la precisión de clasificación al reducir el ruido y la información irrelevante. Adicionalmente, las condiciones de adquisición de imágenes hiperespectrales requieren un control cuidadoso de factores ambientales como la iluminación, temperatura y humedad, que pueden afectar la calidad y consistencia de los datos espectrales. La calibración y normalización de los datos espectrales son procedimientos críticos para garantizar la reproducibilidad y confiabilidad de los resultados.
+
+\subsection{Imágenes RGB en Agricultura de Precisión}
+
+En el ámbito agrícola, las imágenes RGB siguen siendo la tecnología más extendida \cite{FERENTINOS2018311}. Aunque limitadas en comparación con HSI, destacan por su bajo costo, simplicidad de uso y rapidez en el procesamiento, cualidades que han facilitado su implementación a gran escala. Los sistemas RGB capturan únicamente tres bandas espectrales correspondientes a los colores primarios, generando representaciones visuales similares a la percepción humana. A pesar de su simplicidad, esta información resulta suficiente para detectar variaciones morfológicas y de color asociadas con infecciones fúngicas u otros contaminantes.
+
+\vspace{5mm}
+
+La literatura científica documenta numerosas aplicaciones exitosas de imágenes RGB en la detección de contaminantes agrícolas. Estos sistemas han demostrado eficacia particular en la identificación de cambios visuales asociados con infecciones fúngicas, decoloración y alteraciones morfológicas que preceden o acompañan la contaminación por micotoxinas. En el contexto de detección de aflatoxinas, algunos estudios han explorado el uso de imágenes RGB para identificar cambios visuales en productos contaminados. Aunque la información espectral limitada de RGB puede restringir la detección de cambios químicos sutiles, la tecnología ha mostrado utilidad en la identificación de síntomas visuales avanzados de contaminación fúngica.
+
+\vspace{5mm}
+
+Las aplicaciones RGB se han extendido también a sistemas de clasificación automatizada para el control de calidad en líneas de producción, donde la velocidad de procesamiento y la simplicidad del sistema son factores críticos. Estos sistemas pueden proporcionar una primera línea de defensa en la detección de productos visiblemente afectados.
+
+\vspace{5mm}
+
+Las principales limitaciones de los sistemas RGB radican en su capacidad limitada para detectar cambios químicos sutiles que no se manifiestan visualmente. La contaminación por micotoxinas puede ocurrir sin síntomas visuales evidentes en las etapas tempranas, limitando la efectividad de los sistemas RGB para la detección precoz. Adicionalmente, los sistemas RGB son susceptibles a variaciones en las condiciones de iluminación y pueden requerir normalización cuidadosa para mantener la consistencia en diferentes entornos. La dependencia de características visuales también puede resultar en falsos positivos cuando se presentan variaciones naturales en color o textura que no están relacionadas con contaminación.
+
+\subsection{Machine Learning en Imagenología Agrícola}
+
+La aplicación de deep learning (DL) en el procesamiento de imágenes hiperespectrales ha revolucionado las capacidades de análisis y clasificación en agricultura de precisión \cite{PAOLETTI2019279}. Como subconjunto del machine learning, el deep learning utiliza redes neuronales profundas que consisten en múltiples capas interconectadas de neuronas artificiales capaces de aprender representaciones de alto nivel a partir de datos de entrada.
+
+\vspace{5mm}
+
+La implementación de DL para el procesamiento y análisis de imágenes hiperespectrales fue inicialmente descrita en investigaciones pioneras que propusieron enfoques de clasificación utilizando información espacialmente dominante \cite{chen2014deep}. Desde entonces, un gran número de estudios han reflejado el interés creciente de la comunidad científica en esta área de investigación.
+
+\vspace{5mm}
+
+Las redes neuronales convolucionales tridimensionales han emergido como una arquitectura particularmente efectiva para el procesamiento de cubos hiperespectrales \cite{Zhong}. Estas redes pueden capturar simultáneamente características espaciales y espectrales, aprovechando la naturaleza tridimensional inherente de los datos hiperespectrales. Las CNN 3D operan mediante la aplicación de filtros convolucionales tridimensionales que se desplazan a través de las dimensiones espaciales (x, y) y espectral (z) del cubo hiperespectral. Esta capacidad permite la extracción de características que consideran tanto la variabilidad espacial local como las relaciones espectrales entre bandas adyacentes.
+
+\vspace{5mm}
+
+Una alternativa prometedora al uso directo de redes 3D consiste en la aplicación de transformadas matemáticas al espectro hiperespectral antes del procesamiento con redes neuronales \cite{agriengineering6040225}. Las transformadas wavelet han mostrado particular eficacia en este contexto, permitiendo la descomposición del espectro en componentes de frecuencia que pueden ser procesados mediante arquitecturas de red más simples. El enfoque basado en transformadas wavelet ofrece ventajas computacionales significativas, ya que permite la conversión de firmas espectrales unidimensionales en representaciones bidimensionales que pueden ser procesadas eficientemente mediante CNN 2D convencionales. Esta metodología puede mantener la información espectral crítica mientras reduce la complejidad computacional del procesamiento.
+
+\vspace{5mm}
+
+Las redes neuronales convolucionales bidimensionales (CNN 2D) representan el estándar establecido para el procesamiento de imágenes RGB en aplicaciones agrícolas \cite{FERENTINOS2018311}. Estas arquitecturas han demostrado eficacia excepcional en tareas de clasificación, detección de objetos y segmentación semántica aplicadas a productos agrícolas. Las CNN 2D operan mediante la aplicación de filtros convolucionales que capturan características espaciales locales en las imágenes RGB. La jerarquía de capas permite la extracción progresiva de características, desde detectores de bordes y texturas en capas tempranas hasta representaciones semánticas complejas en capas profundas.
+
+
+\vspace{5mm}
+
+El desarrollo de arquitecturas especializadas para detección de objetos y segmentación semántica ha facilitado la implementación de sistemas automatizados de análisis agrícola. Arquitecturas como YOLO (You Only Look Once), R-CNN y sus variantes han demostrado eficacia en la detección y localización automática de productos agrícolas en imágenes RGB. Para tareas de segmentación semántica, arquitecturas como U-Net, SegNet y DeepLab han mostrado resultados prometedores en la delimitación precisa de regiones de interés en imágenes agrícolas. Estas capacidades son fundamentales para el análisis posterior de características específicas de productos individuales.
+
+\vspace{5mm}
+
+La integración de información RGB e hiperespectral representa una frontera emergente en el análisis agrícola automatizado \cite{jimaging5050052}. Los enfoques híbridos pueden aprovechar las ventajas complementarias de ambas modalidades: la simplicidad y velocidad del RGB para detección y localización, y la riqueza espectral de HSI para análisis químico detallado. Estos sistemas multimodales típicamente implementan arquitecturas de procesamiento en cascada, donde la información RGB se utiliza para la detección inicial y segmentación de productos, seguida por análisis hiperespectral detallado de las regiones de interés identificadas. Esta estrategia puede optimizar tanto la eficiencia computacional como la precisión de detección.
+
+\vspace{5mm}
+
+Las técnicas de fusión de características permiten la combinación sistemática de información extraída de diferentes modalidades de imagen. Estos enfoques pueden implementarse a diferentes niveles del pipeline de procesamiento: fusión temprana (combinación de datos raw), fusión intermedia (combinación de características extraídas) o fusión tardía (combinación de decisiones de clasificadores independientes). La fusión efectiva de características RGB e hiperespectrales requiere consideración cuidadosa de las diferencias en resolución espacial, rango dinámico y características estadísticas entre las modalidades. Técnicas de normalización y alineamiento espacial son críticas para el éxito de estos enfoques.
+
+\vspace{5mm}
+
+El análisis de la literatura revela fortalezas y limitaciones distintas en los enfoques actuales para la detección de contaminantes agrícolas. Los sistemas basados en HSI ofrecen capacidades superiores de detección química pero requieren recursos computacionales significativos y equipos especializados costosos \cite{KHAN2022101678}. Los sistemas RGB proporcionan soluciones más accesibles y eficientes pero con capacidades limitadas de detección temprana.
+
+\vspace{5mm}
+
+Las arquitecturas de deep learning han demostrado capacidades excepcionales en ambas modalidades, pero su implementación efectiva requiere datasets grandes y representativos que pueden ser costosos y tiempo-intensivos de generar. La transferibilidad de modelos entre diferentes cultivos, condiciones ambientales y sistemas de adquisición permanece como un desafío significativo.
+
+Las oportunidades de innovación identificadas incluyen el desarrollo de arquitecturas híbridas que combinen eficientemente información RGB e hiperespectral, la implementación de técnicas de selección inteligente de características espectrales y el desarrollo de sistemas adaptativos que puedan operar efectivamente en condiciones variables de campo \cite{WIEME2022156}. La integración de técnicas de optimización evolutiva, como algoritmos genéticos, para la selección automática de características espectrales representa una dirección prometedora para mejorar tanto la eficiencia como la precisión de los sistemas de detección. Estos enfoques pueden automatizar el proceso de identificación de bandas espectrales óptimas para aplicaciones específicas.
