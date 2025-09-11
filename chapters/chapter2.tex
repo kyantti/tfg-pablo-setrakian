@@ -2,7 +2,7 @@
 
 \section{Introducción}
 
-La agricultura de precisión ha experimentado una transformación significativa en las últimas décadas, impulsada por el desarrollo de tecnologías emergentes que permiten el monitoreo y análisis automatizado de cultivos \cite{CISTERNAS2020105626}. En este contexto, las tecnologías de imagenología avanzada, particularmente las imágenes hiperespectrales (HSI) y RGB, han emergido como herramientas clave para la detección temprana de contaminantes y patógenos en productos agrícolas. La integración de estas tecnologías con algoritmos de machine learning ha abierto nuevas posibilidades para el desarrollo de sistemas de detección no invasivos, precisos y eficientes \cite{jimaging5050052, KHAN2022101678}. 
+La agricultura de precisión ha experimentado una transformación significativa en las últimas décadas, impulsada por el desarrollo de tecnologías emergentes que permiten el monitoreo y análisis automatizado de cultivos \cite{CISTERNAS2020105626, KHAN2022101678}. En este contexto, las tecnologías de imagenología avanzada, particularmente las imágenes hiperespectrales (HSI) y RGB, han emergido como herramientas clave para la detección temprana de contaminantes y patógenos en productos agrícolas. La integración de estas tecnologías con algoritmos de machine learning ha abierto nuevas posibilidades para el desarrollo de sistemas de detección no invasivos, precisos y eficientes \cite{KHAN2022101678, jimaging5050052, agriengineering6040225}. 
     
 Este capítulo presenta una revisión sistemática del estado del arte en tecnologías de detección de contaminantes en productos agrícolas, centrándose en la aplicación de imágenes hiperespectrales y RGB en combinación con técnicas de aprendizaje automático. El análisis ofrece el marco teórico necesario para comprender las contribuciones de este proyecto y su relevancia dentro del panorama científico actual.
 
@@ -26,7 +26,7 @@ La distribución superficial de las aflatoxinas representa una ventaja particula
 
 A pesar de las ventajas evidentes de HSI, existen desafíos significativos asociados con su implementación práctica. El principal desafío radica en la alta dimensionalidad de los datos hiperespectrales, que puede representar un obstáculo considerable para los algoritmos de clasificación tradicionales \cite{HONG201935}. Los cubos hiperespectrales generan volúmenes masivos de datos complejos que requieren técnicas especializadas de procesamiento y análisis. La gestión de la dimensionalidad espectral requiere estrategias de selección de características y reducción dimensional para identificar las bandas espectrales más informativas. La eliminación de bandas espectrales redundantes no solo facilita el análisis computacional, sino que también puede mejorar la precisión de clasificación al reducir el ruido y la información irrelevante. Adicionalmente, las condiciones de adquisición de imágenes hiperespectrales requieren un control cuidadoso de factores ambientales como la iluminación, temperatura y humedad, que pueden afectar la calidad y consistencia de los datos espectrales. La calibración y normalización de los datos espectrales son procedimientos críticos para garantizar la reproducibilidad y confiabilidad de los resultados.
 
-\subsection{Imágenes RGB en Agricultura de Precisión}
+\section{Imágenes RGB en Agricultura de Precisión}
 
 En el ámbito agrícola, las imágenes RGB siguen siendo la tecnología más extendida \cite{FERENTINOS2018311}. Aunque limitadas en comparación con HSI, destacan por su bajo costo, simplicidad de uso y rapidez en el procesamiento, cualidades que han facilitado su implementación a gran escala. Los sistemas RGB capturan únicamente tres bandas espectrales correspondientes a los colores primarios, generando representaciones visuales similares a la percepción humana. A pesar de su simplicidad, esta información resulta suficiente para detectar variaciones morfológicas y de color asociadas con infecciones fúngicas u otros contaminantes.
 
@@ -42,9 +42,9 @@ Las aplicaciones RGB se han extendido también a sistemas de clasificación auto
 
 Las principales limitaciones de los sistemas RGB radican en su capacidad limitada para detectar cambios químicos sutiles que no se manifiestan visualmente. La contaminación por micotoxinas puede ocurrir sin síntomas visuales evidentes en las etapas tempranas, limitando la efectividad de los sistemas RGB para la detección precoz. Adicionalmente, los sistemas RGB son susceptibles a variaciones en las condiciones de iluminación y pueden requerir normalización cuidadosa para mantener la consistencia en diferentes entornos. La dependencia de características visuales también puede resultar en falsos positivos cuando se presentan variaciones naturales en color o textura que no están relacionadas con contaminación.
 
-\subsection{Machine Learning en Imagenología Agrícola}
+\section{ML en Imagenología Agrícola}
 
-La aplicación de deep learning (DL) en el procesamiento de imágenes hiperespectrales ha revolucionado las capacidades de análisis y clasificación en agricultura de precisión \cite{PAOLETTI2019279}. Como subconjunto del machine learning, el deep learning utiliza redes neuronales profundas que consisten en múltiples capas interconectadas de neuronas artificiales capaces de aprender representaciones de alto nivel a partir de datos de entrada.
+La aplicación de Deep Learning (DL) en el procesamiento de imágenes hiperespectrales ha revolucionado las capacidades de análisis y clasificación en agricultura de precisión \cite{PAOLETTI2019279}. Como subconjunto del machine learning, el deep learning utiliza redes neuronales profundas que consisten en múltiples capas interconectadas de neuronas artificiales capaces de aprender representaciones de alto nivel a partir de datos de entrada.
 
 \vspace{5mm}
 

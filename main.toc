@@ -12,8 +12,8 @@
 \contentsline {chapter}{\numberline {2}Estado del Arte}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}HSI en Agricultura de Precisión}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Imágenes RGB en Agricultura de Precisión}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Machine Learning en Imagenología Agrícola}{9}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Imágenes RGB en Agricultura de Precisión}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}ML en Imagenología Agrícola}{9}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Desarrollo}{12}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introducción}{12}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Adquisición de Imágenes Hiperespectrales}{12}{subsection.3.1.1}%
