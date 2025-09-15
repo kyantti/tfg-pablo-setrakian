@@ -1,2 +1,5 @@
 # Ignore all papers in the papers directory
 papers/
+
+# Ignore the create-dataset-figs directory
+create-dataset-figs/

@@ -2,160 +2,255 @@
 
 \section{Introducción}
 
-El desarrollo del proyecto se ha estructurado en múltiples fases secuenciales, cada una diseñada para abordar aspectos específicos del proceso de análisis hiperespectral aplicado a la detección de aflatoxinas en higos frescos. La metodología desarrollada implementa técnicas de \emph{computer vision} de última generación combinadas con procesamiento especializado de datos hiperespectrales para crear un sistema automatizado de análisis de muestras.
+El desarrollo del proyecto se ha estructurado en múltiples fases secuenciales, cada una diseñada para abordar aspectos específicos del proceso de análisis hiperespectral aplicado a la detección de aflatoxinas en higos frescos. La metodología desarrollada implementa técnicas de visión por computador de última generación combinadas con procesamiento especializado de datos hiperespectrales para crear un sistema automatizado de análisis de muestras.
+
+\section{Entorno de Desarrollo}
+
+El proyecto se ha implementado utilizando un entorno de desarrollo adaptado para procesamiento de imágenes hiperespectrales y ejecución de modelos de aprendizaje profundo. A continuación se detallan los aspectos fundamentales de la infraestructura técnica utilizada.
+
+\subsection{Gestión de Entornos y Dependencias}
+
+El proyecto se desarrolló utilizando el lenguaje de programación \emph{Python} \cite{van1995python} en su versión 3.13 con soporte para \emph{Cython} \cite{behnel2011cython}, lo que proporcionó ventajas significativas en términos de rendimiento.
+
+\vspace{5mm}
+
+Para la gestión de entornos virtuales se utilizó \emph{Conda} \cite{anaconda}, un sistema que permite crear espacios de trabajo aislados con versiones específicas de bibliotecas.
+\vspace{5mm}
+
+Sobre la base de \emph{Conda}, se implementó \emph{UV} \cite{uv2024github}, un gestor de paquetes y proyectos para \emph{Python}, extremadamente rápido y escrito en \emph{Rust} \cite{matsakis2014rust}. \emph{UV} fue utilizado para la instalación y gestión de paquetes dentro del entorno \emph{Conda}, aprovechando su capacidad para resolver dependencias de manera más eficiente y rápida que las herramientas tradicionales como \emph{pip} o el propio instalador de \emph{Conda}. Esta combinación permitió mantener un entorno consistente y reproducible mientras se optimizaba el tiempo de instalación y actualización de dependencias.
+
+\vspace{5mm}
+
+Para cada fase del proyecto se creó un paquete independiente con dependencias específicas según los requisitos de cada etapa. Las principales bibliotecas utilizadas en el proyecto incluyen:
+
+\begin{itemize}
+    \item \textbf{PyTorch con torchvision y torchaudio}: Framework principal para implementación de modelos de aprendizaje profundo \cite{NEURIPS2019_9015}. 
+    \item \textbf{NumPy y SciPy}: Para operaciones numéricas y manipulación eficiente de matrices \cite{2020NumPy-Array, 2020SciPy-NMeth}.
+    \item \textbf{Scikit-learn}: Para implementación de algoritmos de aprendizaje automático y métricas \cite{sklearn_api}.
+    \item \textbf{Spectral}: Biblioteca especializada para procesamiento de imágenes hiperespectrales \cite{thomas_boggs_2022_7135091}.
+    \item \textbf{OpenCV-Python}: Para operaciones de procesamiento de imágenes y visión por computador \cite{opencv_library}.
+    \item \textbf{Transformers}: Para implementación y uso de modelos basados en arquitecturas de \emph{transformers} \cite{wolf-etal-2020-transformers}.
+    \item \textbf{Timm}: Colección de modelos preentrenados para tareas de visión por computador \cite{rw2019timm}.
+    \item \textbf{Supervision}: Para visualización y análisis de resultados de detección y segmentación \cite{Roboflow_Supervision}.
+    \item \textbf{PyCocoTools}: Para manipulación de anotaciones en formato \emph{COCO} \cite{Welsh2018,Hoops2006,Medley2018}.
+    \item \textbf{DEAP}: Para implementación de algoritmos genéticos y evolutivos \cite{DEAP_JMLR2012}.
+\end{itemize}
+
+\sloppy
+Adicionalmente, se incorporaron bibliotecas auxiliares como \texttt{addict}, \texttt{colorlog}, \texttt{gdown}, \texttt{split-folders}, \texttt{submitit} y \texttt{termcolor} para tareas de gestión de configuración, logging, descarga de modelos pre-entrenados, organización de datos y paralelización de tareas.
+
+\vspace{5mm}
+
+La gestión precisa de versiones de estas dependencias resultó crítica para garantizar la compatibilidad entre componentes y estabilidad del entorno de desarrollo.
+
+\subsection{Entorno de Desarrollo Integrado}
+
+Para el desarrollo del código se empleó Visual Studio Code (VS Code) como entorno de desarrollo integrado.
+
+\subsection{Infraestructura Computacional}
+
+El desarrollo y ejecución del proyecto se realizó en un servidor de alto rendimiento proporcionado por la Universidad de Extremadura, con las siguientes especificaciones técnicas:
+
+\begin{itemize}
+    \item \textbf{Procesador}: Intel Xeon de última generación (detalles específicos a completar).
+    \item \textbf{Memoria RAM}: 504 GB para procesamiento de grandes volúmenes de datos hiperespectrales.
+    \item \textbf{Aceleradores GPU}: 4 × NVIDIA A100 con 40 GB de memoria VRAM cada una, de las cuales se utilizó una para la ejecución de los modelos de aprendizaje profundo.
+    \item \textbf{Almacenamiento}: Sistema de almacenamiento de alta velocidad para manejo eficiente del conjunto de datos hiperespectral (aproximadamente X TB).
+\end{itemize}
 
 \subsection{Adquisición de Imágenes Hiperespectrales}
 
 Las imágenes fueron capturadas utilizando una cámara hiperespectral SPECIM, específicamente el modelo FX10 VNIR, cuyas características técnicas principales incluyen: resolución espacial de 1024 píxeles (800 \emph{width} × 1024 \emph{height}), rango espectral de 400 nm a 1000 nm (visible y parte del infrarrojo cercano), 448 bandas espectrales, y un salto espectral de 1.339 nm.
 
+\vspace{5mm}
+
 El conjunto de datos comprende 320 higos cosechados de la plantación de la variedad calabacita ubicada en la ``Finca La Orden-Valdesequera'' (38°51' N, 6°40' W, altitud 184 m) en Guadajira, España, donde CICYTEX tiene su sede central. Las imágenes hiperespectrales se capturaron durante un período de 2 semanas, utilizando cada semana 160 higos cosechados en diferentes etapas de madurez.
 
-Cada semana, los 160 higos se dividieron en cuatro subconjuntos de 40 especímenes cada uno. El primer grupo correspondió a los controles sanos (clase 0), mientras que los tres grupos siguientes fueron inoculados con concentraciones de $10^3$ UFC/mL (clase 1), $10^5$ UFC/mL (clase 2), y $10^7$ UFC/mL (clase 3), respectivamente. El proceso de inoculación se realizó mediante inmersión del área durante aproximadamente 3 segundos, siguiendo el protocolo establecido por CICYTEX.
+\vspace{5mm}
 
-Las imágenes hiperespectrales se capturaron \emph{post}-inoculación cada 24 horas durante cinco días consecutivos. Entre cada sesión de adquisición, las muestras se almacenaron en una cámara de incubación controlada a 25°C, con humedad relativa entre 80 y 90\% para promover el crecimiento fúngico. Cada clase consistió de 380 imágenes hiperespectrales, generando un total de 1520 imágenes hiperespectrales para el \emph{dataset} completo.
+Cada semana, 160 higos se dividieron en cuatro subconjuntos de aproximandamente 40 especímenes cada uno. El primer grupo correspondió a los controles sanos (clase 0), mientras que los tres grupos siguientes fueron inoculados con concentraciones de $10^3$ UFC/mL (clase 1), $10^5$ UFC/mL (clase 2), y $10^7$ UFC/mL (clase 3), respectivamente. El proceso de inoculación se realizó mediante inmersión del área durante aproximadamente 3 segundos, siguiendo el protocolo establecido por CICYTEX.
 
-Una vez adquiridas, las imágenes originales fueron preprocesadas con corrección blanco/negro para normalizar y corregir los datos, eliminando inconsistencias introducidas por factores ambientales, condiciones de iluminación y sensibilidad del sensor, facilitando así el análisis espectral posterior.
+\vspace{5mm}
 
-\textcolor{red}{referencia al proyecto nacional}
+Las imágenes hiperespectrales se capturaron \emph{post}-inoculación cada 24 horas durante cinco días consecutivos. Entre cada sesión de adquisición, las muestras se almacenaron en una cámara de incubación controlada a 25°C, con humedad relativa entre 80 y 90\% para promover el crecimiento fúngico. Cada clase consistió de 380 imágenes hiperespectrales, generando un total de 1520 imágenes hiperespectrales para el conjunto de datos completo.
 
-% Insert Figure: General scheme of the methodology followed to carry out the study
+\vspace{5mm}
 
-\subsection{Arquitectura del Sistema}
+Las imágenes hiperespectrales capturadas se almacenan en una estructura de directorios organizada que incluye múltiples archivos asociados a cada adquisición. A continuación, se describe el formato y contenido de los archivos principales:
 
-La arquitectura del sistema desarrollado combina detección de objetos mediante \emph{text prompts}, segmentación semántica avanzada \textcolor{red}{refencia a esta técnica}, y procesamiento especializado de cubos hiperespectrales. El enfoque metodológico permite la creación de un \emph{dataset} estructurado que facilita el análisis automatizado y escalable de muestras, estableciendo las bases para las fases posteriores que implementarán algoritmos de \emph{machine learning} para la clasificación y detección de contaminación.
+\begin{itemize}
+    \item \textbf{Archivos de datos hiperespectrales (\texttt{.hdr}, \texttt{.raw})}: 
+    \begin{itemize}
+        \item El archivo \texttt{.hdr} contiene metadatos descriptivos de la imagen, como dimensiones espaciales, número de bandas espectrales, rango espectral, y formato de datos.
+        \item El archivo \texttt{.raw} almacena los datos espectrales en bruto, organizados en un formato binario que representa la intensidad de cada banda para cada píxel.
+    \end{itemize}
+    \item \textbf{Referencias de calibración (\texttt{DARKREF}, \texttt{WHITEREF})}: 
+    \begin{itemize}
+        \item Los archivos \texttt{DARKREF} y \texttt{WHITEREF} contienen las referencias oscura y blanca necesarias para la posterior corrección radiométrica de las imágenes hiperespectrales.
+    \end{itemize}
+    \item \textbf{Imagen \texttt{.png}}: 
+    \begin{itemize}
+        \item Este archivo representa una visualización en falso color RGB generada a partir de tres bandas seleccionadas del cubo hiperespectral. Se utiliza como entrada para el flujo de trabajo de detección y segmentación.
+    \end{itemize}
+    \item \textbf{Archivos de metadatos (\texttt{.xml})}: 
+    \begin{itemize}
+        \item Contienen información adicional sobre las condiciones de captura, como fecha, hora, y parámetros experimentales.
+    \end{itemize}
+\end{itemize}
 
-El sistema se ha diseñado para manejar eficientemente el volumen considerable de datos hiperespectrales, garantizando tanto la precisión en la localización de objetos como la integridad radiométrica de los datos espectrales extraídos. La primera fase, completada y documentada en el repositorio \texttt{create-dataset}, establece los fundamentos para el procesamiento posterior mediante la localización y segmentación automatizada de higos individuales.
+Esta estructura permite un manejo eficiente de los datos, facilitando tanto la corrección radiométrica como la integración con el flujo de procesamiento automatizado.
 
-\section{Primera Fase: Localización y Segmentación de Figuras}
+
+\section{Localización y Segmentación de Figuras}
 
 \subsection{Objetivo de la Fase}
+La primera fase del proyecto consiste en la creación del conjunto de datos mediante la localización y segmentación automatizada de higos individuales sobre las imágenes creadas a través del falso color \emph{RGB}. El objetivo principal es generar anotaciones precisas en formato COCO \cite{lin2015microsoftcococommonobjects}, que incluyan cuadros delimitadores y máscaras de segmentación para cada higo detectado, y extraer los subcubos hiperespectrales radiométricamente corregidos correspondientes a cada fruto.
 
-La primera fase del desarrollo se centra en la localización y segmentación automatizada de higos individuales dentro de imágenes hiperespectrales que contienen múltiples especímenes dispuestos sobre una superficie de trabajo. El objetivo principal consiste en generar anotaciones precisas en formato COCO \textcolor{blue}{\url{https://cocodataset.org/}} que incluyan cuadros delimitadores y máscaras de segmentación para cada higo detectado, junto con la extracción de subcubos hiperespectrales radiométricamente corregidos correspondientes a cada instancia individual.
+\vspace{5mm}
 
-Esta fase es fundamental para el flujo de trabajo completo, ya que permite el aislamiento automatizado de regiones de interés que posteriormente serán procesadas por algoritmos de análisis espectral y clasificación. La precisión en esta etapa determina directamente la calidad de los datos de entrada para las fases subsiguientes.
+Esta fase es fundamental para el flujo de trabajo completo, ya que permite el aislamiento automatizado de las regiones de interés que servirán como imágenes de entrada para el entrenamiento y la inferencia de la \emph{CNN}. La precisión en esta etapa condiciona directamente la calidad de los datos que utilizará la red en las fases posteriores, por lo que resulta esencial garantizar su exactitud.
 
 \subsection{Herramientas y Tecnologías Empleadas}
-\label{docker}
 
 La implementación de esta fase se basa en la integración de modelos de visión por computador de última generación, complementados con librerías especializadas para el procesamiento de datos hiperespectrales y manipulación de anotaciones.
 
 \subsubsection{Grounding DINO}
 
-\emph{Grounding DINO} representa una arquitectura innovadora que combina capacidades de \emph{grounding} de lenguaje natural con detección de objetos basada en \emph{transformers}. Este modelo permite la localización de objetos mediante \emph{text prompts}, eliminando la necesidad de entrenamiento específico para nuevas clases de objetos.
-
-La arquitectura se basa en un \emph{backbone} \emph{Swin Transformer} que procesa las características visuales de la imagen, integrado con un módulo de \emph{grounding} que establece correspondencias entre la entrada de texto y las regiones visuales relevantes. El modelo implementa \emph{attention mechanisms} bidireccionales que permiten la fusión eficiente entre modalidades visual y textual.
-
-Para este proyecto, se empleó el modelo \text{GroundingDINO SwinB} con pesos preentrenados \texttt{groundingdino\_swinb\_cogcoor.pth}, utilizando la entrada de texto ``fig.' que significa higo en ingles' para la detección de higos. Esta aproximación \emph{zero-shot} resulta particularmente ventajosa para aplicaciones especializadas donde la disponibilidad de \emph{datasets} anotados es limitada.
-
-La optimización de los parámetros de inferencia se realizó mediante experimentación sistemática, evaluando diferentes combinaciones de \texttt{box\_threshold} y \texttt{text\_threshold}. El \texttt{box\_threshold} controla la confianza mínima requerida para considerar una detección válida, mientras que el \texttt{text\_threshold} determina el umbral de similaridad semántica entre el \emph{text prompt} y las regiones detectadas. Tras un proceso de optimización por prueba y error, se determinó que los valores \texttt{box\_threshold=0.25} y \texttt{text\_threshold=0.25} proporcionan el balance óptimo entre sensibilidad de detección y precisión para el \emph{dataset} específico de higos.
-
-% Insert Table: Evaluation results for different threshold combinations
-
-La Tabla muestra los resultados obtenidos para diferentes combinaciones de umbrales, donde se puede observar que los valores seleccionados minimizan tanto falsos positivos como falsos negativos, maximizando la precisión general del sistema de detección en el contexto específico de localización de higos individuales.
+\emph{Grounding DINO} \cite{liu2023grounding,ren2024grounding} es un modelo de inteligencia artificial de última generación especializado en la detección de objetos en imágenes mediante el uso combinado de descripciones textuales e información visual, permitiendo un análisis multimodal avanzado. Gracias a su arquitectura basada en \emph{transformers} \cite{vaswani2023attentionneed} y técnicas de aprendizaje profundo, puede localizar y etiquetar objetos de interés, sin necesidad de entrenamiento específico para cada tipo de objeto, lo que lo hace altamente adaptable para tareas de detección abiertas o \emph{zero-shot} \cite{socher2013zeroshotlearningcrossmodaltransfer}.
 
 \subsubsection{SAM2 (Segment Anything Model 2)}
 
-SAM2 constituye la evolución del paradigma ``\emph{Segment Anything}'', implementando capacidades de segmentación universal que permiten generar máscaras precisas para cualquier objeto en una imagen. El modelo se basa en una arquitectura \emph{Vision Transformer} modificada que procesa \emph{prompts} visuales (como \emph{bounding boxes} o puntos) para generar segmentaciones de alta calidad.
+\emph{SAM (Segment Anything Model)} \cite{kirillov2023segany, ravi2024sam2segmentimages} es un modelo de inteligencia artificial de última generación diseñado para segmentar cualquier objeto en imágenes o videos de manera automática y versátil. Fue desarrollado por \emph{Meta AI} y su objetivo principal es permitir la segmentación de objetos de imágenes y videos sin necesidad de entrenamiento específico para cada clase, usando tecnologías de visión por computador avanzadas y aprendizaje \emph{zero-shot}. Está entrenado en uno de los mayores conjuntos de datos existentes (SA-1B), con 11 millones de imágenes y 1.1 mil millones de máscaras de segmentación, lo que le da una capacidad sobresaliente para generalizar a nuevos contextos visuales.
+
+\subsubsection{COCO (Common Objects in Context)}
+El formato COCO (Common Objects in Context) \cite{lin2015microsoftcococommonobjects} es un estándar ampliamente adoptado para el almacenamiento y intercambio de anotaciones en tareas de visión por computador, especialmente en detección de objetos, segmentación de instancias y estimación de poses. Desarrollado por \emph{Microsoft Research},  \emph{COCO} define una estructura \emph{JSON} \cite{crockford2006application} que organiza metadatos de imágenes, anotaciones de objetos y categorías de manera eficiente y escalable.
+
+\vspace{5mm}
+
+Entre las componentes que definen la estructura del formato \emph{COCO}, se encuentran las \textbf{anotaciones (\emph{annotations})}, las cuales contienen las anotaciones específicas de cada objeto detectado, incluyendo identificadores únicos, referencias a imagen y categoría, coordenadas de bounding box, área, máscaras de segmentación en formato \emph{RLE (Run-Length Encoding)}, y banderas adicionales como \emph{iscrowd}, que indica si el objeto es parte de un grupo denso.
+
+\vspace{5mm}
+
+Para tareas de segmentación de instancias, las máscaras se codifican mediante \emph{RLE}, un algoritmo de compresión sin pérdidas que representa secuencias de píxeles consecutivos como pares (valor, longitud), reduciendo significativamente el espacio de almacenamiento requerido. Las coordenadas de bounding box se especifican en formato \texttt{[x, y, width, height]}, donde \texttt{(x, y)} representa la esquina superior izquierda del rectángulo delimitador.
 
 
+\subsection{Flujo de Procesamiento}
 
-La arquitectura de SAM2 incluye un \emph{image encoder} basado en \emph{Hierarchical Vision Transformer} (HiT) que genera \emph{embeddings} densos de la imagen, un \emph{prompt encoder} que procesa los \emph{inputs} de \emph{guidance}, y un \emph{mask decoder} que combina ambos para producir las máscaras de segmentación finales. Esta separación modular permite flexibilidad en los tipos de \emph{prompts} soportados.
+La implementación del flujo de trabajo se diseñó siguiendo una arquitectura modular que separa conceptualmente la detección y anotación automatizada de la extracción de subcubos hiperespectrales. Esta separación se materializa en dos módulos principales: el primero responsable de la localización y segmentación de higos individuales sobre las imágenes RGB derivadas, y el segundo encargado de la extracción de los subcubos hiperespectrales correspondientes a cada detección validada.
 
-Para la implementación, se utilizó la configuración \texttt{sam2.1\_hiera\_l.yaml} con el \emph{checkpoint} \texttt{sam2.1\_hiera\_large.pt}, que proporciona el mejor balance entre precisión de segmentación y eficiencia computacional. La inferencia se ejecutó aprovechando \emph{mixed precision} (\texttt{bfloat16}) para optimizar el uso de memoria GPU sin comprometer la calidad de las segmentaciones.
+\vspace{5mm}
 
-El modelo recibe como \emph{input} los \emph{bounding boxes} generados por \emph{Grounding DINO}, convertidos al formato \texttt{xyxy} requerido, y produce máscaras binarias de alta resolución que delimitan precisamente los contornos de cada higo detectado. La configuración \texttt{multimask\_output=False} se empleó para obtener una única máscara por detección, simplificando el procesamiento posterior.
+El sistema adopta un patrón de procesamiento por lotes que opera sistemáticamente sobre la estructura jerárquica del conjunto de datos. Cada directorio de clase (C0, C1, C2, C3) contiene las imágenes hiperespectrales junto con sus archivos de metadatos y referencias de calibración.
 
+\subsubsection{1. Detección}
 
-\begin{figure}[h]
+El módulo de detección y segmentación constituye el núcleo del flujo automatizado. La implementación utiliza \emph{Grounding DINO} como modelo de detección, empleando la arquitectura con la red principal (\emph{backbone}) \emph{Swin Transformer Base} y el punto de control preentrenado correspondiente. Esta configuración permite al modelo procesar imágenes \emph{RGB} manteniendo su relación de aspecto original mientras utiliza la entrada de  texto \emph{fig} (higo en inglés) como descriptor semántico para guiar la detección.
+
+\vspace{5mm}
+
+La optimización de los parámetros de inferencia se estableció mediante experimentación empírica, fijando tanto el umbral de confianza de detección como el umbral de similaridad semántica texto-imagen en 0.25. Esta configuración proporciona un equilibrio óptimo entre sensibilidad de detección y precisión para el conjunto de datos específico, minimizando tanto los falsos positivos como los falsos negativos. El proceso de detección implementa una secuencia de validación que comienza con la carga de imágenes seguida de la conversión del espacio de color \emph{BGR} a \emph{RGB} y la extracción automática de metadatos temporales y experimentales del nombre del archivo.
+
+\vspace{5mm}
+
+Durante la inferencia, el modelo transforma las imágenes a tensores \emph{PyTorch} aplicando la normalización correspondiente a los parámetros del modelo preentrenado, ejecuta la detección con la entrada de texto especificada y aplica un filtrado geométrico crítico que limita las dimensiones máximas de los cuadros delimitadores a 250×150 píxeles. Esta restricción dimensional resulta fundamental para asegurar la detección de higos individuales y evitar regiones que abarquen múltiples especímenes, un problema recurrente en imágenes con alta densidad de objetos. El post-procesamiento convierte las coordenadas al formato requerido por \emph{SAM-2} y extrae las puntuaciones de confianza asociadas a cada detección.
+
+\subsubsection{2. Segmentación}
+
+La segmentación se realiza mediante \emph{SAM-2}, inicializado con la configuración \emph{Hiera Large} y el punto de control preentrenado correspondiente, utilizando el predictor específicamente diseñado para el procesamiento de imágenes estáticas. El modelo opera sin supervisión de puntos, empleando exclusivamente los cuadros delimitadores generados por \emph{Grounding DINO} como entrada primaria. La configuración para una única máscara por detección asegura la generación coherente, simplificando el procesamiento posterior y manteniendo la consistencia en las anotaciones. La figura \ref{fig:dino_sam} muestra un ejemplo representativo del proceso de detección y segmentación automatizada implementado.
+
+\begin{figure}[ht]
 \centering
-\includegraphics[width=0.5\textwidth]{images/dino_sam.jpg}
-\caption{Your image caption}
-\label{fig:your_label}
+\includegraphics[width=\textwidth]{images/dino_sam.jpg}
+\caption{Ejemplo de detección y segmentación de higos utilizando \emph{Grounding DINO} y \emph{SAM-2}. La imagen muestra las cajas delimitadoras generadas por \emph{Grounding DINO} y las máscaras de segmentación producidas por \emph{SAM-2}.}
+\label{fig:dino_sam}
 \end{figure}
 
+\subsubsection{3. Generación de Anotaciones}
 
-\subsubsection{Librerías de Soporte}
+La generación de anotaciones en formato \emph{COCO} se realizó mediante la construcción sistemática de estructuras de datos que incluyen metadatos de imagen, información de categorías y listas de anotaciones. Cada máscara binaria generada por \emph{SAM-2} se transforma al formato \emph{RLE} mediante las herramientas correspondientes, calculando automáticamente el área de cada instancia y asignando identificadores únicos secuenciales. El sistema exporta los resultados como archivos \emph{JSON} organizados por clase experimental, manteniendo la trazabilidad completa desde las imágenes originales hasta las anotaciones finales.
 
-El desarrollo incorporó librerías especializadas para diferentes aspectos del \emph{pipeline}: \texttt{spectral} para manejo eficiente de datos hiperespectrales en formato ENVI, \texttt{pycocotools} para manipulación y validación de anotaciones en formato COCO, \texttt{supervision} para visualización avanzada de detecciones y segmentaciones, \texttt{OpenCV} para operaciones de procesamiento de imágenes, y \texttt{PyTorch} como \emph{framework} base para la ejecución de los modelos de \emph{deep learning}.
+\subsubsection{4. Extracción de Subcubos Hiperespectrales}
 
+El último componente del flujo se encarga de la extracción de sub-cubos hiperespectrales radiométricamente corregidos a partir de las detecciones validadas en la fase anterior. Este módulo implementa un procesamiento sofisticado que combina corrección radiométrica, mapeo geométrico y extracción volumétrica para generar datos hiperespectrales de alta calidad correspondientes a cada higo individual detectado.
 
+\vspace{5mm}
 
-\subsection{Implementación del \emph{Pipeline}}
+La corrección radiométrica constituye un paso crítico para garantizar la calidad de los datos hiperespectrales, eliminando efectos de iluminación y variaciones instrumentales que podrían comprometer el análisis posterior. El proceso utiliza las referencias oscura y blanca capturadas simultáneamente con cada imagen hiperespectral, aplicando la ecuación estándar de corrección:
 
-\subsubsection{Estructura del \emph{Workflow}}
-
-% Insert Figure: Workflow or Architecture Diagram
-
-El \emph{pipeline} implementado consta de dos componentes principales ejecutados secuencialmente:
-
-\textbf{Componente 1 - Detección y Segmentación (\texttt{detect\_and\_segment\_coco\_annotations.py})}:
-
-La implementación comienza con la inicialización de ambos modelos en GPU, seguida del procesamiento \emph{batch} de imágenes organizadas por clase. Para cada imagen, se ejecuta la siguiente secuencia:
-
-\begin{enumerate}
-\item \textbf{Carga y preprocesamiento}: Las imágenes RGB derivadas de los cubos hiperespectrales se cargan utilizando la función \texttt{load\_image()} de \emph{Grounding DINO}, que maneja automáticamente la normalización y conversión de formato requerida.
-
-\item \textbf{Detección con \emph{Grounding DINO}}: Se aplica el \emph{text prompt} ``fig.'' para localizar instancias de higos en la imagen. El modelo retorna coordenadas de \emph{bounding boxes} en formato normalizado (\emph{cx}, \emph{cy}, \emph{w}, \emph{h}), \emph{scores} de confianza y \emph{labels} correspondientes.
-
-\item \textbf{Filtrado por tamaño}: Se implementó un filtro dimensional para eliminar detecciones erróneas, limitando las dimensiones máximas a 250×150 píxeles para asegurar la detección de higos individuales y evitar regiones que abarquen múltiples especímenes.
-
-\item \textbf{Segmentación con SAM2}: Los \emph{bounding boxes} filtrados se convierten al formato \texttt{xyxy} requerido por SAM2, que genera máscaras de segmentación de alta precisión utilizando \emph{mixed precision} para optimizar el rendimiento computacional.
-
-\item \textbf{Generación de anotaciones COCO}: Las detecciones se convierten al formato COCO estándar, incluyendo la conversión de máscaras a formato RLE (\emph{Run-Length Encoding}) para almacenamiento eficiente.
-\end{enumerate}
-
-% Insert Code Snippet: Dataset Generation Function
-
-\textbf{Componente 2 - Extracción de Subcubos Hiperespectrales (\texttt{create\_cropped\_cubes.py})}:
-
-Este componente procesa las anotaciones generadas para extraer subcubos hiperespectrales:
-
-\begin{enumerate}
-\item \textbf{Carga de datos hiperespectrales}: Para cada imagen anotada, se localizan y cargan los archivos HDR correspondientes (imagen principal, referencia blanca y referencia oscura) desde la estructura de directorios organizada.
-
-\item \textbf{Corrección radiométrica}: Se aplica la corrección línea por línea utilizando la fórmula estándar:
 \begin{equation}
-I_{corrected} = \frac{I_{raw} - R_{dark}}{R_{white} - R_{dark}}
+R = \frac{RAW - DARK}{WHITE - DARK}
 \end{equation}
-donde las referencias blanca y oscura se promedian espacialmente para reducir el ruido.
 
-\item \textbf{Extracción de subcubos}: Para cada anotación, se extraen subcubos hiperespectrales utilizando las coordenadas del \emph{bounding box} y se aplican las máscaras de segmentación para aislar únicamente los píxeles correspondientes al higo.
+donde $R$ representa la reflectancia corregida, $RAW$ los datos espectrales en bruto, $DARK$ la referencia oscura y $WHITE$ la referencia blanca. La implementación incluye el tratamiento robusto de casos especiales, como la prevención de divisiones por cero en regiones donde las referencias oscura y blanca presentan valores idénticos, situación que puede ocurrir en áreas de muy baja reflectancia.
 
-\item \textbf{Almacenamiento estructurado}: Los subcubos se guardan en formato \emph{NumPy} (\texttt{.npy}) con nomenclatura sistemática que preserva la trazabilidad hacia las imágenes originales.
-\end{enumerate}
+\vspace{5mm}
 
-\subsubsection{Organización de Metadatos}
+La extracción geométrica de sub-cubos requiere una transformación precisa desde el espacio de coordenadas \emph{RGB}, donde se realizaron las detecciones, al espacio hiperespectral correspondiente. Esta conversión considera las posibles diferencias en resolución espacial entre las imágenes \emph{RGB} derivadas y los cubos hiperespectrales originales, implementando técnicas de mapeo que preservan la correspondencia espacial exacta. El sistema valida geométricamente cada región de interés para asegurar que los subcubos extraídos no excedan los límites físicos del cubo hiperespectral, evitando errores de indexación y garantizando la integridad de los datos espectrales.
 
-El sistema implementa extracción automática de metadatos a partir de la nomenclatura de archivos mediante el módulo \texttt{file\_processing.py}. Esta funcionalidad parsea información crítica incluyendo:
+\vspace{5mm}
 
-\begin{itemize}
-\item Identificación de clase (C0: control sano, C1-C3: diferentes concentraciones de inoculación)
-\item \emph{Timestamps} de captura con precisión temporal
-\item Información de condiciones experimentales (riego, días \emph{post}-inoculación)
-\end{itemize}
+El proceso de extracción volumétrica utiliza técnicas de división tridimensional optimizadas para mantener la estructura espectral completa de cada región de interés. Los subcubos resultantes preservan las 448 bandas espectrales originales junto con la resolución espacial correspondiente a cada detección, manteniendo la información espectral íntegra necesaria para el análisis posterior. La organización del almacenamiento sigue una estructura jerárquica específica, con subdirectorios organizados por clase experimental (\texttt{C0}, \texttt{C1}, \texttt{C2}, \texttt{C3}). Cada subcubo se almacena en formato \texttt{.npy} de \emph{NumPy} siguiendo una nomenclatura sistemática que incluye clase, timestamp y número de instancia, facilitando tanto el acceso eficiente como la trazabilidad completa mientras preserva la precisión numérica de punto flotante y optimiza los tiempos de carga durante el entrenamiento de modelos.
 
-\subsection{Resultados y Productos Intermedios}
+\subsection{Resultados}
 
-La ejecución completa de la primera fase genera los siguientes productos estructurados:
+La ejecución completa de la primera fase genera un conjunto estructurado de elementos que constituyen la base fundamental para las fases posteriores del proyecto. Las anotaciones \emph{COCO} resultantes comprenden archivos \emph{JSON} organizados por clase experimental, cada uno conteniendo metadatos completos de detección que incluyen coordenadas de cuadros delimitadores, máscaras de segmentación en formato \emph{RLE} y metadatos temporales extraídos automáticamente del sistema de nomenclatura implementado. Esta organización sistemática permite mantener la trazabilidad completa desde las imágenes originales hasta las detecciones finales, facilitando tanto la validación manual como el procesamiento automatizado en etapas subsecuentes.
 
-\textbf{Anotaciones COCO}: Archivos JSON por clase conteniendo metadatos completos de detección, con un total de anotaciones distribuidas \emph{across} las cuatro clases experimentales. Cada anotación incluye \emph{bounding box coordinates}, \emph{segmentation masks} en formato RLE, y metadatos temporales extraídos automáticamente.
-
-% Insert Figure: Sample Generated Data or Logs
-
-\textbf{Visualizaciones de control}: Imágenes anotadas que muestran las detecciones y segmentaciones superpuestas sobre las imágenes originales, facilitando la validación visual del \emph{pipeline} y la identificación de casos \emph{edge}.
-
-\textbf{\emph{Dataset} de subcubos hiperespectrales}: Colección estructurada de subcubos radiométricamente corregidos organizados por clase, con cada subcubo conteniendo el espectro completo (448 bandas espectrales) para la región correspondiente a un higo individual.
+\begin{figure}[H]
+\centering
+\small
+\begin{verbatim}
+{
+    "info": {
+        "description": "Fig detection and segmentation dataset",
+        "version": "1.0",
+        "year": 2024,
+        "contributor": "Hyperspectral Analysis Pipeline",
+        "date_created": "2024-01-15"
+    },
+    "licenses": [],
+    "images": [
+        {
+            "id": 1,
+            "width": 800,
+            "height": 1024,
+            "file_name": "C0_2023-07-17_10-15-30_001.png",
+            "date_captured": "2023-07-17T10:15:30"
+        }
+    ],
+    "annotations": [
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 1,
+            "segmentation": {
+                "size": [1024, 800],
+                "counts": "nXh04M3M2N2N1O1O1N2N2N1O1O1N2N..."
+            },
+            "area": 12485,
+            "bbox": [245.3, 412.7, 128.4, 97.2],
+            "iscrowd": 0
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "fig",
+            "supercategory": "fruit"
+        }
+    ]
+}
+\end{verbatim}
+\caption{Ejemplo de anotación en formato COCO para la clase 0.}
+\end{figure}
 
 \subsection{Desafíos y Observaciones Técnicas}
 
-Durante la implementación se identificaron y resolvieron varios desafíos técnicos significativos:
+Durante la implementación, se identificaron y resolvieron varios desafíos técnicos que proporcionaron valiosas lecciones para el desarrollo del proyecto. El primer y más significativo desafío encontrado fue determinar las versiones correctas de \emph{PyTorch} y sus dependencias relacionadas (\emph{torchvision} y \emph{torchaudio}) que fueran compatibles tanto con \emph{Grounding DINO} como con \emph{SAM-2}. Ambos modelos requieren versiones específicas del framework que no siempre coinciden, especialmente considerando las actualizaciones frecuentes en el ecosistema de aprendizaje profundo. La solución final involucró el análisis detallado de los requisitos de compatibilidad de cada modelo y la identificación de una versión común de \emph{PyTorch} 2.1.2 con soporte \emph{CUDA} 11.8 que proporcionara estabilidad y rendimiento óptimo para ambos componentes.
 
-\textbf{Optimización de memoria GPU}: El procesamiento conjunto de \emph{Grounding DINO} y SAM2 requirió implementación cuidadosa de \emph{autocast contexts} para prevenir \emph{overflow} de memoria, aplicando \emph{mixed precision} selectivamente a SAM2 mientras se mantiene precisión completa para \emph{Grounding DINO}.
+\vspace{5mm}
 
-\textbf{Manejo de inconsistencias dimensionales}: La variabilidad en dimensiones de imágenes hiperespectrales entre sesiones de captura requirió implementación de lógica robusta para \emph{handling} de \emph{shapes mismatch} durante la corrección radiométrica.
+La optimización de la memoria de la \emph{GPU} constituyó otro reto importante, dado que el procesamiento conjunto de \emph{Grounding DINO} y \emph{SAM-2} requirió una implementación cuidadosa de contextos autocast para prevenir desbordamientos de memoria. La solución implementada aplica precisión mixta de forma selectiva \cite{micikevicius2018mixedprecisiontraining}: utiliza \texttt{torch.autocast} con \texttt{dtype=torch.bfloat16} únicamente para \emph{SAM-2}, mientras mantiene precisión completa para \emph{Grounding DINO}, equilibrando eficiencia computacional con calidad de inferencia. La elección del formato \texttt{bfloat16} se fundamenta en su diseño específico para aplicaciones de aprendizaje profundo, proporcionando un rango dinámico superior a \texttt{float16} tradicional \cite{8877411}. Adicionalmente, se configuró el uso de \emph{TF32} cuando está disponible en hardware compatible para optimizar las operaciones de multiplicación de matrices.
 
-\textbf{Precisión de segmentación}: La calidad de las máscaras de segmentación mostró alta dependencia de la calidad de los \emph{bounding boxes} de entrada, validando la importancia del filtrado dimensional implementado en la etapa de detección.
-
-\section{Fases Futuras del Desarrollo}
+\section{Selección de Bandas con Algoritmo Genético}
 
 \subsection{[Sección reservada para Fase 2: Selección de Bandas con Algoritmo Genético]}

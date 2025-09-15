@@ -22,17 +22,6 @@ C.~Cruz-Carrasco, J.~Díaz-Álvarez, F.~Chávez de~la O, A.~Sánchez-Venegas,
   hyperspectral images and deep learning algorithms,'' {\em AgriEngineering},
   vol.~6, no.~4, pp.~3969--3988, 2024.
 
-\bibitem{article}
-R.~Sahoo, S.~Ray, and M.~R, ``Hyperspectral remote sensing of agriculture,''
-  {\em Current science}, vol.~108, pp.~848--859, 03 2015.
-
-\bibitem{WIEME2022156}
-J.~Wieme, K.~Mollazade, I.~Malounas, M.~Zude-Sasse, M.~Zhao, A.~Gowen,
-  D.~Argyropoulos, S.~Fountas, and J.~{Van Beek}, ``Application of
-  hyperspectral imaging systems and artificial intelligence for quality
-  assessment of fruit, vegetables and mushrooms: A review,'' {\em Biosystems
-  Engineering}, vol.~222, pp.~156--176, 2022.
-
 \bibitem{HONG201935}
 D.~Hong, N.~Yokoya, J.~Chanussot, J.~Xu, and X.~X. Zhu, ``Learning to propagate
   labels on graphs: An iterative multitask regression framework for
@@ -60,5 +49,180 @@ Z.~Zhong, J.~Li, Z.~Luo, and M.~Chapman, ``Spectral-spatial residual network
   for hyperspectral image classification: A 3-d deep learning framework,'' {\em
   IEEE Transactions on Geoscience and Remote Sensing}, vol.~56, pp.~847--858,
   10 2017.
+
+\bibitem{WIEME2022156}
+J.~Wieme, K.~Mollazade, I.~Malounas, M.~Zude-Sasse, M.~Zhao, A.~Gowen,
+  D.~Argyropoulos, S.~Fountas, and J.~{Van Beek}, ``Application of
+  hyperspectral imaging systems and artificial intelligence for quality
+  assessment of fruit, vegetables and mushrooms: A review,'' {\em Biosystems
+  Engineering}, vol.~222, pp.~156--176, 2022.
+
+\bibitem{van1995python}
+G.~Van~Rossum and F.~L. Drake~Jr, {\em Python tutorial}.
+\newblock Centrum voor Wiskunde en Informatica Amsterdam, The Netherlands,
+  1995.
+
+\bibitem{behnel2011cython}
+S.~Behnel, R.~Bradshaw, C.~Citro, L.~Dalcin, D.~S. Seljebotn, and K.~Smith,
+  ``Cython: The best of both worlds,'' {\em Computing in Science \&
+  Engineering}, vol.~13, no.~2, pp.~31--39, 2011.
+
+\bibitem{anaconda}
+``Anaconda software distribution,'' 2020.
+
+\bibitem{uv2024github}
+{Astral}, ``Uv: An extremely fast python package installer and resolver,''
+  2024.
+\newblock GitHub Repository. Disponible en: https://github.com/astral-sh/uv.
+
+\bibitem{matsakis2014rust}
+N.~D. Matsakis and F.~S. Klock~II, ``The rust language,'' in {\em ACM SIGAda
+  Ada Letters}, vol.~34, pp.~103--104, ACM, 2014.
+
+\bibitem{NEURIPS2019_9015}
+A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
+  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~Kopf, E.~Yang, Z.~DeVito,
+  M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang, J.~Bai, and
+  S.~Chintala, ``Pytorch: An imperative style, high-performance deep learning
+  library,'' in {\em Advances in Neural Information Processing Systems 32},
+  pp.~8024--8035, Curran Associates, Inc., 2019.
+
+\bibitem{2020NumPy-Array}
+C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, R.~Gommers, P.~Virtanen,
+  D.~Cournapeau, E.~Wieser, J.~Taylor, S.~Berg, N.~J. Smith, R.~Kern, M.~Picus,
+  S.~Hoyer, M.~H. van Kerkwijk, M.~Brett, A.~Haldane, J.~Fernández~del Río,
+  M.~Wiebe, P.~Peterson, P.~Gérard-Marchant, K.~Sheppard, T.~Reddy,
+  W.~Weckesser, H.~Abbasi, C.~Gohlke, and T.~E. Oliphant, ``Array programming
+  with {NumPy},'' {\em Nature}, vol.~585, p.~357–362, 2020.
+
+\bibitem{2020SciPy-NMeth}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
+  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, S.~J. {van der Walt},
+  M.~Brett, J.~Wilson, K.~J. Millman, N.~Mayorov, A.~R.~J. Nelson, E.~Jones,
+  R.~Kern, E.~Larson, C.~J. Carey, {\.I}.~Polat, Y.~Feng, E.~W. Moore,
+  J.~{VanderPlas}, D.~Laxalde, J.~Perktold, R.~Cimrman, I.~Henriksen, E.~A.
+  Quintero, C.~R. Harris, A.~M. Archibald, A.~H. Ribeiro, F.~Pedregosa, P.~{van
+  Mulbregt}, and {SciPy 1.0 Contributors}, ``{{SciPy} 1.0: Fundamental
+  Algorithms for Scientific Computing in Python},'' {\em Nature Methods},
+  vol.~17, pp.~261--272, 2020.
+
+\bibitem{sklearn_api}
+L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A.~Mueller, O.~Grisel,
+  V.~Niculae, P.~Prettenhofer, A.~Gramfort, J.~Grobler, R.~Layton,
+  J.~VanderPlas, A.~Joly, B.~Holt, and G.~Varoquaux, ``{API} design for machine
+  learning software: experiences from the scikit-learn project,'' in {\em ECML
+  PKDD Workshop: Languages for Data Mining and Machine Learning}, pp.~108--122,
+  2013.
+
+\bibitem{thomas_boggs_2022_7135091}
+T.~Boggs, D.~March, kormang, L.~J. McGibbney, F.~Magimel, G.~Mason, K.~Banman,
+  M.~J.~L. Uzumaki), R.~Kumar, T.~G. Badger, T.~Aarnio, W.~Wang, and kidpixo,
+  ``spectralpython/spectral: Spectral python (spy) 0.23.1,'' Oct. 2022.
+
+\bibitem{opencv_library}
+G.~Bradski, ``{The OpenCV Library},'' {\em Dr. Dobb's Journal of Software
+  Tools}, 2000.
+
+\bibitem{wolf-etal-2020-transformers}
+T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
+  T.~Rault, R.~Louf, M.~Funtowicz, J.~Davison, S.~Shleifer, P.~von Platen,
+  C.~Ma, Y.~Jernite, J.~Plu, C.~Xu, T.~L. Scao, S.~Gugger, M.~Drame, Q.~Lhoest,
+  and A.~M. Rush, ``Transformers: State-of-the-art natural language
+  processing,'' in {\em Proceedings of the 2020 Conference on Empirical Methods
+  in Natural Language Processing: System Demonstrations}, (Online), pp.~38--45,
+  Association for Computational Linguistics, Oct. 2020.
+
+\bibitem{rw2019timm}
+R.~Wightman, ``Pytorch image models.''
+  \url{https://github.com/rwightman/pytorch-image-models}, 2019.
+
+\bibitem{Roboflow_Supervision}
+Roboflow, ``{Supervision}.''
+
+\bibitem{Welsh2018}
+C.~M. Welsh, N.~Fullard, C.~J. Proctor, A.~Martinez-Guimera, R.~J. Isfort,
+  C.~C. Bascom, R.~Tasseff, S.~A. Przyborski, and D.~P. Shanley, ``Pycotools: a
+  python toolbox for copasi,'' {\em Bioinformatics}, vol.~34, no.~21,
+  pp.~3702--3710, 2018.
+
+\bibitem{Hoops2006}
+S.~Hoops, S.~Sahle, R.~Gauges, C.~Lee, J.~Pahle, N.~Simus, M.~Singhal, L.~Xu,
+  P.~Mendes, and U.~Kummer, ``Copasi—a complex pathway simulator,'' {\em
+  Bioinformatics}, vol.~22, no.~24, pp.~3067--3074, 2006.
+
+\bibitem{Medley2018}
+J.~K. Medley, K.~Choi, M.~König, L.~Smith, S.~Gu, J.~Hellerstein, S.~C.
+  Sealfon, and H.~M. Sauro, ``Tellurium notebooks—an environment for
+  reproducible dynamical modeling in systems biology,'' {\em PLOS Computational
+  Biology}, vol.~14, no.~6, p.~e1006220, 2018.
+
+\bibitem{DEAP_JMLR2012}
+F.-A. Fortin, F.-M. {De Rainville}, M.-A. Gardner, M.~Parizeau, and C.~Gagn\'e,
+  ``{DEAP}: Evolutionary algorithms made easy,'' {\em Journal of Machine
+  Learning Research}, vol.~13, pp.~2171--2175, jul 2012.
+
+\bibitem{lin2015microsoftcococommonobjects}
+T.-Y. Lin, M.~Maire, S.~Belongie, L.~Bourdev, R.~Girshick, J.~Hays, P.~Perona,
+  D.~Ramanan, C.~L. Zitnick, and P.~Dollár, ``Microsoft coco: Common objects
+  in context,'' 2015.
+
+\bibitem{liu2023grounding}
+S.~Liu, Z.~Zeng, T.~Ren, F.~Li, H.~Zhang, J.~Yang, C.~Li, J.~Yang, H.~Su,
+  J.~Zhu, {\em et~al.}, ``Grounding dino: Marrying dino with grounded
+  pre-training for open-set object detection,'' {\em arXiv preprint
+  arXiv:2303.05499}, 2023.
+
+\bibitem{ren2024grounding}
+T.~Ren, Q.~Jiang, S.~Liu, Z.~Zeng, W.~Liu, H.~Gao, H.~Huang, Z.~Ma, X.~Jiang,
+  Y.~Chen, Y.~Xiong, H.~Zhang, F.~Li, P.~Tang, K.~Yu, and L.~Zhang, ``Grounding
+  dino 1.5: Advance the "edge" of open-set object detection,'' 2024.
+
+\bibitem{vaswani2023attentionneed}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
+  L.~Kaiser, and I.~Polosukhin, ``Attention is all you need,'' 2023.
+
+\bibitem{socher2013zeroshotlearningcrossmodaltransfer}
+R.~Socher, M.~Ganjoo, H.~Sridhar, O.~Bastani, C.~D. Manning, and A.~Y. Ng,
+  ``Zero-shot learning through cross-modal transfer,'' 2013.
+
+\bibitem{kirillov2023segany}
+A.~Kirillov, E.~Mintun, N.~Ravi, H.~Mao, C.~Rolland, L.~Gustafson, T.~Xiao,
+  S.~Whitehead, A.~C. Berg, W.-Y. Lo, P.~Doll{\'a}r, and R.~Girshick, ``Segment
+  anything,'' {\em arXiv:2304.02643}, 2023.
+
+\bibitem{ravi2024sam2segmentimages}
+N.~Ravi, V.~Gabeur, Y.-T. Hu, R.~Hu, C.~Ryali, T.~Ma, H.~Khedr, R.~Rädle,
+  C.~Rolland, L.~Gustafson, E.~Mintun, J.~Pan, K.~V. Alwala, N.~Carion, C.-Y.
+  Wu, R.~Girshick, P.~Dollár, and C.~Feichtenhofer, ``Sam 2: Segment anything
+  in images and videos,'' 2024.
+
+\bibitem{crockford2006application}
+D.~Crockford, ``The application/json media type for javascript object notation
+  (json),'' Tech. Rep. RFC 4627, Internet Engineering Task Force (IETF), 2006.
+
+\bibitem{micikevicius2018mixedprecisiontraining}
+P.~Micikevicius, S.~Narang, J.~Alben, G.~Diamos, E.~Elsen, D.~Garcia,
+  B.~Ginsburg, M.~Houston, O.~Kuchaiev, G.~Venkatesh, and H.~Wu, ``Mixed
+  precision training,'' 2018.
+
+\bibitem{8877411}
+A.~Agrawal, S.~M. Mueller, B.~M. Fleischer, X.~Sun, N.~Wang, J.~Choi, and
+  K.~Gopalakrishnan, ``Dlfloat: A 16-b floating point format designed for deep
+  learning training and inference,'' in {\em 2019 IEEE 26th Symposium on
+  Computer Arithmetic (ARITH)}, pp.~92--95, 2019.
+
+\bibitem{article}
+R.~Sahoo, S.~Ray, and M.~R, ``Hyperspectral remote sensing of agriculture,''
+  {\em Current science}, vol.~108, pp.~848--859, 03 2015.
+
+\bibitem{ren2024grounded}
+T.~Ren, S.~Liu, A.~Zeng, J.~Lin, K.~Li, H.~Cao, J.~Chen, X.~Huang, Y.~Chen,
+  F.~Yan, Z.~Zeng, H.~Zhang, F.~Li, J.~Yang, H.~Li, Q.~Jiang, and L.~Zhang,
+  ``Grounded sam: Assembling open-world models for diverse visual tasks,''
+  2024.
+
+\bibitem{jiang2024trex2}
+Q.~Jiang, F.~Li, Z.~Zeng, T.~Ren, S.~Liu, and L.~Zhang, ``T-rex2: Towards
+  generic object detection via text-visual prompt synergy,'' 2024.
 
 \end{thebibliography}

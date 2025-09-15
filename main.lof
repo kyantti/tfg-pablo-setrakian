@@ -2,7 +2,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Your image caption}}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ejemplo de detección y segmentación de higos utilizando \emph {Grounding DINO} y \emph {SAM-2}. La imagen muestra las cajas delimitadoras generadas por \emph {Grounding DINO} y las máscaras de segmentación producidas por \emph {SAM-2}.}}{20}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de anotación en formato COCO para la clase 0.}}{22}{figure.caption.15}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

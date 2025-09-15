@@ -27,44 +27,49 @@ Reallocating 'name_of_file' (item size: 1) to 24 items.
 Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Database file #1: bibliography/references.bib
-You've used 11 entries,
+Warning--entry type for "thomas_boggs_2022_7135091" isn't style-file defined
+--line 663 of file bibliography/references.bib
+Warning--entry type for "Roboflow_Supervision" isn't style-file defined
+--line 779 of file bibliography/references.bib
+You've used 41 entries,
             1876 wiz_defined-function locations,
-            566 strings with 6269 characters,
-and the built_in function-call counts, 3672 in all, are:
-= -- 358
-> -- 165
-< -- 0
-+ -- 59
-- -- 48
-* -- 274
-:= -- 521
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 11
+            719 strings with 14791 characters,
+and the built_in function-call counts, 13451 in all, are:
+= -- 1015
+> -- 1122
+< -- 1
++ -- 390
+- -- 349
+* -- 1155
+:= -- 2127
+add.period$ -- 42
+call.type$ -- 41
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 186
-empty$ -- 303
-format.name$ -- 48
-if$ -- 903
+cite$ -- 41
+duplicate$ -- 522
+empty$ -- 1011
+format.name$ -- 349
+if$ -- 3061
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 11
-newline$ -- 36
-num.names$ -- 11
-pop$ -- 20
+int.to.str$ -- 41
+missing$ -- 28
+newline$ -- 128
+num.names$ -- 40
+pop$ -- 169
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 156
+skip$ -- 421
 stack$ -- 0
-substring$ -- 260
-swap$ -- 101
-text.length$ -- 0
+substring$ -- 618
+swap$ -- 234
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 30
-width$ -- 13
-write$ -- 113
+while$ -- 90
+width$ -- 43
+write$ -- 371
+(There were 2 warnings)
