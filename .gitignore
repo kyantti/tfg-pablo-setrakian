@@ -3,3 +3,6 @@ papers/
 
 # Ignore the create-dataset-figs directory
 create-dataset-figs/
+
+# Ignore the select-best-bands directory
+select-best-bands/

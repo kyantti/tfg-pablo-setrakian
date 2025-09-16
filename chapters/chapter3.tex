@@ -253,4 +253,128 @@ La optimización de la memoria de la \emph{GPU} constituyó otro reto importante
 
 \section{Selección de Bandas con Algoritmo Genético}
 
-\subsection{[Sección reservada para Fase 2: Selección de Bandas con Algoritmo Genético]}
+\subsection{Objetivo de la Fase}
+La segunda fase del proyecto se centra en la optimización de la selección de bandas espectrales mediante la implementación de un algoritmo genético que identifica automáticamente las tres bandas más informativas del cubo hiperespectral. El objetivo principal es reducir la dimensionalidad de los datos hiperespectrales de manera inteligente, preservando la información espectral crítica para la clasificación de contaminación por aflatoxinas mientras se optimiza la eficiencia computacional del entrenamiento de redes neuronales.
+
+\vspace{5mm}
+
+La reducción de 448 bandas espectrales a una combinación RGB de tres bandas estratégicamente seleccionadas permite aprovechar arquitecturas de CNN preentrenadas diseñadas para imágenes RGB convencionales, facilitando el uso de técnicas de aprendizaje por transferencia mediante ajuste fino selectivo \cite{NEURIPS2019_9015} con modelos robustos como \emph{ResNet-50} \cite{he2016deep} sin sacrificar la capacidad discriminativa del sistema.
+
+\subsection{Herramientas y Tecnologías Empleadas}
+
+La implementación de esta fase integra algoritmos evolutivos de optimización con técnicas de aprendizaje profundo, creando un sistema híbrido que combina la exploración global de los algoritmos genéticos con la capacidad de generalización de las redes neuronales convolucionales.
+
+\subsubsection{DEAP (Distributed Evolutionary Algorithms in Python)}
+
+\emph{DEAP} \cite{DEAP_JMLR2012} es un framework innovador de computación evolutiva diseñado específicamente para el prototipado rápido y la evaluación eficiente de ideas en el ámbito de la optimización bio-inspirada. A diferencia de otros frameworks tradicionales que imponen limitaciones mediante tipos predefinidos, \emph{DEAP} adopta una filosofía de diseño que prioriza la flexibilidad y la transparencia, permitiendo a los desarrolladores crear tipos de datos apropiados, personalizar inicializadores según sus necesidades específicas y seleccionar operadores de manera explícita y fundamentada.
+
+\vspace{5mm}
+
+En el contexto específico de este proyecto, \emph{DEAP} facilita la implementación de un algoritmo genético especializado para la selección de bandas hiperespectrales mediante la creación de tipos personalizados que representan combinaciones de índices espectrales, operadores de cruce y mutación que respetan las restricciones del dominio (rango [0, 447]), y estrategias de selección por torneo optimizadas para el problema de clasificación.
+
+\subsubsection{ResNet-50}
+
+ResNet-50 \cite{he2015deepresiduallearningimage} constituye la arquitectura base empleada para evaluar la aptitud de cada individuo en el algoritmo genético. Esta red neuronal convolucional profunda introduce el concepto de \emph{residual connections}, que permiten entrenar de forma estable modelos sustancialmente más profundos al mitigar problemas de desvanecimiento del gradiente. Con sus 50 capas, \emph{ResNet-50} logra un equilibrio entre profundidad y eficiencia computacional, ofreciendo un rendimiento robusto en tareas de clasificación de imágenes. Al estar preentrenada en el extenso conjunto de datos ImageNet \cite{deng2009imagenet}, proporciona un punto de partida sólido para el aprendizaje por transferencia, lo que permite aprovechar representaciones visuales generales y adaptarlas a la tarea específica de clasificación de imágenes \emph{RGB} derivadas de las combinaciones de bandas espectrales seleccionadas por el algoritmo evolutivo.
+
+\subsection{Flujo de Procesamiento}
+
+El algoritmo genético implementado utiliza una arquitectura evolutiva estándar, adaptada específicamente para abordar el problema de selección de bandas hiperespectrales. Cada iteración del proceso evolutivo integra una evaluación basada en aprendizaje profundo, optimizando así la selección de bandas de manera eficiente.
+
+\subsubsection{1. Representación y Inicialización}
+
+Cada individuo en la población se representa mediante un vector de tres enteros en el rango [0, 447], donde cada posición del vector corresponde a una banda espectral específica: el primer entero representa la banda asignada al canal \emph{R} (rojo), el segundo entero al canal \emph{G} (verde), y el tercer entero al canal \emph{B} (azul). Estas bandas seleccionadas se combinan para formar la imagen \emph{RGB}. La población inicial se genera aleatoriamente con un tamaño de 20 individuos, valor determinado mediante experimentación empírica para equilibrar diversidad poblacional con eficiencia computacional. La inicialización uniforme garantiza la exploración inicial del espacio completo de 448 bandas disponibles, evitando sesgos hacia regiones específicas del espectro electromagnético.
+
+\subsubsection{2. Función de Evaluación}
+
+La evaluación de la aptitud constituye el componente más computacionalmente intensivo del algoritmo, requiriendo el entrenamiento mediante ajuste fino parcial de una red \emph{ResNet-50} para cada individuo evaluado. El proceso comienza con la construcción de imágenes \emph{RGB} utilizando las tres bandas especificadas por el individuo, seguido de la creación de cargadores de datos de \emph{PyTorch} para los conjuntos de entrenamiento y prueba.
+
+\vspace{5mm}
+
+El modelo \emph{ResNet-50} preentrenado en \emph{ImageNet} se adapta específicamente para el problema de clasificación de cuatro clases mediante una estrategia de aprendizaje por transferencia basada en ajuste fino selectivo. La arquitectura implementa las siguientes modificaciones: (1) congelación de todas las capas desde la entrada hasta \texttt{layer3} (inclusive), manteniendo los pesos preentrenados para la extracción de características de bajo y medio nivel; (2) liberación de los parámetros de \texttt{layer4}, la capa convolucional más profunda, permitiendo la adaptación de características de alto nivel específicas para la clasificación de higos con diferentes niveles de contaminación; y (3) reemplazo completo de la capa de clasificación final (\texttt{fc}) por una nueva capa lineal con 4 unidades de salida correspondientes a las clases \emph{C0}, \emph{C1}, \emph{C2} y \emph{C3}, inicializada aleatoriamente.
+
+\vspace{5mm}
+
+Esta configuración resulta en un modelo con aproximadamente 2.3 millones de parámetros entrenables de los 25.6 millones totales, concentrando el aprendizaje en las representaciones más específicas del dominio mientras preserva las características generales aprendidas en \emph{ImageNet}. El entrenamiento se ejecuta durante 50 épocas utilizando el optimizador \emph{Adam} con una tasa de aprendizaje de 0.001, aplicando técnicas de aumento de datos que incluyen volteos horizontales y verticales aleatorios, rotaciones de hasta 15 grados, y normalización estándar de \emph{ImageNet}. La aptitud final del individuo se define como la precisión de prueba alcanzada en la última época, proporcionando una medida directa de la capacidad clasificatoria de la combinación de bandas espectrales seleccionada.
+
+\vspace{5mm}
+
+Para optimizar la eficiencia computacional, se implementó un sistema de caché que almacena los resultados de evaluaciones previas, evitando el reentrenamiento de combinaciones de bandas ya evaluadas en generaciones anteriores.
+
+\subsubsection{3. Operadores Genéticos}
+
+El algoritmo implementa operadores genéticos especializados que respetan las restricciones del dominio espectral y aprovechan las características intrínsecas de la información hiperespectral. La selección de estos operadores se fundamenta en el principio de que la información espectral relevante para la clasificación tiende a concentrarse en bandas espectralmente adyacentes debido a la correlación espacial natural entre longitudes de onda vecinas en el espectro electromagnético.
+
+\vspace{5mm}
+
+\textbf{Operador de Cruce:} El cruce utiliza una variante modificada del operador de mezcla (\emph{blend crossover}) que combina linealmente los valores de los padres. La fórmula utilizada es:
+
+\begin{equation}
+hijo_i = (1-\gamma) \cdot padre1_i + \gamma \cdot padre2_i
+\end{equation}
+
+donde $\gamma$ se genera aleatoriamente en cada posición. Este operador resulta particularmente apropiado para la selección de bandas hiperespectrales porque produce descendientes cuyos índices de banda se mantienen en regiones espectrales intermedias entre los padres, preservando la localidad espectral y evitando saltos abruptos hacia bandas distantes que podrían no contener información correlacionada. Tras la aplicación del operador, se aplican restricciones de dominio para garantizar que los descendientes mantengan índices válidos en el rango [0, 447].
+
+\vspace{5mm}
+
+\textbf{Operador de Mutación:} La mutación emplea un operador gaussiano con desviación estándar de 1.0 y probabilidad individual de 0.1, seguido de restricción al dominio válido. La elección de la mutación gaussiana con desviación estándar reducida ($\sigma=1.0$) está específicamente diseñada para introducir variaciones locales que exploren bandas espectralmente cercanas a las actuales, aprovechando el hecho de que bandas adyacentes en el espectro electromagnético típicamente contienen información complementaria y correlacionada. Esta estrategia de mutación conservativa evita perturbaciones drásticas que podrían llevar la búsqueda hacia regiones espectrales completamente diferentes y potencialmente menos informativas, manteniendo la continuidad espectral mientras permite la exploración gradual del espacio de soluciones.
+
+\vspace{5mm}
+
+\textbf{Selección y Elitismo:} La selección de padres utiliza torneos de tamaño 3, proporcionando una presión selectiva moderada que equilibra la explotación de buenas soluciones con la exploración de nuevas regiones del espacio de búsqueda. Se implementa elitismo con tamaño 1, garantizando la preservación de la mejor solución encontrada a través de las generaciones y asegurando que el algoritmo no pierda combinaciones de bandas de alta aptitud durante el proceso evolutivo.
+
+\subsubsection{4. Configuración Experimental}
+
+El algoritmo se configura para ejecutar durante 50 generaciones con una población de 20 individuos, utilizando probabilidades de cruzamiento y mutación de 0.8 y 0.15 respectivamente. Estos parámetros se determinaron mediante experimentación previa para optimizar el balance entre exploración y explotación en el contexto específico del problema de selección de bandas.
+
+\vspace{5mm}
+
+Para garantizar la reproducibilidad y robustez estadística, se implementó un sistema de experimentos múltiples que permite la ejecución de varias corridas independientes del algoritmo, cada una con semillas aleatorias diferentes. Los resultados de cada experimento se almacenan automáticamente en archivos CSV que incluyen estadísticas generacionales completas y métricas detalladas del mejor individuo.
+
+\subsection{Gestión de Datos y Eficiencia Computacional}
+
+La implementación incorpora varias optimizaciones críticas para manejar eficientemente los grandes volúmenes de datos hiperespectrales y los requisitos computacionales intensivos del entrenamiento de redes neuronales.
+
+\subsubsection{Estrategia de Carga de Datos}
+
+El sistema implementa una estrategia de precarga que lee todos los subcubos hiperespectrales en memoria al inicio de la ejecución, eliminando el overhead de E/S repetitivo durante la evaluación de individuos. Esta aproximación resulta viable debido a la capacidad de memoria disponible (504 GB) y mejora significativamente el rendimiento del algoritmo al evitar accesos repetitivos al sistema de almacenamiento durante las evaluaciones.
+
+\subsubsection{Optimización de Memoria GPU}
+
+La gestión de memoria GPU incorpora técnicas de limpieza automática y uso de precisión mixta para prevenir desbordamientos de memoria durante evaluaciones consecutivas. Se implementa limpieza explícita de caché GPU entre evaluaciones y uso selectivo de \texttt{torch.autocast} para optimizar el uso de memoria sin comprometer la precisión numérica de los cálculos.
+
+\subsubsection{Paralelización y Escalabilidad}
+
+Aunque la implementación actual utiliza evaluación secuencial debido a las restricciones de memoria GPU, la arquitectura permite la incorporación futura de paralelización mediante pools de procesos para distribución de evaluaciones en múltiples GPUs o nodos computacionales.
+
+\subsection{Resultados y Métricas}
+
+La ejecución del algoritmo genético genera múltiples tipos de resultados que proporcionan información detallada sobre el proceso evolutivo y la calidad de las soluciones encontradas.
+
+\subsubsection{Estadísticas Evolutivas}
+
+El sistema registra estadísticas completas por generación incluyendo valores promedio, desviación estándar, mínimo y máximo de aptitud poblacional, así como la mejor solución encontrada hasta el momento. Estos datos se almacenan en formato CSV facilitando el análisis posterior del comportamiento evolutivo y la convergencia del algoritmo.
+
+\subsubsection{Métricas de Clasificación}
+
+Para cada mejor individuo identificado, se registran métricas detalladas del entrenamiento de la CNN incluyendo pérdida y precisión en entrenamiento y validación a lo largo de las 50 épocas. Esta información permite evaluar no solo la aptitud final sino también el comportamiento de convergencia y la estabilidad del entrenamiento para cada combinación de bandas.
+
+\subsubsection{Visualizaciones y Análisis}
+
+El sistema genera automáticamente curvas de pérdida y precisión para el mejor individuo de cada experimento, proporcionando visualizaciones que facilitan el análisis del comportamiento de entrenamiento y la identificación de posibles problemas como sobreajuste o convergencia prematura.
+
+\subsection{Desafíos y Observaciones Técnicas}
+
+La implementación de esta fase presentó varios desafíos técnicos significativos que requirieron soluciones innovadoras y optimizaciones específicas.
+
+\vspace{5mm}
+
+El principal desafío encontrado fue la gestión eficiente de los recursos computacionales, particularmente la memoria GPU, durante evaluaciones consecutivas de múltiples individuos. Cada evaluación requiere el entrenamiento completo de una red \emph{ResNet-50} durante 50 épocas, resultando en un uso intensivo de memoria que puede causar desbordamientos en evaluaciones posteriores si no se gestiona adecuadamente. La solución implementada incluye limpieza explícita de memoria entre evaluaciones y monitoreo continuo del uso de recursos.
+
+\vspace{5mm}
+
+La optimización del balance entre exploración y explotación en el algoritmo genético constituyó otro aspecto crítico. Los parámetros de probabilidad de cruzamiento y mutación requirieron ajuste cuidadoso para evitar convergencia prematura hacia soluciones subóptimas, considerando que cada evaluación de aptitud requiere aproximadamente 15-20 minutos en hardware GPU. La implementación del sistema de caché resultó esencial para prevenir evaluaciones redundantes y mejorar la eficiencia global del proceso evolutivo.
+
+\vspace{5mm}
+
+La gestión de la reproducibilidad experimental presentó complejidades adicionales debido a la naturaleza estocástica tanto del algoritmo genético como del entrenamiento de redes neuronales. Se implementaron controles de semillas aleatorias múltiples y documentación detallada de configuraciones para garantizar la reproducibilidad de los resultados mientras se mantiene la capacidad de exploración estocástica necesaria para el algoritmo evolutivo.
+

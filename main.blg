@@ -31,45 +31,46 @@ Warning--entry type for "thomas_boggs_2022_7135091" isn't style-file defined
 --line 663 of file bibliography/references.bib
 Warning--entry type for "Roboflow_Supervision" isn't style-file defined
 --line 779 of file bibliography/references.bib
-You've used 41 entries,
+Warning--I didn't find a database entry for "he2016deep"
+You've used 43 entries,
             1876 wiz_defined-function locations,
-            719 strings with 14791 characters,
-and the built_in function-call counts, 13451 in all, are:
-= -- 1015
-> -- 1122
+            730 strings with 15166 characters,
+and the built_in function-call counts, 14018 in all, are:
+= -- 1063
+> -- 1156
 < -- 1
-+ -- 390
-- -- 349
-* -- 1155
-:= -- 2127
-add.period$ -- 42
-call.type$ -- 41
-change.case$ -- 40
++ -- 402
+- -- 359
+* -- 1196
+:= -- 2207
+add.period$ -- 44
+call.type$ -- 43
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 522
-empty$ -- 1011
-format.name$ -- 349
-if$ -- 3061
+cite$ -- 43
+duplicate$ -- 547
+empty$ -- 1066
+format.name$ -- 359
+if$ -- 3197
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 28
-newline$ -- 128
-num.names$ -- 40
-pop$ -- 169
+int.to.str$ -- 43
+missing$ -- 29
+newline$ -- 134
+num.names$ -- 42
+pop$ -- 182
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 421
+skip$ -- 440
 stack$ -- 0
-substring$ -- 618
-swap$ -- 234
+substring$ -- 650
+swap$ -- 243
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 90
-width$ -- 43
-write$ -- 371
-(There were 2 warnings)
+while$ -- 95
+width$ -- 45
+write$ -- 388
+(There were 3 warnings)
