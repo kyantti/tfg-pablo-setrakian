@@ -1,0 +1,2 @@
+train-loss,train-acc,test-loss,test-acc
+0.18,0.95,0.59,0.84

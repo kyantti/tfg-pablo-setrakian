@@ -35,11 +35,11 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Localización y Segmentación de Figuras}{16}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Objetivo de la Fase}{16}{subsection.3.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Herramientas y Tecnologías Empleadas}{16}{subsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Grounding DINO}{16}{section*.7}\protected@file@percent }
 \citation{kirillov2023segany}
 \citation{ravi2024sam2segmentimages}
 \citation{lin2015microsoftcococommonobjects}
 \citation{crockford2006application}
-\@writefile{toc}{\contentsline {subsubsection}{Grounding DINO}{17}{section*.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{SAM2 (Segment Anything Model 2)}{17}{section*.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{COCO (Common Objects in Context)}{17}{section*.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Flujo de Procesamiento}{18}{subsection.3.3.3}\protected@file@percent }
@@ -50,39 +50,75 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Ejemplo de detección y segmentación de higos utilizando \emph  {Grounding DINO} y \emph  {SAM-2}. La imagen muestra las cajas delimitadoras generadas por \emph  {Grounding DINO} y las máscaras de segmentación producidas por \emph  {SAM-2}.}}{20}{figure.caption.12}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:dino_sam}{{3.1}{20}{Ejemplo de detección y segmentación de higos utilizando \emph {Grounding DINO} y \emph {SAM-2}. La imagen muestra las cajas delimitadoras generadas por \emph {Grounding DINO} y las máscaras de segmentación producidas por \emph {SAM-2}}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de la representación en falso color \emph  {RGB} de un higo individual extraído del cubo hiperespectral. Las bandas espectrales utilizadas para la visualización son 220 (Rojo), 113 (Verde) y 78 (Azul).}}{21}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:higo_individual}{{3.2}{21}{Ejemplo de la representación en falso color \emph {RGB} de un higo individual extraído del cubo hiperespectral. Las bandas espectrales utilizadas para la visualización son 220 (Rojo), 113 (Verde) y 78 (Azul)}{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Resultados}{21}{subsection.3.3.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de anotación en formato COCO para la clase 0.}}{22}{figure.caption.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de anotación en formato COCO para la clase 0.}}{23}{figure.caption.16}\protected@file@percent }
 \citation{micikevicius2018mixedprecisiontraining}
 \citation{8877411}
 \citation{NEURIPS2019_9015}
 \citation{he2016deep}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Desafíos y Observaciones Técnicas}{23}{subsection.3.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Selección de Bandas con Algoritmo Genético}{23}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Objetivo de la Fase}{23}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Desafíos y Observaciones Técnicas}{24}{subsection.3.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Selección de Bandas}{24}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Objetivo de la Fase}{24}{subsection.3.4.1}\protected@file@percent }
 \citation{DEAP_JMLR2012}
 \citation{he2015deepresiduallearningimage}
 \citation{deng2009imagenet}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Herramientas y Tecnologías Empleadas}{24}{subsection.3.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{DEAP (Distributed Evolutionary Algorithms in Python)}{24}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{ResNet-50}{24}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Flujo de Procesamiento}{25}{subsection.3.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{1. Representación y Inicialización}{25}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{2. Función de Evaluación}{25}{section*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{3. Operadores Genéticos}{26}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{4. Configuración Experimental}{27}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Gestión de Datos y Eficiencia Computacional}{28}{subsection.3.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Estrategia de Carga de Datos}{28}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Optimización de Memoria GPU}{28}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Paralelización y Escalabilidad}{28}{section*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.5}Resultados y Métricas}{28}{subsection.3.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Estadísticas Evolutivas}{29}{section*.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Métricas de Clasificación}{29}{section*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Visualizaciones y Análisis}{29}{section*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.6}Desafíos y Observaciones Técnicas}{29}{subsection.3.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Herramientas y Tecnologías Empleadas}{25}{subsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{DEAP (Distributed Evolutionary Algorithms in Python)}{25}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{ResNet-50}{25}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Flujo de Procesamiento}{26}{subsection.3.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{1. Representación y Inicialización}{26}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{2. Función de Evaluación}{26}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{3. Operadores Genéticos}{27}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{4. Configuración Experimental}{28}{section*.22}\protected@file@percent }
+\citation{agriengineering6040225}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Resultados}{29}{subsection.3.4.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Resumen de métricas de los experimentos de selección de bandas.}}{29}{table.caption.23}\protected@file@percent }
+\newlabel{tab:experiment_metrics}{{3.1}{29}{Resumen de métricas de los experimentos de selección de bandas}{table.caption.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Resultados del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{29}{table.caption.24}\protected@file@percent }
+\newlabel{tab:exp_10_cnn_results_220_113_78}{{3.2}{29}{Resultados del experimento 10 con las bandas seleccionadas 220, 113 y 78}{table.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.5}Desafíos y Observaciones Técnicas}{29}{subsection.3.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Análisis Hiperespectral mediante Transformadas Wavelet}{29}{section.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Objetivo de la Fase}{29}{subsection.3.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Matriz de confusión del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{30}{table.caption.25}\protected@file@percent }
+\newlabel{tab:exp_10_confusion_matrix_220_113_78}{{3.3}{30}{Matriz de confusión del experimento 10 con las bandas seleccionadas 220, 113 y 78}{table.caption.25}{}}
+\citation{lee2019pywavelets}
+\citation{huang2018denselyconnectedconvolutionalnetworks}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Reporte de clasificación del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{31}{table.caption.26}\protected@file@percent }
+\newlabel{tab:exp_10_classification_report_220_113_78}{{3.4}{31}{Reporte de clasificación del experimento 10 con las bandas seleccionadas 220, 113 y 78}{table.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Herramientas y Tecnologías Empleadas}{31}{subsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{PyWavelets}{31}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{DenseNet-121}{31}{section*.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Curvas de evolución de la aptitud del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{32}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:exp_10_fitness_evolution}{{3.4}{32}{Curvas de evolución de la aptitud del experimento 10 con las bandas seleccionadas 220, 113 y 78}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Flujo de Procesamiento}{32}{subsection.3.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{33}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:exp_10_cnn_results_220_113_78}{{3.5}{33}{Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78}{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {subsubsection}{1. Extracción de Parches Espectrales}{33}{section*.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Visualización de la región de 32×32 píxeles extraída automáticamente del higo, subdividida en 64 parches de 4×4 píxeles.}}{34}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:patch_extraction_example}{{3.6}{34}{Visualización de la región de 32×32 píxeles extraída automáticamente del higo, subdividida en 64 parches de 4×4 píxeles}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Ejemplo de firma espectral promedio extraída de un parche de 4×4 píxeles. La gráfica muestra la reflectancia en función de las 448 bandas espectrales.}}{34}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:hyperspectral_signature_example}{{3.7}{34}{Ejemplo de firma espectral promedio extraída de un parche de 4×4 píxeles. La gráfica muestra la reflectancia en función de las 448 bandas espectrales}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {subsubsection}{2. Transformada Wavelet Continua}{34}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{3. Preparación de Datos para CNN}{35}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{4. Arquitectura y Entrenamiento de CNN}{35}{section*.37}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Configuración de la cabeza clasificadora personalizada para \emph  {DenseNet-121}.}}{36}{table.caption.38}\protected@file@percent }
+\newlabel{tab:custom_layers}{{3.5}{36}{Configuración de la cabeza clasificadora personalizada para \emph {DenseNet-121}}{table.caption.38}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Resultados}{36}{subsection.3.5.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Reporte de clasificación del modelo basado en transformadas wavelet.}}{37}{table.caption.40}\protected@file@percent }
+\newlabel{tab:wavelet_report}{{3.6}{37}{Reporte de clasificación del modelo basado en transformadas wavelet}{table.caption.40}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces Matriz de confusión del modelo basado en transformadas wavelet.}}{37}{table.caption.41}\protected@file@percent }
+\newlabel{tab:wavelet_confusion_matrix}{{3.7}{37}{Matriz de confusión del modelo basado en transformadas wavelet}{table.caption.41}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Desafíos y Observaciones Técnicas}{37}{subsection.3.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Ejemplo de escalograma generado por la Transformada Wavelet Continua (\emph  {CWT}) utilizando la \emph  {wavelet} de \emph  {Morlet}.}}{39}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:cwt_morl_example}{{3.8}{39}{Ejemplo de escalograma generado por la Transformada Wavelet Continua (\emph {CWT}) utilizando la \emph {wavelet} de \emph {Morlet}}{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Curvas de entrenamiento del modelo \emph  {DenseNet-121} para clasificación de escalogramas wavelet. Se muestran la evolución de la pérdida y precisión durante 50 épocas de entrenamiento.}}{40}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:wavelet_training_results}{{3.9}{40}{Curvas de entrenamiento del modelo \emph {DenseNet-121} para clasificación de escalogramas wavelet. Se muestran la evolución de la pérdida y precisión durante 50 épocas de entrenamiento}{figure.caption.39}{}}
 \@setckpt{chapters/chapter3}{
-\setcounter{page}{31}
+\setcounter{page}{41}
 \setcounter{equation}{2}
-\setcounter{enumi}{4}
+\setcounter{enumi}{5}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -90,28 +126,28 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
-\setcounter{section}{4}
-\setcounter{subsection}{6}
+\setcounter{section}{5}
+\setcounter{subsection}{5}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{2}
-\setcounter{table}{0}
+\setcounter{figure}{9}
+\setcounter{table}{7}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{parentequation}{0}
 \setcounter{float@type}{8}
 \setcounter{lastpagecount}{0}
 \setcounter{AM@survey}{0}
-\setcounter{csvinputline}{0}
-\setcounter{csvrow}{0}
-\setcounter{csvcol}{0}
+\setcounter{csvinputline}{6}
+\setcounter{csvrow}{4}
+\setcounter{csvcol}{5}
 \setcounter{r@tfl@t}{0}
 \setcounter{lstnumber}{1}
 \setcounter{section@level}{2}
-\setcounter{Item}{4}
+\setcounter{Item}{5}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{35}
+\setcounter{bookmark@seq@number}{40}
 \setcounter{ALG@line}{0}
 \setcounter{ALG@rem}{0}
 \setcounter{ALG@nested}{0}

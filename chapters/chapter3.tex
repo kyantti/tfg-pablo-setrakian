@@ -52,27 +52,27 @@ Para el desarrollo del código se empleó Visual Studio Code (VS Code) como ento
 El desarrollo y ejecución del proyecto se realizó en un servidor de alto rendimiento proporcionado por la Universidad de Extremadura, con las siguientes especificaciones técnicas:
 
 \begin{itemize}
-    \item \textbf{Procesador}: Intel Xeon de última generación (detalles específicos a completar).
-    \item \textbf{Memoria RAM}: 504 GB para procesamiento de grandes volúmenes de datos hiperespectrales.
-    \item \textbf{Aceleradores GPU}: 4 × NVIDIA A100 con 40 GB de memoria VRAM cada una, de las cuales se utilizó una para la ejecución de los modelos de aprendizaje profundo.
-    \item \textbf{Almacenamiento}: Sistema de almacenamiento de alta velocidad para manejo eficiente del conjunto de datos hiperespectral (aproximadamente X TB).
+    \item \textbf{Procesador}:  Intel(R) Xeon(R) Silver 4310 CPU @ 2.10GHz.
+    \item \textbf{Memoria RAM}: 512 GB DDR4.
+    \item \textbf{Acelerador Gráfico}: 4 × NVIDIA A100 con 40 GB de memoria VRAM cada una, de las cuales se utilizó una para la ejecución de los modelos de aprendizaje profundo.
+    \item \textbf{Almacenamiento}: 4 TB en disco SSD NVMe.
 \end{itemize}
 
 \subsection{Adquisición de Imágenes Hiperespectrales}
 
-Las imágenes fueron capturadas utilizando una cámara hiperespectral SPECIM, específicamente el modelo FX10 VNIR, cuyas características técnicas principales incluyen: resolución espacial de 1024 píxeles (800 \emph{width} × 1024 \emph{height}), rango espectral de 400 nm a 1000 nm (visible y parte del infrarrojo cercano), 448 bandas espectrales, y un salto espectral de 1.339 nm.
+Las imágenes fueron capturadas utilizando una cámara hiperespectral \emph{SPECIM}, específicamente el modelo \emph{FX10 VNIR}, cuyas características técnicas principales incluyen: resolución espacial de 1024 píxeles (800 ancho × 1024 alto), rango espectral de 400 nm a 1000 nm (visible y parte del infrarrojo cercano), 448 bandas espectrales, y un salto espectral de 1.339 nm.
 
 \vspace{5mm}
 
-El conjunto de datos comprende 320 higos cosechados de la plantación de la variedad calabacita ubicada en la ``Finca La Orden-Valdesequera'' (38°51' N, 6°40' W, altitud 184 m) en Guadajira, España, donde CICYTEX tiene su sede central. Las imágenes hiperespectrales se capturaron durante un período de 2 semanas, utilizando cada semana 160 higos cosechados en diferentes etapas de madurez.
+El conjunto de datos comprende 320 higos cosechados de la plantación de la variedad calabacita ubicada en la \emph{Finca La Orden-Valdesequera} (38°51' N, 6°40' W, altitud 184 m) en Guadajira, España, donde \emph{CICYTEX} tiene su sede central. Las imágenes hiperespectrales se capturaron durante un período de 2 semanas, utilizando cada semana 160 higos cosechados en diferentes etapas de madurez.
 
 \vspace{5mm}
 
-Cada semana, 160 higos se dividieron en cuatro subconjuntos de aproximandamente 40 especímenes cada uno. El primer grupo correspondió a los controles sanos (clase 0), mientras que los tres grupos siguientes fueron inoculados con concentraciones de $10^3$ UFC/mL (clase 1), $10^5$ UFC/mL (clase 2), y $10^7$ UFC/mL (clase 3), respectivamente. El proceso de inoculación se realizó mediante inmersión del área durante aproximadamente 3 segundos, siguiendo el protocolo establecido por CICYTEX.
+Cada semana, 160 higos se dividieron en cuatro subconjuntos de aproximandamente 40 especímenes cada uno. El primer grupo correspondió a los controles sanos (Clase 0), mientras que los tres grupos siguientes fueron inoculados con concentraciones de $10^3$ UFC/mL (Clase 1), $10^5$ UFC/mL (Clase 2), y $10^7$ UFC/mL (Clase 3), respectivamente. El proceso de inoculación se realizó mediante inmersión del área durante aproximadamente 3 segundos, siguiendo el protocolo establecido por \emph{CICYTEX}.
 
 \vspace{5mm}
 
-Las imágenes hiperespectrales se capturaron \emph{post}-inoculación cada 24 horas durante cinco días consecutivos. Entre cada sesión de adquisición, las muestras se almacenaron en una cámara de incubación controlada a 25°C, con humedad relativa entre 80 y 90\% para promover el crecimiento fúngico. Cada clase consistió de 380 imágenes hiperespectrales, generando un total de 1520 imágenes hiperespectrales para el conjunto de datos completo.
+Las imágenes hiperespectrales se capturaron después de la inoculación cada 24 horas durante cinco días consecutivos. Entre cada sesión de adquisición, las muestras se almacenaron en una cámara de incubación controlada a 25°C, con humedad relativa entre 80 y 90\% para promover el crecimiento fúngico. Cada clase consistió de 380 imágenes hiperespectrales, generando un total de 1520 imágenes hiperespectrales para el conjunto de datos completo.
 
 \vspace{5mm}
 
@@ -90,7 +90,7 @@ Las imágenes hiperespectrales capturadas se almacenan en una estructura de dire
     \end{itemize}
     \item \textbf{Imagen \texttt{.png}}: 
     \begin{itemize}
-        \item Este archivo representa una visualización en falso color RGB generada a partir de tres bandas seleccionadas del cubo hiperespectral. Se utiliza como entrada para el flujo de trabajo de detección y segmentación.
+        \item Este archivo representa una visualización en falso color \emph{RGB} generada a partir de tres bandas seleccionadas del cubo hiperespectral.
     \end{itemize}
     \item \textbf{Archivos de metadatos (\texttt{.xml})}: 
     \begin{itemize}
@@ -173,6 +173,14 @@ La generación de anotaciones en formato \emph{COCO} se realizó mediante la con
 
 El último componente del flujo se encarga de la extracción de sub-cubos hiperespectrales radiométricamente corregidos a partir de las detecciones validadas en la fase anterior. Este módulo implementa un procesamiento sofisticado que combina corrección radiométrica, mapeo geométrico y extracción volumétrica para generar datos hiperespectrales de alta calidad correspondientes a cada higo individual detectado.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/higo_individual_220_113_78.png}
+\caption{Ejemplo de la representación en falso color \emph{RGB} de un higo individual extraído del cubo hiperespectral. Las bandas espectrales utilizadas para la visualización son 220 (Rojo), 113 (Verde) y 78 (Azul).}
+\label{fig:higo_individual}
+\end{figure}
+
+
 \vspace{5mm}
 
 La corrección radiométrica constituye un paso crítico para garantizar la calidad de los datos hiperespectrales, eliminando efectos de iluminación y variaciones instrumentales que podrían comprometer el análisis posterior. El proceso utiliza las referencias oscura y blanca capturadas simultáneamente con cada imagen hiperespectral, aplicando la ecuación estándar de corrección:
@@ -251,7 +259,7 @@ Durante la implementación, se identificaron y resolvieron varios desafíos téc
 
 La optimización de la memoria de la \emph{GPU} constituyó otro reto importante, dado que el procesamiento conjunto de \emph{Grounding DINO} y \emph{SAM-2} requirió una implementación cuidadosa de contextos autocast para prevenir desbordamientos de memoria. La solución implementada aplica precisión mixta de forma selectiva \cite{micikevicius2018mixedprecisiontraining}: utiliza \texttt{torch.autocast} con \texttt{dtype=torch.bfloat16} únicamente para \emph{SAM-2}, mientras mantiene precisión completa para \emph{Grounding DINO}, equilibrando eficiencia computacional con calidad de inferencia. La elección del formato \texttt{bfloat16} se fundamenta en su diseño específico para aplicaciones de aprendizaje profundo, proporcionando un rango dinámico superior a \texttt{float16} tradicional \cite{8877411}. Adicionalmente, se configuró el uso de \emph{TF32} cuando está disponible en hardware compatible para optimizar las operaciones de multiplicación de matrices.
 
-\section{Selección de Bandas con Algoritmo Genético}
+\section{Selección de Bandas}
 
 \subsection{Objetivo de la Fase}
 La segunda fase del proyecto se centra en la optimización de la selección de bandas espectrales mediante la implementación de un algoritmo genético que identifica automáticamente las tres bandas más informativas del cubo hiperespectral. El objetivo principal es reducir la dimensionalidad de los datos hiperespectrales de manera inteligente, preservando la información espectral crítica para la clasificación de contaminación por aflatoxinas mientras se optimiza la eficiencia computacional del entrenamiento de redes neuronales.
@@ -330,51 +338,201 @@ El algoritmo se configura para ejecutar durante 50 generaciones con una poblaci�
 
 Para garantizar la reproducibilidad y robustez estadística, se implementó un sistema de experimentos múltiples que permite la ejecución de varias corridas independientes del algoritmo, cada una con semillas aleatorias diferentes. Los resultados de cada experimento se almacenan automáticamente en archivos CSV que incluyen estadísticas generacionales completas y métricas detalladas del mejor individuo.
 
-\subsection{Gestión de Datos y Eficiencia Computacional}
+\subsection{Resultados}
 
-La implementación incorpora varias optimizaciones críticas para manejar eficientemente los grandes volúmenes de datos hiperespectrales y los requisitos computacionales intensivos del entrenamiento de redes neuronales.
+Se realizaron diez experimentos independientes.
 
-\subsubsection{Estrategia de Carga de Datos}
+\begin{table}[ht]
+\centering
+\caption{Resumen de métricas de los experimentos de selección de bandas.}
+\label{tab:experiment_metrics}
+\resizebox{\textwidth}{!}{
+\csvautotabular{tables/experiment_metrics_summary.csv}
+}
+\end{table}
 
-El sistema implementa una estrategia de precarga que lee todos los subcubos hiperespectrales en memoria al inicio de la ejecución, eliminando el overhead de E/S repetitivo durante la evaluación de individuos. Esta aproximación resulta viable debido a la capacidad de memoria disponible (504 GB) y mejora significativamente el rendimiento del algoritmo al evitar accesos repetitivos al sistema de almacenamiento durante las evaluaciones.
+\begin{table}[ht]
+\centering
+\caption{Resultados del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{tab:exp_10_cnn_results_220_113_78}
+\resizebox{\textwidth}{!}{
+\csvautotabular{tables/exp_10_cnn_results_220_113_78.csv}
+}
+\end{table}
 
-\subsubsection{Optimización de Memoria GPU}
+\begin{table}[ht]
+\centering
+\caption{Matriz de confusión del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{tab:exp_10_confusion_matrix_220_113_78}
+\resizebox{\textwidth}{!}{
+\csvautotabular{tables/exp_10_confusion_matrix_220_113_78.csv}
+}
+\end{table}
 
-La gestión de memoria GPU incorpora técnicas de limpieza automática y uso de precisión mixta para prevenir desbordamientos de memoria durante evaluaciones consecutivas. Se implementa limpieza explícita de caché GPU entre evaluaciones y uso selectivo de \texttt{torch.autocast} para optimizar el uso de memoria sin comprometer la precisión numérica de los cálculos.
+\begin{table}[ht]
+\centering
+\caption{Reporte de clasificación del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{tab:exp_10_classification_report_220_113_78}
+\resizebox{\textwidth}{!}{
+\csvautotabular{tables/exp_10_classification_report_220_113_78.csv}
+}
+\end{table}
 
-\subsubsection{Paralelización y Escalabilidad}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/exp_10_fitness_evolution.png}
+\caption{Curvas de evolución de la aptitud del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{fig:exp_10_fitness_evolution}
+\end{figure}
 
-Aunque la implementación actual utiliza evaluación secuencial debido a las restricciones de memoria GPU, la arquitectura permite la incorporación futura de paralelización mediante pools de procesos para distribución de evaluaciones en múltiples GPUs o nodos computacionales.
-
-\subsection{Resultados y Métricas}
-
-La ejecución del algoritmo genético genera múltiples tipos de resultados que proporcionan información detallada sobre el proceso evolutivo y la calidad de las soluciones encontradas.
-
-\subsubsection{Estadísticas Evolutivas}
-
-El sistema registra estadísticas completas por generación incluyendo valores promedio, desviación estándar, mínimo y máximo de aptitud poblacional, así como la mejor solución encontrada hasta el momento. Estos datos se almacenan en formato CSV facilitando el análisis posterior del comportamiento evolutivo y la convergencia del algoritmo.
-
-\subsubsection{Métricas de Clasificación}
-
-Para cada mejor individuo identificado, se registran métricas detalladas del entrenamiento de la CNN incluyendo pérdida y precisión en entrenamiento y validación a lo largo de las 50 épocas. Esta información permite evaluar no solo la aptitud final sino también el comportamiento de convergencia y la estabilidad del entrenamiento para cada combinación de bandas.
-
-\subsubsection{Visualizaciones y Análisis}
-
-El sistema genera automáticamente curvas de pérdida y precisión para el mejor individuo de cada experimento, proporcionando visualizaciones que facilitan el análisis del comportamiento de entrenamiento y la identificación de posibles problemas como sobreajuste o convergencia prematura.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/exp_10_cnn_results_220_113_78.png}
+\caption{Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{fig:exp_10_cnn_results_220_113_78}
+\end{figure}
 
 \subsection{Desafíos y Observaciones Técnicas}
 
-La implementación de esta fase presentó varios desafíos técnicos significativos que requirieron soluciones innovadoras y optimizaciones específicas.
+\section{Análisis Hiperespectral mediante Transformadas Wavelet}
+
+\subsection{Objetivo de la Fase}
+
+La tercera fase del proyecto implementa una metodología alternativa para el análisis de imágenes hiperespectrales mediante la aplicación de transformadas \emph{wavelet} en regiones espacialmente localizadas del higo. Esta aproximación sigue la línea de investigación establecida por Cruz-Carrasco et al. \cite{agriengineering6040225}, quienes demostraron la efectividad del análisis hiperespectral combinado con transformadas \emph{wavelet} para la detección de \emph{Aspergillus flavus} en higos. Sin embargo, mientras que el estudio de referencia realizó el análisis a nivel de píxel individual, esta fase extiende la metodología considerando regiones espaciales más amplias que capturan información contextual y variabilidad espacial local.
 
 \vspace{5mm}
 
-El principal desafío encontrado fue la gestión eficiente de los recursos computacionales, particularmente la memoria GPU, durante evaluaciones consecutivas de múltiples individuos. Cada evaluación requiere el entrenamiento completo de una red \emph{ResNet-50} durante 50 épocas, resultando en un uso intensivo de memoria que puede causar desbordamientos en evaluaciones posteriores si no se gestiona adecuadamente. La solución implementada incluye limpieza explícita de memoria entre evaluaciones y monitoreo continuo del uso de recursos.
+El objetivo principal es explorar la capacidad de las transformadas \emph{wavelet} continuas (CWT) y discretas (DWT) para extraer características espectrales discriminativas a partir de regiones de 32×32 píxeles subdivididas en parches de 4×4 píxeles, permitiendo la clasificación efectiva de diferentes niveles de contaminación por aflatoxinas. Esta aproximación regional, en contraste con el análisis puntual por píxeles, permite capturar patrones espaciales de heterogeneidad espectral que pueden indicar diferentes etapas del desarrollo fúngico y la distribución espacial de la contaminación dentro del tejido del higo.
 
 \vspace{5mm}
 
-La optimización del balance entre exploración y explotación en el algoritmo genético constituyó otro aspecto crítico. Los parámetros de probabilidad de cruzamiento y mutación requirieron ajuste cuidadoso para evitar convergencia prematura hacia soluciones subóptimas, considerando que cada evaluación de aptitud requiere aproximadamente 15-20 minutos en hardware GPU. La implementación del sistema de caché resultó esencial para prevenir evaluaciones redundantes y mejorar la eficiencia global del proceso evolutivo.
+Esta aproximación se fundamenta en la hipótesis de que las transformadas \emph{wavelet} pueden capturar información espectral-temporal crítica que métodos tradicionales de procesamiento espectral podrían no detectar. A diferencia de las fases anteriores que operan sobre imágenes \emph{RGB} derivadas o selecciones optimizadas de bandas espectrales, esta metodología procesa directamente la información espectral completa mediante análisis tiempo-frecuencia, preservando tanto las características espectrales como sus variaciones temporales a lo largo del espectro electromagnético.
+
+\subsection{Herramientas y Tecnologías Empleadas}
+
+La implementación de esta fase integra técnicas avanzadas de procesamiento de señales con arquitecturas de aprendizaje profundo especializadas, combinando análisis \emph{wavelet} con redes neuronales convolucionales para la clasificación automatizada de muestras.
+
+\subsubsection{PyWavelets}
+
+\emph{PyWavelets} \cite{lee2019pywavelets} es una biblioteca de Python de código abierto que implementa de manera eficiente y numéricamente estable una amplia gama de transformadas \emph{wavelet}, tanto en su versión discreta como continua. Ofrece soporte para transformadas multiescala, transformadas inversas, y herramientas de análisis como filtrado, compresión y descomposición de señales. La biblioteca incluye múltiples familias de \emph{wavelets} (\emph{Daubechies}, \emph{Morlet}, \emph{Haar}, \emph{Biorthogonal}, entre otras), lo que permite seleccionar la función base más adecuada según la aplicación. En el marco de este proyecto, \emph{PyWavelets} se emplea para transformar firmas espectrales unidimensionales en representaciones tiempo-frecuencia bidimensionales (escalogramas), que capturan de forma localizada tanto las características frecuenciales como su posición en el dominio espectral.
+
+\subsubsection{DenseNet-121}
+
+La arquitectura \emph{DenseNet-121} \cite{huang2018denselyconnectedconvolutionalnetworks} se caracteriza por el uso de conexiones densas entre capas, en las cuales cada capa recibe como entrada no solo la salida de la capa inmediatamente anterior, sino también los mapas de características de todas las capas previas, lo que fomenta una reutilización eficiente de la información aprendida. Esta estrategia de conectividad permite mitigar el problema del desvanecimiento del gradiente, favoreciendo un entrenamiento más estable y profundo, al tiempo que reduce la redundancia de parámetros en comparación con otras arquitecturas tradicionales como \emph{ResNet}, gracias a la mayor eficiencia en el flujo de información. \emph{DenseNet-121}, con sus 121 capas organizadas en bloques densos e intercaladas con capas de transición que controlan la dimensionalidad y la complejidad computacional, logra un equilibrio entre profundidad, capacidad de representación y eficiencia, lo que la convierte en una de las arquitecturas más utilizadas en tareas de clasificación y extracción de características en el dominio del aprendizaje profundo.
+
+\subsection{Flujo de Procesamiento}
+
+El flujo de procesamiento implementa una metodología sistemática que combina extracción espacial de regiones de interés, análisis espectral mediante transformadas \emph{wavelet}, y clasificación mediante aprendizaje profundo.
+
+\subsubsection{1. Extracción de Parches Espectrales}
+
+El proceso comienza con la identificación automática de regiones óptimas de 32×32 píxeles en cada imagen hiperespectral. El algoritmo implementa una estrategia de búsqueda espacial que localiza la región centrada verticalmente y posicionada horizontalmente para minimizar la presencia de píxeles de fondo. Esta selección automatizada garantiza que los parches extraídos contengan exclusivamente información espectral del tejido del higo, eliminando interferencias del fondo de la imagen que podrían introducir ruido en el análisis posterior.
 
 \vspace{5mm}
 
-La gestión de la reproducibilidad experimental presentó complejidades adicionales debido a la naturaleza estocástica tanto del algoritmo genético como del entrenamiento de redes neuronales. Se implementaron controles de semillas aleatorias múltiples y documentación detallada de configuraciones para garantizar la reproducibilidad de los resultados mientras se mantiene la capacidad de exploración estocástica necesaria para el algoritmo evolutivo.
+Una vez identificada la región óptima de 32×32 píxeles, se procede a la subdivisión sistemática en una grilla regular de 64 sub-parches de 4×4 píxeles cada uno. Para cada sub-parche de 4×4 píxeles, se extrae la firma espectral promedio calculando la media aritmética de los valores espectrales a través de las dimensiones espaciales. Este procedimiento de promediado espacial genera 64 firmas espectrales representativas, cada una de 448 bandas espectrales, que capturan la información espectral característica de regiones espacialmente localizadas dentro del higo individual.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png}
+\caption{Visualización de la región de 32×32 píxeles extraída automáticamente del higo, subdividida en 64 parches de 4×4 píxeles.}
+\label{fig:patch_extraction_example}
+\end{figure}
+
+
+Esta metodología de promediado espacial permite reducir el ruido espectral inherente a nivel de píxel individual mientras preserva las características espectrales distintivas de cada región. Al calcular la media espectral de los 16 píxeles (4×4) que componen cada sub-parche, se obtiene una representación espectral más robusta y estable que facilita la identificación de patrones espectrales asociados con diferentes grados de contaminación fúngica.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/hyperspectral_signature.png}
+\caption{Ejemplo de firma espectral promedio extraída de un parche de 4×4 píxeles. La gráfica muestra la reflectancia en función de las 448 bandas espectrales.}
+\label{fig:hyperspectral_signature_example}
+\end{figure}
+
+\subsubsection{2. Transformada Wavelet Continua}
+
+La transformación espectral utiliza la Transformada Wavelet Continua (\emph{CWT}) con la \emph{wavelet} de \emph{Morlet} como función base. Esta elección se fundamenta en las propiedades óptimas de la \emph{wavelet} de \emph{Morlet} para análisis espectral: proporciona una resolución tiempo-frecuencia balanceada, mantiene fase constante, y exhibe características de localización espectral apropiadas para señales hiperespectrales. La \emph{CWT} se aplica a cada firma espectral de 448 bandas utilizando 64 escalas logarítmicamente distribuidas, generando escalogramas de 64×448 píxeles que representan la distribución tiempo-frecuencia de la información espectral.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png}
+\caption{Ejemplo de escalograma generado por la Transformada Wavelet Continua (\emph{CWT}) utilizando la \emph{wavelet} de \emph{Morlet}.}
+\label{fig:cwt_morl_example}
+\end{figure}
+
+\vspace{5mm}
+
+Los escalogramas resultantes capturan tanto características espectrales globales como variaciones localizadas en frecuencia, proporcionando una representación rica en información que preserva patrones espectrales discriminativos para la detección de contaminación por aflatoxinas. La selección de 64 escalas permite una cobertura completa del rango espectral mientras mantiene una resolución suficiente para detectar características espectrales finas asociadas con cambios bioquímicos inducidos por el desarrollo fúngico.
+
+\subsubsection{3. Preparación de Datos para CNN}
+
+Los 64 escalogramas generados por cada parche de 32×32 píxeles se organizan como imágenes individuales para el entrenamiento de la red neuronal convolucional. Esta estrategia de aumentado de datos resulta en una expansión significativa del conjunto de datos: cada imagen hiperespectral original genera 64 instancias de entrenamiento, multiplicando efectivamente el tamaño del conjunto de datos disponible para el aprendizaje supervisado.
+
+\vspace{5mm}
+
+Los escalogramas se normalizan utilizando estadísticas estándar de \emph{ImageNet} para aprovechar las ventajas del aprendizaje por transferencia. La organización del conjunto de datos sigue una estructura jerárquica estándar con directorios separados para entrenamiento y prueba, manteniendo la distribución de clases balanceada (\emph{C0}, \emph{C1}, \emph{C2}, \emph{C3}) y preservando la trazabilidad desde las imágenes hiperespectrales originales hasta los escalogramas individuales.
+
+\subsubsection{4. Arquitectura y Entrenamiento de CNN}
+
+La red \emph{DenseNet-121} se adapta específicamente para la clasificación de cuatro clases mediante la modificación de la capa clasificadora final. La arquitectura implementa una cabeza clasificadora personalizada que incluye capas lineales con normalización por lotes, funciones de activación \emph{ReLU}, y regularización mediante \emph{dropout} para prevenir sobreajuste. La configuración final comprende: una capa lineal de 1024 a 128 unidades con \emph{ReLU} y normalización por lotes, seguida de \emph{dropout} (0.4), una segunda capa lineal de 128 a 64 unidades con \emph{ReLU} y \emph{dropout} (0.3), y finalmente una capa de salida de 64 a 4 unidades correspondientes a las clases experimentales.
+
+\vspace{5mm}
+
+El entrenamiento se ejecuta durante 50 épocas utilizando el optimizador \emph{Adam} con tasa de aprendizaje inicial de 0.001 y un planificador \emph{ReduceLROnPlateau} que reduce la tasa de aprendizaje cuando la pérdida de validación se estanca. El modelo utiliza función de pérdida de entropía cruzada y técnicas de aumento de datos que incluyen transformaciones estocásticas apropiadas para imágenes de escalogramas, preservando las características tiempo-frecuencia mientras introducen variabilidad para mejorar la generalización.
+
+\begin{table}[ht]
+\centering
+\caption{Configuración de la cabeza clasificadora personalizada para \emph{DenseNet-121}.}
+\label{tab:custom_layers}
+\csvautotabular{tables/custom_layers.csv}
+\end{table}
+
+\subsection{Resultados}
+
+La metodología basada en transformadas wavelet demostró una efectividad notable para la clasificación de contaminación por aflatoxinas en muestras de higo. El modelo \emph{DenseNet-121} entrenado alcanzó una precisión de clasificación de \textbf{87.43\%} en el conjunto de prueba, con métricas consistentes a través de las cuatro clases experimentales.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/wavelet_training_results.png}
+\caption{Curvas de entrenamiento del modelo \emph{DenseNet-121} para clasificación de escalogramas wavelet. Se muestran la evolución de la pérdida y precisión durante 50 épocas de entrenamiento.}
+\label{fig:wavelet_training_results}
+\end{figure}
+
+\vspace{5mm}
+
+El análisis detallado por clases revela un rendimiento balanceado: \emph{C0} (control sano) alcanzó precisión de 88.92\% y recall de 88.59\%, \emph{C1} (baja contaminación) obtuvo precisión y recall de 88.26\%, \emph{C2} (contaminación media) logró precisión de 85.24\% y recall de 84.49\%, mientras que \emph{C3} (alta contaminación) registró precisión de 87.35\% y recall de 88.43\%. Los puntajes F1 correspondientes fueron 88.76\%, 88.26\%, 84.86\% y 87.89\% respectivamente, indicando un equilibrio efectivo entre precisión y recall en todas las categorías.
+
+\begin{table}[ht]
+\centering
+\caption{Reporte de clasificación del modelo basado en transformadas wavelet.}
+\label{tab:wavelet_report}
+\csvautotabular{tables/wavelet_classification_report.csv}
+\end{table}
+
+\vspace{5mm}
+
+La matriz de confusión revela patrones de clasificación interpretables: las confusiones más frecuentes ocurren entre clases adyacentes (\emph{C1-C2} y \emph{C2-C3}), reflejando la progresión gradual de la contaminación por aflatoxinas. Específicamente, se observan 190 confusiones entre \emph{C1} y \emph{C2}, y 174 confusiones entre \emph{C2} y \emph{C3}. La clase control (\emph{C0}) muestra la menor tasa de confusión con clases contaminadas, con solo 403 clasificaciones erróneas de un total de 3533 muestras, indicando que la metodología wavelet es efectiva para distinguir muestras sanas de contaminadas.
+
+\begin{table}[ht]
+\centering
+\caption{Matriz de confusión del modelo basado en transformadas wavelet.}
+\label{tab:wavelet_confusion_matrix}
+\csvautotabular{tables/wavelet_confusion_matrix.csv}
+\end{table}
+
+\vspace{5mm}
+
+El entrenamiento del modelo se completó en 50 épocas, con un tiempo total de entrenamiento de aproximadamente 3.1 horas en una GPU NVIDIA A100. La convergencia del modelo se observa claramente en las curvas de entrenamiento, donde tanto la pérdida como la precisión se estabilizan después de las primeras 20 épocas, indicando un aprendizaje efectivo sin evidencia significativa de sobreajuste.
+
+\subsection{Desafíos y Observaciones Técnicas}
+
+La implementación de la metodología wavelet presentó varios desafíos técnicos que proporcionaron perspectivas valiosas sobre el procesamiento de imágenes hiperespectrales. El primer desafío significativo fue la selección de parámetros óptimos para la CWT, particularmente el número de escalas y su distribución. La experimentación inicial con diferentes configuraciones reveló que 64 escalas logarítmicamente distribuidas proporcionan el mejor equilibrio entre resolución espectral y eficiencia computacional, capturando características espectrales finas sin introducir redundancia excesiva.
+
+\vspace{5mm}
+
+La gestión de memoria constituyó otro aspecto crítico, dado que la generación de escalogramas para el conjunto completo de datos resulta en un volumen significativo de datos procesados. La implementación de procesamiento por lotes y técnicas de liberación explícita de memoria (\texttt{gc.collect()}) después de cada lote de procesamiento permitió manejar eficientemente el flujo de datos sin saturar la memoria disponible. Adicionalmente, se observó que la normalización apropiada de los escalogramas resulta crítica para la convergencia estable del entrenamiento, requiriendo ajustes específicos para accommodar las características únicas de las representaciones tiempo-frecuencia generadas por CWT.
+
+\vspace{5mm}
+
+Un hallazgo técnico importante fue que la metodología wavelet captura información espectral complementaria a las aproximaciones basadas en selección de bandas RGB. Los escalogramas revelan patrones espectrales localizados que no son evidentes en análisis espectrales tradicionales, sugiriendo que las transformadas wavelet proporcionan una perspectiva única para la caracterización de cambios bioquímicos asociados con el desarrollo fúngico y la producción de aflatoxinas en tejidos vegetales.
 

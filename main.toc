@@ -12,7 +12,7 @@
 \contentsline {chapter}{\numberline {2}Estado del Arte}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}HSI en Agricultura de Precisión}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Imágenes RGB en Agricultura de Precisión}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Imágenes \emph {RGB} en Agricultura de Precisión}{8}{section.2.3}%
 \contentsline {section}{\numberline {2.4}ML en Imagenología Agrícola}{9}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Desarrollo}{12}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introducción}{12}{section.3.1}%
@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {3.3}Localización y Segmentación de Figuras}{16}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Objetivo de la Fase}{16}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Herramientas y Tecnologías Empleadas}{16}{subsection.3.3.2}%
-\contentsline {subsubsection}{Grounding DINO}{17}{section*.7}%
+\contentsline {subsubsection}{Grounding DINO}{16}{section*.7}%
 \contentsline {subsubsection}{SAM2 (Segment Anything Model 2)}{17}{section*.8}%
 \contentsline {subsubsection}{COCO (Common Objects in Context)}{17}{section*.9}%
 \contentsline {subsection}{\numberline {3.3.3}Flujo de Procesamiento}{18}{subsection.3.3.3}%
@@ -33,29 +33,33 @@
 \contentsline {subsubsection}{3. Generación de Anotaciones}{19}{section*.13}%
 \contentsline {subsubsection}{4. Extracción de Subcubos Hiperespectrales}{19}{section*.14}%
 \contentsline {subsection}{\numberline {3.3.4}Resultados}{21}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Desafíos y Observaciones Técnicas}{23}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}Selección de Bandas con Algoritmo Genético}{23}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Objetivo de la Fase}{23}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Herramientas y Tecnologías Empleadas}{24}{subsection.3.4.2}%
-\contentsline {subsubsection}{DEAP (Distributed Evolutionary Algorithms in Python)}{24}{section*.16}%
-\contentsline {subsubsection}{ResNet-50}{24}{section*.17}%
-\contentsline {subsection}{\numberline {3.4.3}Flujo de Procesamiento}{25}{subsection.3.4.3}%
-\contentsline {subsubsection}{1. Representación y Inicialización}{25}{section*.18}%
-\contentsline {subsubsection}{2. Función de Evaluación}{25}{section*.19}%
-\contentsline {subsubsection}{3. Operadores Genéticos}{26}{section*.20}%
-\contentsline {subsubsection}{4. Configuración Experimental}{27}{section*.21}%
-\contentsline {subsection}{\numberline {3.4.4}Gestión de Datos y Eficiencia Computacional}{28}{subsection.3.4.4}%
-\contentsline {subsubsection}{Estrategia de Carga de Datos}{28}{section*.22}%
-\contentsline {subsubsection}{Optimización de Memoria GPU}{28}{section*.23}%
-\contentsline {subsubsection}{Paralelización y Escalabilidad}{28}{section*.24}%
-\contentsline {subsection}{\numberline {3.4.5}Resultados y Métricas}{28}{subsection.3.4.5}%
-\contentsline {subsubsection}{Estadísticas Evolutivas}{29}{section*.25}%
-\contentsline {subsubsection}{Métricas de Clasificación}{29}{section*.26}%
-\contentsline {subsubsection}{Visualizaciones y Análisis}{29}{section*.27}%
-\contentsline {subsection}{\numberline {3.4.6}Desafíos y Observaciones Técnicas}{29}{subsection.3.4.6}%
-\contentsline {chapter}{\numberline {4}Resultados}{31}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{32}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{32}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Logros Principales}{32}{subsection.5.1.1}%
-\contentsline {chapter}{\numberline {6}Agradecimientos}{33}{chapter.6}%
-\contentsline {chapter}{Referencias}{34}{chapter.6}%
+\contentsline {subsection}{\numberline {3.3.5}Desafíos y Observaciones Técnicas}{24}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Selección de Bandas}{24}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Objetivo de la Fase}{24}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Herramientas y Tecnologías Empleadas}{25}{subsection.3.4.2}%
+\contentsline {subsubsection}{DEAP (Distributed Evolutionary Algorithms in Python)}{25}{section*.17}%
+\contentsline {subsubsection}{ResNet-50}{25}{section*.18}%
+\contentsline {subsection}{\numberline {3.4.3}Flujo de Procesamiento}{26}{subsection.3.4.3}%
+\contentsline {subsubsection}{1. Representación y Inicialización}{26}{section*.19}%
+\contentsline {subsubsection}{2. Función de Evaluación}{26}{section*.20}%
+\contentsline {subsubsection}{3. Operadores Genéticos}{27}{section*.21}%
+\contentsline {subsubsection}{4. Configuración Experimental}{28}{section*.22}%
+\contentsline {subsection}{\numberline {3.4.4}Resultados}{29}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Desafíos y Observaciones Técnicas}{29}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Análisis Hiperespectral mediante Transformadas Wavelet}{29}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Objetivo de la Fase}{29}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Herramientas y Tecnologías Empleadas}{31}{subsection.3.5.2}%
+\contentsline {subsubsection}{PyWavelets}{31}{section*.29}%
+\contentsline {subsubsection}{DenseNet-121}{31}{section*.30}%
+\contentsline {subsection}{\numberline {3.5.3}Flujo de Procesamiento}{32}{subsection.3.5.3}%
+\contentsline {subsubsection}{1. Extracción de Parches Espectrales}{33}{section*.31}%
+\contentsline {subsubsection}{2. Transformada Wavelet Continua}{34}{section*.34}%
+\contentsline {subsubsection}{3. Preparación de Datos para CNN}{35}{section*.36}%
+\contentsline {subsubsection}{4. Arquitectura y Entrenamiento de CNN}{35}{section*.37}%
+\contentsline {subsection}{\numberline {3.5.4}Resultados}{36}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Desafíos y Observaciones Técnicas}{37}{subsection.3.5.5}%
+\contentsline {chapter}{\numberline {4}Resultados}{41}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{42}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{42}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Logros Principales}{42}{subsection.5.1.1}%
+\contentsline {chapter}{Referencias}{43}{subsection.5.1.1}%

@@ -1,15 +1,43 @@
 \begin{thebibliography}{10}
 
-\bibitem{CISTERNAS2020105626}
-I.~Cisternas, I.~Velásquez, A.~Caro, and A.~Rodríguez, ``Systematic
-  literature review of implementations of precision agriculture,'' {\em
-  Computers and Electronics in Agriculture}, vol.~176, p.~105626, 2020.
+\bibitem{KHAN2024e28361}
+R.~Khan, F.~Anwar, and F.~M. Ghazali, ``A comprehensive review of mycotoxins:
+  Toxicology, detection, and effective mitigation approaches,'' {\em Heliyon},
+  vol.~10, no.~8, p.~e28361, 2024.
+
+\bibitem{iarc2012aflatoxins}
+{IARC Working Group on the Evaluation of Carcinogenic Risks to Humans}, {\em
+  {Chemical Agents and Related Occupations. AFLATOXINS}}.
+\newblock {IARC Monographs on the Evaluation of Carcinogenic Risks to Humans,
+  No. 100F}, Lyon, France: {International Agency for Research on Cancer}, 2012.
+
+\bibitem{10.1093/fqsafe/fyz040}
+B.~Tai, J.~Chang, Y.~Liu, and F.~Xing, ``Recent progress of the effect of
+  environmental factors on aspergillus flavus growth and aflatoxins production
+  on foods,'' {\em Food Quality and Safety}, vol.~4, pp.~21--28, 02 2020.
+
+\bibitem{Ahmad2025}
+T.~Ahmad, S.~Wang, and Y.~Liu, ``Aspergillus flavus and aflatoxins (3rd
+  edition),'' {\em Toxins (Basel)}, vol.~17, p.~326, June 2025.
+
+\bibitem{cabicompendium.24078}
+P.~Bakewell-Stone, ``Ficus carica (common fig),'' {\em CABI Compendium}, 2022.
+
+\bibitem{esyrce2023}
+{Ministerio de Agricultura, Pesca y Alimentación}, ``Encuesta sobre
+  superficies y rendimientos de cultivos (esyrce) 2023,'' tech. rep.,
+  Ministerio de Agricultura, Pesca y Alimentación, España, 2023.
 
 \bibitem{KHAN2022101678}
 A.~Khan, A.~D. Vibhute, S.~Mali, and C.~Patil, ``A systematic review on
   hyperspectral imaging technology with a machine and deep learning methodology
   for agricultural applications,'' {\em Ecological Informatics}, vol.~69,
   p.~101678, 2022.
+
+\bibitem{CISTERNAS2020105626}
+I.~Cisternas, I.~Velásquez, A.~Caro, and A.~Rodríguez, ``Systematic
+  literature review of implementations of precision agriculture,'' {\em
+  Computers and Electronics in Agriculture}, vol.~176, p.~105626, 2020.
 
 \bibitem{jimaging5050052}
 A.~Signoroni, M.~Savardi, A.~Baronio, and S.~Benini, ``Deep learning meets
@@ -28,6 +56,23 @@ D.~Hong, N.~Yokoya, J.~Chanussot, J.~Xu, and X.~X. Zhu, ``Learning to propagate
   semi-supervised hyperspectral dimensionality reduction,'' {\em ISPRS Journal
   of Photogrammetry and Remote Sensing}, vol.~158, pp.~35--49, 2019.
 
+\bibitem{article}
+R.~Sahoo, S.~Ray, and M.~R, ``Hyperspectral remote sensing of agriculture,''
+  {\em Current science}, vol.~108, pp.~848--859, 03 2015.
+
+\bibitem{WIEME2022156}
+J.~Wieme, K.~Mollazade, I.~Malounas, M.~Zude-Sasse, M.~Zhao, A.~Gowen,
+  D.~Argyropoulos, S.~Fountas, and J.~{Van Beek}, ``Application of
+  hyperspectral imaging systems and artificial intelligence for quality
+  assessment of fruit, vegetables and mushrooms: A review,'' {\em Biosystems
+  Engineering}, vol.~222, pp.~156--176, 2022.
+
+\bibitem{Zhong}
+Z.~Zhong, J.~Li, Z.~Luo, and M.~Chapman, ``Spectral-spatial residual network
+  for hyperspectral image classification: A 3-d deep learning framework,'' {\em
+  IEEE Transactions on Geoscience and Remote Sensing}, vol.~56, pp.~847--858,
+  10 2017.
+
 \bibitem{FERENTINOS2018311}
 K.~P. Ferentinos, ``Deep learning models for plant disease detection and
   diagnosis,'' {\em Computers and Electronics in Agriculture}, vol.~145,
@@ -44,18 +89,26 @@ Y.~Chen, Z.~Lin, X.~Zhao, G.~Wang, and Y.~Gu, ``Deep learning-based
   Observations and Remote Sensing, IEEE Journal of}, vol.~7, pp.~2094--2107, 06
   2014.
 
-\bibitem{Zhong}
-Z.~Zhong, J.~Li, Z.~Luo, and M.~Chapman, ``Spectral-spatial residual network
-  for hyperspectral image classification: A 3-d deep learning framework,'' {\em
-  IEEE Transactions on Geoscience and Remote Sensing}, vol.~56, pp.~847--858,
-  10 2017.
+\bibitem{redmon2016lookonceunifiedrealtime}
+J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi, ``You only look once:
+  Unified, real-time object detection,'' 2016.
 
-\bibitem{WIEME2022156}
-J.~Wieme, K.~Mollazade, I.~Malounas, M.~Zude-Sasse, M.~Zhao, A.~Gowen,
-  D.~Argyropoulos, S.~Fountas, and J.~{Van Beek}, ``Application of
-  hyperspectral imaging systems and artificial intelligence for quality
-  assessment of fruit, vegetables and mushrooms: A review,'' {\em Biosystems
-  Engineering}, vol.~222, pp.~156--176, 2022.
+\bibitem{girshick2014richfeaturehierarchiesaccurate}
+R.~Girshick, J.~Donahue, T.~Darrell, and J.~Malik, ``Rich feature hierarchies
+  for accurate object detection and semantic segmentation,'' 2014.
+
+\bibitem{ronneberger2015unetconvolutionalnetworksbiomedical}
+O.~Ronneberger, P.~Fischer, and T.~Brox, ``U-net: Convolutional networks for
+  biomedical image segmentation,'' 2015.
+
+\bibitem{badrinarayanan2016segnetdeepconvolutionalencoderdecoder}
+V.~Badrinarayanan, A.~Kendall, and R.~Cipolla, ``Segnet: A deep convolutional
+  encoder-decoder architecture for image segmentation,'' 2016.
+
+\bibitem{chen2017deeplabsemanticimagesegmentation}
+L.-C. Chen, G.~Papandreou, I.~Kokkinos, K.~Murphy, and A.~L. Yuille, ``Deeplab:
+  Semantic image segmentation with deep convolutional nets, atrous convolution,
+  and fully connected crfs,'' 2017.
 
 \bibitem{van1995python}
 G.~Van~Rossum and F.~L. Drake~Jr, {\em Python tutorial}.
@@ -220,9 +273,20 @@ J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei, ``Imagenet: A
   large-scale hierarchical image database,'' in {\em 2009 IEEE conference on
   computer vision and pattern recognition}, pp.~248--255, Ieee, 2009.
 
-\bibitem{article}
-R.~Sahoo, S.~Ray, and M.~R, ``Hyperspectral remote sensing of agriculture,''
-  {\em Current science}, vol.~108, pp.~848--859, 03 2015.
+\bibitem{lee2019pywavelets}
+G.~R. Lee, R.~Gommers, F.~Wasilewski, K.~Wohlfahrt, and A.~O'Leary,
+  ``Pywavelets: A python package for wavelet analysis,'' {\em Journal of Open
+  Source Software}, vol.~4, no.~36, p.~1237, 2019.
+
+\bibitem{huang2018denselyconnectedconvolutionalnetworks}
+G.~Huang, Z.~Liu, L.~van~der Maaten, and K.~Q. Weinberger, ``Densely connected
+  convolutional networks,'' 2018.
+
+\bibitem{worldpopulationreview2025fig}
+{World Population Review}, ``Fig production by country 2025.''
+  \url{https://worldpopulationreview.com/country-rankings/fig-production-by-country},
+  2025.
+\newblock Retrieved September 19, 2025.
 
 \bibitem{ren2024grounded}
 T.~Ren, S.~Liu, A.~Zeng, J.~Lin, K.~Li, H.~Cao, J.~Chen, X.~Huang, Y.~Chen,
