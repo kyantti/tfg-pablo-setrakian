@@ -5,11 +5,11 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ejemplo de detección y segmentación de higos utilizando \emph {Grounding DINO} y \emph {SAM-2}. La imagen muestra las cajas delimitadoras generadas por \emph {Grounding DINO} y las máscaras de segmentación producidas por \emph {SAM-2}.}}{20}{figure.caption.12}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de la representación en falso color \emph {RGB} de un higo individual extraído del cubo hiperespectral. Las bandas espectrales utilizadas para la visualización son 220 (Rojo), 113 (Verde) y 78 (Azul).}}{21}{figure.caption.15}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de anotación en formato COCO para la clase 0.}}{23}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Curvas de evolución de la aptitud del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{32}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{33}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Visualización de la región de 32×32 píxeles extraída automáticamente del higo, subdividida en 64 parches de 4×4 píxeles.}}{34}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Ejemplo de firma espectral promedio extraída de un parche de 4×4 píxeles. La gráfica muestra la reflectancia en función de las 448 bandas espectrales.}}{34}{figure.caption.33}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Ejemplo de escalograma generado por la Transformada Wavelet Continua (\emph {CWT}) utilizando la \emph {wavelet} de \emph {Morlet}.}}{39}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Curvas de entrenamiento del modelo \emph {DenseNet-121} para clasificación de escalogramas wavelet. Se muestran la evolución de la pérdida y precisión durante 50 épocas de entrenamiento.}}{40}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{30}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Curvas de evolución de la aptitud del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{31}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Visualización de la región de 32×32 píxeles extraída automáticamente del higo, subdividida en 64 parches de 4×4 píxeles.}}{36}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Ejemplo de firma espectral promedio extraída de un parche de 4×4 píxeles. La gráfica muestra la reflectancia en función de las 448 bandas espectrales.}}{37}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Ejemplo de escalograma generado por la Transformada Wavelet Continua (\emph {CWT}) utilizando la \emph {wavelet} de \emph {Morlet}.}}{42}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Curvas de entrenamiento del modelo \emph {DenseNet-121} para clasificación de escalogramas wavelet. Se muestran la evolución de la pérdida y precisión durante 50 épocas de entrenamiento.}}{43}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

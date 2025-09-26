@@ -340,7 +340,11 @@ Para garantizar la reproducibilidad y robustez estadística, se implementó un s
 
 \subsection{Resultados}
 
-Se realizaron diez experimentos independientes.
+Se ejecutaron diez experimentos independientes. Los resultados demuestran variaciones significativas en el rendimiento clasificatorio según las bandas seleccionadas.
+
+\vspace{5mm}
+
+La Tabla \ref{tab:experiment_metrics} presenta el rendimiento de cada experimento. Las precisiones de prueba oscilaron entre 0.78 y 0.84, con una variabilidad de 6 puntos porcentuales que subraya la importancia de la selección inteligente de bandas.
 
 \begin{table}[ht]
 \centering
@@ -351,6 +355,15 @@ Se realizaron diez experimentos independientes.
 }
 \end{table}
 
+El Experimento 10 alcanzó el rendimiento superior con precisión de 0.84 utilizando las bandas [220, 113, 78], seguido por los Experimentos 2, 3, 4, 6 y 7 con precisión de 0.82. Los Experimentos 8 y 9 mostraron el rendimiento más bajo (0.78 y 0.79), indicando que sus combinaciones espectrales fueron menos efectivas para la discriminación de contaminación. La Figura \ref{fig:exp_10_cnn_results_220_113_78} muestra las curvas de entrenamiento del experimento de mejor rendimiento, mientras que la Tabla \ref{tab:exp_10_cnn_results_220_113_78} presenta sus métricas detalladas.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/exp_10_cnn_results_220_113_78.png}
+\caption{Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{fig:exp_10_cnn_results_220_113_78}
+\end{figure}
+
 \begin{table}[ht]
 \centering
 \caption{Resultados del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
@@ -360,14 +373,7 @@ Se realizaron diez experimentos independientes.
 }
 \end{table}
 
-\begin{table}[ht]
-\centering
-\caption{Matriz de confusión del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
-\label{tab:exp_10_confusion_matrix_220_113_78}
-\resizebox{\textwidth}{!}{
-\csvautotabular{tables/exp_10_confusion_matrix_220_113_78.csv}
-}
-\end{table}
+Las métricas \emph{F1} macro mantuvieron consistencia con las tendencias de precisión (0.75-0.82), confirmando capacidades de discriminación equilibradas entre las cuatro categorías de contaminación sin sesgos hacia clases específicas, como se detalla en la Tabla \ref{tab:exp_10_classification_report_220_113_78}.
 
 \begin{table}[ht]
 \centering
@@ -378,6 +384,8 @@ Se realizaron diez experimentos independientes.
 }
 \end{table}
 
+El análisis de la evolución del fitness revela un patrón de convergencia consistente en todos los experimentos, con tres fases características. La \textbf{fase inicial} (generaciones 0-10) muestra mejora rápida del fitness promedio desde 0.69 hasta 0.79 con alta variabilidad poblacional. La \textbf{fase de convergencia} (generaciones 10-25) estabiliza el fitness promedio en 0.82-0.84 con reducción gradual de variabilidad. La \textbf{fase final} (generaciones 25-50) exhibe convergencia completa hacia el valor óptimo de 0.84, confirmando la estabilidad de las soluciones identificadas y la robustez del algoritmo evolutivo, como se observa en la Figura \ref{fig:exp_10_fitness_evolution}.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{images/exp_10_fitness_evolution.png}
@@ -385,14 +393,42 @@ Se realizaron diez experimentos independientes.
 \label{fig:exp_10_fitness_evolution}
 \end{figure}
 
-\begin{figure}[ht]
+El Experimento 10 representa la configuración de máximo rendimiento, utilizando las bandas 220, 113 y 78. El reporte de clasificación detallado (Tabla \ref{tab:exp_10_classification_report_220_113_78}) muestra:
+
+\begin{itemize} \item \textbf{C0 (Saludables):} Precisión = 0.797, Recall = 0.839, F1 = 0.817 \item \textbf{C1 (Baja contaminación):} Precisión = 0.863, Recall = 0.786, F1 = 0.822 \item \textbf{C2 (Media contaminación):} Precisión = 0.825, Recall = 0.825, F1 = 0.825 \item \textbf{C3 (Alta contaminación):} Precisión = 0.797, Recall = 0.825, F1 = 0.810 \end{itemize}
+
+La precisión global alcanzó 81.9\% con promedios macro de 0.820, 0.819 y 0.819 para precisión, recall y F1-score respectivamente. La matriz de confusión (Tabla \ref{tab:exp_10_confusion_matrix_220_113_78}) reveló tasas de detección verdadero positivo robustas: C0 (83.9\%), C1 (78.6\%), C2 (82.5\%) y C3 (82.5\%), con errores de clasificación distribuidos uniformemente sin sesgos sistemáticos.
+
+\begin{table}[ht]
 \centering
-\includegraphics[width=\textwidth]{images/exp_10_cnn_results_220_113_78.png}
-\caption{Curvas de precisión y pérdida del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
-\label{fig:exp_10_cnn_results_220_113_78}
-\end{figure}
+\caption{Matriz de confusión del experimento 10 con las bandas seleccionadas 220, 113 y 78.}
+\label{tab:exp_10_confusion_matrix_220_113_78}
+\resizebox{\textwidth}{!}{
+\csvautotabular{tables/exp_10_confusion_matrix_220_113_78.csv}
+}
+\end{table}
+
+Los resultados demuestran la efectividad de la metodología híbrida que combina algoritmos genéticos con redes neuronales convolucionales para la selección automática de bandas espectrales. La convergencia consistente observada entre las generaciones 10-25 confirma la eficiencia del algoritmo evolutivo para identificar soluciones óptimas evitando la exploración exhaustiva de $\binom{448}{3} \approx 1.5 \times 10^7$ combinaciones posibles.
 
 \subsection{Desafíos y Observaciones Técnicas}
+
+Durante la implementación de esta fase del proyecto, se identificaron varios desafíos técnicos significativos que impactaron tanto en los tiempos de desarrollo como en la metodología experimental. Estos desafíos proporcionan conocimientos valiosos para futuras implementaciones y optimizaciones del sistema.
+
+\vspace{5mm}
+
+Uno de los principales obstáculos técnicos encontrados se relacionó con la configuración de los cargadores de datos de PyTorch (\texttt{DataLoader}). Durante las pruebas iniciales, se observó que configurar el parámetro \texttt{num\_workers} con valores superiores a 0 resultaba en tiempos de ejecución significativamente prolongados, contrario a las expectativas teóricas de paralelización. Este comportamiento aparentemente contradictorio se debe a varias consideraciones específicas del entorno de ejecución. En sistemas con limitaciones de memoria RAM o configuraciones específicas de hardware, la creación de múltiples procesos trabajadores puede introducir una sobrecarga significativa debido al costo de inicialización de procesos, transferencia de datos entre procesos padre e hijos, y sincronización. Esta sobrecarga puede superar los beneficios de la paralelización, especialmente cuando el conjunto de datos no es lo suficientemente grande o complejo como para justificar la distribución del trabajo.
+
+\vspace{5mm}
+
+Además, el uso de múltiples procesos trabajadores puede generar contención por recursos del sistema como acceso a disco, memoria compartida, y ancho de banda de memoria, lo que paradójicamente puede ralentizar el proceso de carga de datos. En el contexto de este proyecto, donde cada muestra requiere la carga y procesamiento de datos hiperespectrales de alta dimensionalidad (448 bandas espectrales), la contención de recursos se vuelve particularmente crítica. Este problema se ve agravado en entornos de servidores compartidos como este, donde múltiples usuarios ejecutan trabajos simultáneamente, ya que aunque la GPU pueda estar dedicada exclusivamente al proceso de entrenamiento, otros recursos críticos como CPU, memoria RAM, ancho de banda de memoria y sistema de I/O de disco pueden estar bajo demanda concurrente, incrementando significativamente la latencia de operaciones de carga de datos paralelas. La solución adoptada fue mantener \texttt{num\_workers=0}, configuración que fuerza la carga secuencial de datos en el proceso principal. Aunque esta configuración elimina el paralelismo en la carga de datos, resultó en tiempos de entrenamiento significativamente más eficientes para las características específicas del conjunto de datos y la infraestructura utilizada.
+
+\vspace{5mm}
+
+La definición de la arquitectura óptima del modelo constituyó un proceso iterativo y computacionalmente intensivo que requirió varias semanas de experimentación sistemática. Este proceso involucró la exploración de múltiples configuraciones arquitectónicas, cada una requiriendo ciclos completos de entrenamiento para su evaluación. Se evaluaron diferentes estrategias de congelación de capas en la red ResNet-50 preentrenada, incluyendo: (1) congelación completa de la estructura base con entrenamiento únicamente de la capa clasificadora final; (2) liberación progresiva de capas desde la capa de clasificación hacia capas convolucionales más profundas; y (3) configuraciones híbridas que combinan congelación selectiva con tasas de aprendizaje diferenciadas. La configuración final, que congela capas hasta \texttt{layer3} inclusive y libera \texttt{layer4} y la capa \texttt{fc}, emergió como el equilibrio óptimo entre capacidad de adaptación al dominio específico y preservación de características preentrenadas útiles.
+
+\vspace{5mm}
+
+Se exploraron arquitecturas alternativas incluyendo variantes de EfficientNet, DenseNet, y configuraciones personalizadas de ResNet con diferentes profundidades. Cada arquitectura requirió ajustes específicos de hiperparámetros, estrategias de regularización, y técnicas de aumento de datos, resultando en un proceso experimental extensivo que, aunque costoso temporalmente, fue fundamental para identificar la configuración óptima.
 
 \section{Análisis Hiperespectral mediante Transformadas Wavelet}
 
@@ -484,7 +520,9 @@ El entrenamiento se ejecuta durante 50 épocas utilizando el optimizador \emph{A
 \centering
 \caption{Configuración de la cabeza clasificadora personalizada para \emph{DenseNet-121}.}
 \label{tab:custom_layers}
+\resizebox{\textwidth}{!}{
 \csvautotabular{tables/custom_layers.csv}
+}
 \end{table}
 
 \subsection{Resultados}
@@ -506,7 +544,9 @@ El análisis detallado por clases revela un rendimiento balanceado: \emph{C0} (c
 \centering
 \caption{Reporte de clasificación del modelo basado en transformadas wavelet.}
 \label{tab:wavelet_report}
+\resizebox{\textwidth}{!}{
 \csvautotabular{tables/wavelet_classification_report.csv}
+}
 \end{table}
 
 \vspace{5mm}
@@ -517,7 +557,9 @@ La matriz de confusión revela patrones de clasificación interpretables: las co
 \centering
 \caption{Matriz de confusión del modelo basado en transformadas wavelet.}
 \label{tab:wavelet_confusion_matrix}
+\resizebox{\textwidth}{!}{
 \csvautotabular{tables/wavelet_confusion_matrix.csv}
+}
 \end{table}
 
 \vspace{5mm}
