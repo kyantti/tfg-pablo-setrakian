@@ -7,7 +7,7 @@
 \contentsline {table}{\numberline {3.3}{\ignorespaces Reporte de clasificación del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{30}{table.caption.26}%
 \contentsline {table}{\numberline {3.4}{\ignorespaces Matriz de confusión del experimento 10 con las bandas seleccionadas 220, 113 y 78.}}{32}{table.caption.28}%
 \contentsline {table}{\numberline {3.5}{\ignorespaces Configuración de la cabeza clasificadora personalizada para \emph {DenseNet-121}.}}{39}{table.caption.38}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Reporte de clasificación del modelo basado en transformadas wavelet.}}{39}{table.caption.40}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Reporte de clasificación del modelo basado en transformadas wavelet.}}{40}{table.caption.40}%
 \contentsline {table}{\numberline {3.7}{\ignorespaces Matriz de confusión del modelo basado en transformadas wavelet.}}{40}{table.caption.41}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

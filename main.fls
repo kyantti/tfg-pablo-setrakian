@@ -528,6 +528,13 @@ INPUT .\images\wavelet_training_results.png
 INPUT .\images\wavelet_training_results.png
 INPUT tables\wavelet_classification_report.csv
 INPUT tables\wavelet_confusion_matrix.csv
+INPUT .\images\wavelet_experiment_failed_results.png
+INPUT .\images\wavelet_experiment_failed_results.png
+INPUT .\images\wavelet_experiment_failed_results.png
+INPUT .\images\wavelet_experiment_failed_results.png
+INPUT .\images\wavelet_experiment_failed_results.png
+INPUT .\images\wavelet_experiment_failed_results.png
+INPUT .\images\wavelet_experiment_failed_results.png
 INPUT .\chapters\chapter4.tex
 INPUT .\chapters\chapter4.tex
 OUTPUT chapters\chapter4.aux

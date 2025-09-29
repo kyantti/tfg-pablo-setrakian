@@ -11,5 +11,6 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Ejemplo de firma espectral promedio extraída de un parche de 4×4 píxeles. La gráfica muestra la reflectancia en función de las 448 bandas espectrales.}}{37}{figure.caption.33}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Ejemplo de escalograma generado por la Transformada Wavelet Continua (\emph {CWT}) utilizando la \emph {wavelet} de \emph {Morlet}.}}{42}{figure.caption.35}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Curvas de entrenamiento del modelo \emph {DenseNet-121} para clasificación de escalogramas wavelet. Se muestran la evolución de la pérdida y precisión durante 50 épocas de entrenamiento.}}{43}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Comportamiento errático inicial de las métricas de validación, mostrando fluctuaciones extremas en la pérdida de prueba y precisión de prueba durante el entrenamiento sin planificador.}}{43}{figure.caption.42}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.18)  26 SEP 2025 09:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.18)  29 SEP 2025 10:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -813,7 +813,7 @@ Package hyperref Info: Link coloring OFF on input line 67.
 \openout2 = `cover/cover_CUM.aux'.
 
  (cover/cover_CUM.tex
-<images/logo.png, id=185, 971.63pt x 271.0125pt>
+<images/logo.png, id=177, 971.63pt x 271.0125pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 8.
@@ -1008,12 +1008,12 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 [17]
 
 [18]
-<images/dino_sam.jpg, id=537, 1027.84pt x 803.0pt>
+<images/dino_sam.jpg, id=531, 1027.84pt x 803.0pt>
 File: images/dino_sam.jpg Graphic file (type jpg)
 <use images/dino_sam.jpg>
 Package pdftex.def Info: images/dino_sam.jpg  used on input line 163.
 (pdftex.def)             Requested size: 390.0pt x 304.68982pt.
-<images/higo_individual_220_113_78.png, id=538, 513.92pt x 224.84pt>
+<images/higo_individual_220_113_78.png, id=532, 513.92pt x 224.84pt>
 File: images/higo_individual_220_113_78.png Graphic file (type png)
 <use images/higo_individual_220_113_78.png>
 Package pdftex.def Info: images/higo_individual_220_113_78.png  used on input line 178.
@@ -1043,7 +1043,7 @@ LaTeX Warning: Citation `he2016deep' on page 24 undefined on input line 269.
 [27]
 
 [28]
-<images/exp_10_cnn_results_220_113_78.png, id=610, 877.5987pt x 450.2421pt>
+<images/exp_10_cnn_results_220_113_78.png, id=604, 877.5987pt x 450.2421pt>
 File: images/exp_10_cnn_results_220_113_78.png Graphic file (type png)
 <use images/exp_10_cnn_results_220_113_78.png>
 Package pdftex.def Info: images/exp_10_cnn_results_220_113_78.png  used on input line 362.
@@ -1051,7 +1051,7 @@ Package pdftex.def Info: images/exp_10_cnn_results_220_113_78.png  used on input
 
 
 [29]
-<images/exp_10_fitness_evolution.png, id=617, 722.7pt x 433.62pt>
+<images/exp_10_fitness_evolution.png, id=611, 722.7pt x 433.62pt>
 File: images/exp_10_fitness_evolution.png Graphic file (type png)
 <use images/exp_10_fitness_evolution.png>
 Package pdftex.def Info: images/exp_10_fitness_evolution.png  used on input line 391.
@@ -1069,12 +1069,12 @@ Package pdftex.def Info: images/exp_10_fitness_evolution.png  used on input line
 [34]
 
 [35]
-<images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png, id=655, 714.5094pt x 189.3474pt>
+<images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png, id=649, 714.5094pt x 189.3474pt>
 File: images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png Graphic file (type png)
 <use images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png>
 Package pdftex.def Info: images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png  used on input line 473.
 (pdftex.def)             Requested size: 390.0pt x 103.34973pt.
-<images/hyperspectral_signature.png, id=656, 867.24pt x 433.62pt>
+<images/hyperspectral_signature.png, id=651, 867.24pt x 433.62pt>
 File: images/hyperspectral_signature.png Graphic file (type png)
 <use images/hyperspectral_signature.png>
 Package pdftex.def Info: images/hyperspectral_signature.png  used on input line 483.
@@ -1082,7 +1082,7 @@ Package pdftex.def Info: images/hyperspectral_signature.png  used on input line 
 
 
 [36 <./images/patch_visualization_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0.png>]
-<images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png, id=664, 125.0271pt x 124.3044pt>
+<images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png, id=659, 125.0271pt x 124.3044pt>
 File: images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png Graphic file (type png)
 <use images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png>
 Package pdftex.def Info: images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png  used on input line 494.
@@ -1090,24 +1090,30 @@ Package pdftex.def Info: images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02
 
 
 [37 <./images/hyperspectral_signature.png>]
-<images/wavelet_training_results.png, id=672, 877.5987pt x 450.2421pt>
+
+[38]
+<images/wavelet_training_results.png, id=676, 877.5987pt x 450.2421pt>
 File: images/wavelet_training_results.png Graphic file (type png)
 <use images/wavelet_training_results.png>
 Package pdftex.def Info: images/wavelet_training_results.png  used on input line 534.
 (pdftex.def)             Requested size: 390.0pt x 200.07886pt.
 
 
-[38]
-
 [39]
 
-[40])
+[40]
+<images/wavelet_experiment_failed_results.png, id=689, 867.9627pt x 450.2421pt>
+File: images/wavelet_experiment_failed_results.png Graphic file (type png)
+<use images/wavelet_experiment_failed_results.png>
+Package pdftex.def Info: images/wavelet_experiment_failed_results.png  used on input line 579.
+(pdftex.def)             Requested size: 390.0pt x 202.31165pt.
+)
 
 [41]
 
 [42 <./images/CWT_morl_Fx10_20230717_Riego_C0_2023-07-17_09-02-21_ann0_patch_00.png>]
 
-[43 <./images/wavelet_training_results.png>]
+[43 <./images/wavelet_training_results.png> <./images/wavelet_experiment_failed_results.png>]
 \openout2 = `chapters/chapter4.aux'.
 
  (chapters/chapter4.tex
@@ -1182,20 +1188,20 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3973536EBA56E271BBA1E14E8928B831;7911.
+(rerunfilecheck)             Checksum: 546EF7A76D0A0EF4BBD3A7CDF55DD1C6;7634.
  ) 
 Here is how much of TeX's memory you used:
- 28715 strings out of 469941
- 541551 string characters out of 5469430
- 912127 words of memory out of 5000000
- 54729 multiletter control sequences out of 15000+600000
+ 28723 strings out of 469941
+ 541947 string characters out of 5469430
+ 912358 words of memory out of 5000000
+ 54738 multiletter control sequences out of 15000+600000
  636291 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,91p,1454b,782s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk> <C:\Users\pablo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (62 pages, 1401427 bytes).
+Output written on main.pdf (62 pages, 1746563 bytes).
 PDF statistics:
- 853 PDF objects out of 1000 (max. 8388607)
- 208 named destinations out of 1000 (max. 500000)
- 418 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 858 PDF objects out of 1000 (max. 8388607)
+ 207 named destinations out of 1000 (max. 500000)
+ 407 words of extra memory for PDF output out of 10000 (max. 10000000)
 

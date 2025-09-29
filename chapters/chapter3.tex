@@ -476,7 +476,7 @@ Una vez identificada la región óptima de 32×32 píxeles, se procede a la subd
 \end{figure}
 
 
-Esta metodología de promediado espacial permite reducir el ruido espectral inherente a nivel de píxel individual mientras preserva las características espectrales distintivas de cada región. Al calcular la media espectral de los 16 píxeles (4×4) que componen cada sub-parche, se obtiene una representación espectral más robusta y estable que facilita la identificación de patrones espectrales asociados con diferentes grados de contaminación fúngica.
+Esta metodología de promediado espacial permite reducir el ruido espectral inherente a nivel de píxel individual mientras preserva las características espectrales distintivas de cada región. Al calcular la media espectral de los 16 píxeles (4×4) que componen cada sub-parche, se obtiene una representación espectral más robusta y estable que facilita la identificación de patrones espectrales asociados con diferentes grados de contaminación fúngica, como se ilustra en la Figura \ref{fig:hyperspectral_signature_example}.
 
 \begin{figure}[ht]
 \centering
@@ -498,7 +498,7 @@ La transformación espectral utiliza la Transformada Wavelet Continua (\emph{CWT
 
 \vspace{5mm}
 
-Los escalogramas resultantes capturan tanto características espectrales globales como variaciones localizadas en frecuencia, proporcionando una representación rica en información que preserva patrones espectrales discriminativos para la detección de contaminación por aflatoxinas. La selección de 64 escalas permite una cobertura completa del rango espectral mientras mantiene una resolución suficiente para detectar características espectrales finas asociadas con cambios bioquímicos inducidos por el desarrollo fúngico.
+Los escalogramas resultantes capturan tanto características espectrales globales como variaciones localizadas en frecuencia, proporcionando una representación rica en información que preserva patrones espectrales discriminativos para la detección de contaminación por aflatoxinas. La selección de 64 escalas permite una cobertura completa del rango espectral mientras mantiene una resolución suficiente para detectar características espectrales finas asociadas con cambios bioquímicos inducidos por el desarrollo fúngico, como se muestra en la Figura \ref{fig:cwt_morl_example}.
 
 \subsubsection{3. Preparación de Datos para CNN}
 
@@ -510,7 +510,7 @@ Los escalogramas se normalizan utilizando estadísticas estándar de \emph{Image
 
 \subsubsection{4. Arquitectura y Entrenamiento de CNN}
 
-La red \emph{DenseNet-121} se adapta específicamente para la clasificación de cuatro clases mediante la modificación de la capa clasificadora final. La arquitectura implementa una cabeza clasificadora personalizada que incluye capas lineales con normalización por lotes, funciones de activación \emph{ReLU}, y regularización mediante \emph{dropout} para prevenir sobreajuste. La configuración final comprende: una capa lineal de 1024 a 128 unidades con \emph{ReLU} y normalización por lotes, seguida de \emph{dropout} (0.4), una segunda capa lineal de 128 a 64 unidades con \emph{ReLU} y \emph{dropout} (0.3), y finalmente una capa de salida de 64 a 4 unidades correspondientes a las clases experimentales.
+La red \emph{DenseNet-121} se adapta específicamente para la clasificación de cuatro clases mediante la modificación de la capa clasificadora final. La arquitectura implementa una cabeza clasificadora personalizada que incluye capas lineales con normalización por lotes, funciones de activación \emph{ReLU}, y regularización mediante \emph{dropout} para prevenir sobreajuste. La configuración final comprende: una capa lineal de 1024 a 128 unidades con \emph{ReLU} y normalización por lotes, seguida de \emph{dropout} (0.4), una segunda capa lineal de 128 a 64 unidades con \emph{ReLU} y \emph{dropout} (0.3), y finalmente una capa de salida de 64 a 4 unidades correspondientes a las clases experimentales, como se detalla en la Tabla \ref{tab:custom_layers}.
 
 \vspace{5mm}
 
@@ -527,7 +527,7 @@ El entrenamiento se ejecuta durante 50 épocas utilizando el optimizador \emph{A
 
 \subsection{Resultados}
 
-La metodología basada en transformadas wavelet demostró una efectividad notable para la clasificación de contaminación por aflatoxinas en muestras de higo. El modelo \emph{DenseNet-121} entrenado alcanzó una precisión de clasificación de \textbf{87.43\%} en el conjunto de prueba, con métricas consistentes a través de las cuatro clases experimentales.
+La metodología basada en transformadas wavelet demostró una efectividad notable para la clasificación de contaminación por aflatoxinas en muestras de higo. El modelo \emph{DenseNet-121} entrenado alcanzó una precisión de clasificación de \textbf{87.43\%} en el conjunto de prueba, con métricas consistentes a través de las cuatro clases experimentales. La Figura \ref{fig:wavelet_training_results} muestra la evolución del entrenamiento durante 50 épocas.
 
 \begin{figure}[ht]
 \centering
@@ -538,7 +538,7 @@ La metodología basada en transformadas wavelet demostró una efectividad notabl
 
 \vspace{5mm}
 
-El análisis detallado por clases revela un rendimiento balanceado: \emph{C0} (control sano) alcanzó precisión de 88.92\% y recall de 88.59\%, \emph{C1} (baja contaminación) obtuvo precisión y recall de 88.26\%, \emph{C2} (contaminación media) logró precisión de 85.24\% y recall de 84.49\%, mientras que \emph{C3} (alta contaminación) registró precisión de 87.35\% y recall de 88.43\%. Los puntajes F1 correspondientes fueron 88.76\%, 88.26\%, 84.86\% y 87.89\% respectivamente, indicando un equilibrio efectivo entre precisión y recall en todas las categorías.
+El análisis detallado por clases revela un rendimiento balanceado: \emph{C0} (control sano) alcanzó precisión de 88.92\% y recall de 88.59\%, \emph{C1} (baja contaminación) obtuvo precisión y recall de 88.26\%, \emph{C2} (contaminación media) logró precisión de 85.24\% y recall de 84.49\%, mientras que \emph{C3} (alta contaminación) registró precisión de 87.35\% y recall de 88.43\%. Los puntajes F1 correspondientes fueron 88.76\%, 88.26\%, 84.86\% y 87.89\% respectivamente, indicando un equilibrio efectivo entre precisión y recall en todas las categorías, como se presenta en la Tabla \ref{tab:wavelet_report}.
 
 \begin{table}[ht]
 \centering
@@ -551,7 +551,7 @@ El análisis detallado por clases revela un rendimiento balanceado: \emph{C0} (c
 
 \vspace{5mm}
 
-La matriz de confusión revela patrones de clasificación interpretables: las confusiones más frecuentes ocurren entre clases adyacentes (\emph{C1-C2} y \emph{C2-C3}), reflejando la progresión gradual de la contaminación por aflatoxinas. Específicamente, se observan 190 confusiones entre \emph{C1} y \emph{C2}, y 174 confusiones entre \emph{C2} y \emph{C3}. La clase control (\emph{C0}) muestra la menor tasa de confusión con clases contaminadas, con solo 403 clasificaciones erróneas de un total de 3533 muestras, indicando que la metodología wavelet es efectiva para distinguir muestras sanas de contaminadas.
+La matriz de confusión revela patrones de clasificación interpretables: las confusiones más frecuentes ocurren entre clases adyacentes (\emph{C1-C2} y \emph{C2-C3}), reflejando la progresión gradual de la contaminación por aflatoxinas. Específicamente, se observan 190 confusiones entre \emph{C1} y \emph{C2}, y 174 confusiones entre \emph{C2} y \emph{C3}. La clase control (\emph{C0}) muestra la menor tasa de confusión con clases contaminadas, con solo 403 clasificaciones erróneas de un total de 3533 muestras, indicando que la metodología wavelet es efectiva para distinguir muestras sanas de contaminadas, como se detalla en la Tabla \ref{tab:wavelet_confusion_matrix}.
 
 \begin{table}[ht]
 \centering
@@ -564,17 +564,32 @@ La matriz de confusión revela patrones de clasificación interpretables: las co
 
 \vspace{5mm}
 
-El entrenamiento del modelo se completó en 50 épocas, con un tiempo total de entrenamiento de aproximadamente 3.1 horas en una GPU NVIDIA A100. La convergencia del modelo se observa claramente en las curvas de entrenamiento, donde tanto la pérdida como la precisión se estabilizan después de las primeras 20 épocas, indicando un aprendizaje efectivo sin evidencia significativa de sobreajuste.
+El entrenamiento del modelo se completó en 50 épocas, con un tiempo total de entrenamiento de aproximadamente 3.1 horas en una GPU NVIDIA A100. La convergencia del modelo se observa claramente en las curvas de entrenamiento mostradas en la Figura \ref{fig:wavelet_training_results}, donde tanto la pérdida como la precisión se estabilizan después de las primeras 20 épocas, indicando un aprendizaje efectivo sin evidencia significativa de sobreajuste.
 
 \subsection{Desafíos y Observaciones Técnicas}
 
-La implementación de la metodología wavelet presentó varios desafíos técnicos que proporcionaron perspectivas valiosas sobre el procesamiento de imágenes hiperespectrales. El primer desafío significativo fue la selección de parámetros óptimos para la CWT, particularmente el número de escalas y su distribución. La experimentación inicial con diferentes configuraciones reveló que 64 escalas logarítmicamente distribuidas proporcionan el mejor equilibrio entre resolución espectral y eficiencia computacional, capturando características espectrales finas sin introducir redundancia excesiva.
+Durante la implementación, se identificó un desafío técnico significativo relacionado con la estabilidad del entrenamiento de la red neuronal convolucional. El principal obstáculo encontrado fue la presencia de fluctuaciones extremas e inconsistentes en las métricas de validación (pérdida de prueba y precisión de prueba) durante el proceso de entrenamiento, mientras que las métricas de entrenamiento mostraban una progresión estable y monotónicamente decreciente.
 
 \vspace{5mm}
 
-La gestión de memoria constituyó otro aspecto crítico, dado que la generación de escalogramas para el conjunto completo de datos resulta en un volumen significativo de datos procesados. La implementación de procesamiento por lotes y técnicas de liberación explícita de memoria (\texttt{gc.collect()}) después de cada lote de procesamiento permitió manejar eficientemente el flujo de datos sin saturar la memoria disponible. Adicionalmente, se observó que la normalización apropiada de los escalogramas resulta crítica para la convergencia estable del entrenamiento, requiriendo ajustes específicos para accommodar las características únicas de las representaciones tiempo-frecuencia generadas por CWT.
+Este comportamiento anómalo se caracterizó por oscilaciones abruptas y de gran amplitud en la pérdida de validación, con valores que variaban drásticamente entre épocas consecutivas. Por ejemplo, se observaron saltos desde una pérdida de prueba de 0.5782 en la época 26 hasta 2.0304 en la época 27, o fluctuaciones desde 0.4761 en la época 44 hasta 3.3955 en la época 46. De manera similar, la precisión de validación experimentó variaciones extremas, oscilando entre valores tan altos como 0.8413 y tan bajos como 0.3364 en épocas próximas. La Figura \ref{fig:wavelet_experiment_failed_results} ilustra claramente este comportamiento errático en las curvas de entrenamiento iniciales.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/wavelet_experiment_failed_results.png}
+\caption{Comportamiento errático inicial de las métricas de validación, mostrando fluctuaciones extremas en la pérdida de prueba y precisión de prueba durante el entrenamiento sin planificador.}
+\label{fig:wavelet_experiment_failed_results}
+\end{figure}
 
 \vspace{5mm}
 
-Un hallazgo técnico importante fue que la metodología wavelet captura información espectral complementaria a las aproximaciones basadas en selección de bandas RGB. Los escalogramas revelan patrones espectrales localizados que no son evidentes en análisis espectrales tradicionales, sugiriendo que las transformadas wavelet proporcionan una perspectiva única para la caracterización de cambios bioquímicos asociados con el desarrollo fúngico y la producción de aflatoxinas en tejidos vegetales.
+Este fenómeno es indicativo de inestabilidad en el proceso de optimización, comúnmente asociado con tasas de aprendizaje inadecuadas que provocan que el optimizador \emph{Adam} realice actualizaciones de parámetros demasiado agresivas. Las fluctuaciones sugieren que el modelo estaba "saltando" entre diferentes regiones del espacio de pérdida sin converger hacia un mínimo estable, particularmente problemático en arquitecturas profundas como \emph{DenseNet-121} cuando se aplican a dominios especializados como el análisis de escalogramas wavelet.
+
+\vspace{5mm}
+
+La solución implementada consistió en la incorporación de un planificador de tasa de aprendizaje adaptativo (\texttt{ReduceLROnPlateau}) que monitorea la pérdida de validación y reduce automáticamente la tasa de aprendizaje cuando se detecta estancamiento en la mejora del modelo. Esta estrategia permite que el entrenamiento comience con una tasa de aprendizaje más alta para exploración inicial, seguida de reducciones progresivas que facilitan la convergencia fina hacia mínimos locales estables. El planificador se configuró con un factor de reducción de 0.5, paciencia de 5 épocas, y un umbral mínimo de mejora de 0.01, parámetros que demostraron ser efectivos para estabilizar el entrenamiento y lograr la convergencia consistente observada en los resultados finales.
+
+\vspace{5mm}
+
+La implementación del planificador no solo eliminó las fluctuaciones erráticas sino que también mejoró significativamente la capacidad de generalización del modelo, como se evidencia en las curvas de entrenamiento estables mostradas en la Figura \ref{fig:wavelet_training_results} y la precisión final de 87.43\% alcanzada en el conjunto de prueba.
 

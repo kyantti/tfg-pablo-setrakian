@@ -54,12 +54,10 @@
 \contentsline {subsection}{\numberline {3.5.3}Flujo de Procesamiento}{36}{subsection.3.5.3}%
 \contentsline {subsubsection}{1. Extracción de Parches Espectrales}{36}{section*.31}%
 \contentsline {subsubsection}{2. Transformada Wavelet Continua}{37}{section*.34}%
-\contentsline {subsubsection}{3. Preparación de Datos para CNN}{37}{section*.36}%
+\contentsline {subsubsection}{3. Preparación de Datos para CNN}{38}{section*.36}%
 \contentsline {subsubsection}{4. Arquitectura y Entrenamiento de CNN}{38}{section*.37}%
-\contentsline {subsection}{\numberline {3.5.4}Resultados}{38}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.4}Resultados}{39}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Desafíos y Observaciones Técnicas}{40}{subsection.3.5.5}%
 \contentsline {chapter}{\numberline {4}Resultados}{44}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{45}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Logros Principales}{45}{subsection.5.1.1}%
-\contentsline {chapter}{Referencias}{46}{subsection.5.1.1}%
+\contentsline {chapter}{Referencias}{46}{chapter.5}%
