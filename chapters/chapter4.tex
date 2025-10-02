@@ -1,1 +1,15 @@
 \chapter{Resultados}
+
+La selección evolutiva de bandas con ResNet-50 consolidó un \textit{pipeline} RGB capaz de alcanzar una precisión global del 81.9\,\%, con métricas \textit{macro} equilibradas y detecciones verdaderas positivas cercanas al 80\,\% en las cuatro clases, lo que confirma la viabilidad de reducir el cubo hiperespectral a combinaciones tricanal para clasificación automática.
+
+\vspace{5mm}
+
+Por su parte, la caracterización tiempo-frecuencia mediante transformadas \textit{wavelet} y DenseNet-121 elevó la precisión al 87.43\,\%, manteniendo la coherencia entre precisión y \textit{recall} por clase y concentrando los errores en transiciones progresivas de contaminación, lo que evidencia mayor sensibilidad a las variaciones bioquímicas del tejido.
+
+\vspace{5mm}
+
+El método \textit{wavelet} aventaja al esquema RGB-genético en 5.5 puntos porcentuales de precisión absoluta (87.43\,\% frente a 81.9\,\%), además de reducir las confusiones con la clase sana y distribuir los errores según la progresión natural de la infección. Esta mejora se atribuye a la riqueza de los escalogramas, que encapsulan patrones multiescala que permanecen latentes cuando se colapsa el cubo a tres bandas. 
+
+\vspace{5mm}
+
+No obstante, el enfoque RGB sigue ofreciendo una solución más liviana, con menor demanda computacional y una interpretación directa en formato de imagen convencional.
